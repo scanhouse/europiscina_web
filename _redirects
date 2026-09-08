@@ -1,0 +1,39 @@
+# Mapa 301 WordPress -> sitio nuevo. Sin esto se pierde el posicionamiento.
+# --- Castellano (raiz) ---
+/construccion-piscinas/                                   /piscinas-de-obra/           301!
+/construccion-piscinas/construccion-de-piscinas/          /piscinas-lamina-armada/     301!
+/piscinas-de-poliester-2/                                 /piscinas-poliester/         301!
+/piscinas-de-obra-con-gres-porcelanico/                   /gres-porcelanico/           301!
+/construccion-piscinas/mantenimiento-de-piscinas/         /mantenimiento/              301!
+/construccion-piscinas/productos-para-piscina/            /mantenimiento/              301!
+/construccion-piscinas/fugas-de-agua-en-piscina/          /fugas-de-agua/              301!
+/construccion-piscinas/fugas-de-agua-en-piscina/reparacion-de-piscinas/  /reformas/    301!
+/construccion-piscinas/rehabilitacion-de-piscinas/        /reformas/                   301!
+/servicios/construccio-de-piscines/                       /piscinas-de-obra/           301!
+/servicios/rehabilitacion-de-piscinas/                    /reformas/                   301!
+/servicios/mantenimiento-de-piscinas/                     /mantenimiento/              301!
+/servicios/venta-de-equipamiento/                         /mantenimiento/              301!
+/servicios/                                               /                            301!
+/empresa-piscinas/                                        /empresa/                    301!
+/es/*                                                     /:splat                      301!
+
+# --- Catalogo WooCommerce -> configurador ---
+/configurador/*                                           /configurador/               301!
+/producto/*                                               /configurador/               301!
+/tienda/                                                  /configurador/               301!
+/categoria-producto/*                                     /configurador/               301!
+/carrito/                                                 /configurador/               301!
+/finalizar-compra/                                        /configurador/               301!
+
+# --- Catalan (WPML usaba /ca/) ---
+/ca/construccion-piscinas/                                /ca/piscines-obra/           301!
+/ca/piscines-de-poliester-2/                              /ca/piscines-poliester/      301!
+/ca/serveis/*                                             /ca/                         301!
+/ca/empresa-piscinas/                                     /ca/empresa/                 301!
+
+# --- Ruido de WordPress ---
+/author/*                                                 /                            301!
+/page/*                                                   /                            301!
+/wp-content/*                                             /                            404
+/wp-admin/*                                               /                            404
+/xmlrpc.php                                               /                            404

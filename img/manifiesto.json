@@ -1,0 +1,173 @@
+{
+ "hero-oliveres": {
+  "anchos": [
+   2400,
+   1800,
+   1200,
+   800
+  ],
+  "w": 4032,
+  "h": 1728,
+  "origen": "IMG_0560.jpg"
+ },
+ "mos-dron-cenital": {
+  "anchos": [
+   1200,
+   800,
+   500
+  ],
+  "w": 1804,
+  "h": 2256,
+  "origen": "dji_fly_20260310_150144_0131_1773152313054_photo_beautify.JPG"
+ },
+ "mos-andorra": {
+  "anchos": [
+   1200,
+   800,
+   500
+  ],
+  "w": 2419,
+  "h": 3024,
+  "origen": "IMG_9722.jpg"
+ },
+ "mos-escala-pedra": {
+  "anchos": [
+   1200,
+   800,
+   500
+  ],
+  "w": 3024,
+  "h": 3024,
+  "origen": "IMG_0673.jpg"
+ },
+ "mos-lamina-gris": {
+  "anchos": [
+   1200,
+   800,
+   500
+  ],
+  "w": 1439,
+  "h": 1439,
+  "origen": "80D0E2E6-DE8B-480A-8866-C29B68781336.JPG"
+ },
+ "mos-gres-fusta": {
+  "anchos": [
+   1200,
+   800,
+   500
+  ],
+  "w": 1200,
+  "h": 1200,
+  "origen": "9c159c2b-8476-4cde-bfe3-301d6932d7c5.JPG"
+ },
+ "mos-dron-textura": {
+  "anchos": [
+   1200,
+   800,
+   500
+  ],
+  "w": 4000,
+  "h": 1714,
+  "origen": "dji_fly_20260310_150152_0134_1773152314621_photo_beautify.JPG"
+ },
+ "pag-obra": {
+  "anchos": [
+   1800,
+   1200,
+   800
+  ],
+  "w": 5712,
+  "h": 2448,
+  "origen": "IMG_0924.jpg"
+ },
+ "pag-lamina": {
+  "anchos": [
+   1800,
+   1200,
+   800
+  ],
+  "w": 4032,
+  "h": 1728,
+  "origen": "IMG_4636.jpg"
+ },
+ "pag-poliester": {
+  "anchos": [
+   1800,
+   1200,
+   800
+  ],
+  "w": 3024,
+  "h": 1296,
+  "origen": "IMG_9563.jpg"
+ },
+ "pag-gres": {
+  "anchos": [
+   1800,
+   1200,
+   800
+  ],
+  "w": 4284,
+  "h": 1835,
+  "origen": "IMG_1441.jpg"
+ },
+ "pag-mantenimiento": {
+  "anchos": [
+   1800,
+   1200,
+   800
+  ],
+  "w": 4000,
+  "h": 1714,
+  "origen": "IMG_20230623_113259_Original.jpg"
+ },
+ "pag-fugas": {
+  "anchos": [
+   1800,
+   1200,
+   800
+  ],
+  "w": 4000,
+  "h": 1714,
+  "origen": "IMG_20230623_113421_Original.jpg"
+ },
+ "pag-reformas": {
+  "anchos": [
+   1800,
+   1200,
+   800
+  ],
+  "w": 3024,
+  "h": 1296,
+  "origen": "IMG_0590.jpg"
+ },
+ "pag-empresa": {
+  "anchos": [
+   1800,
+   1200,
+   800
+  ],
+  "w": 4032,
+  "h": 1728,
+  "origen": "IMG_2302.jpg"
+ },
+ "pag-configurador": {
+  "anchos": [
+   1800,
+   1200,
+   800
+  ],
+  "w": 5712,
+  "h": 2448,
+  "origen": "IMG_0192.jpg"
+ },
+ "pub-municipal": {
+  "anchos": [
+   1800,
+   1200,
+   800
+  ],
+  "w": 2000,
+  "h": 857,
+  "origen": "IMG_6025.JPG"
+ }
+}

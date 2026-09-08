@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fibreglass pool price calculator | Europiscina</title>
+<meta name="description" content="Work out an indicative price for your prefabricated fibreglass pool: size, finish, excavation, gravel, coping, salt chlorination, heat pump and lighting.">
+<link rel="canonical" href="https://europiscina.es/en/pool-calculator/"><link rel="alternate" hreflang="es" href="https://europiscina.es/configurador/"><link rel="alternate" hreflang="ca" href="https://europiscina.es/ca/configurador/"><link rel="alternate" hreflang="en" href="https://europiscina.es/en/pool-calculator/"><link rel="alternate" hreflang="x-default" href="https://europiscina.es/configurador/">
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/img/icon-512.png" type="image/png" sizes="512x512"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png"><meta name="theme-color" content="#0B4F6C"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--profundo:#0B4F6C;--azul:#17708F;--lamina:#DCECF2;--espuma:#EFF6F8;--arena:#E5DACA;
+--papel:#FCFCFB;--tinta:#12262E;--linea:rgba(18,38,46,.15);
+--display:"Libre Franklin",system-ui,sans-serif;--texto:"Newsreader",Georgia,serif;--gutter:clamp(20px,5vw,72px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--papel);color:var(--tinta);font-family:var(--texto);font-weight:300;font-size:1.0625rem;line-height:1.6}
+h1,h2,h3,label,button,.d{font-family:var(--display);letter-spacing:-.02em}
+:focus-visible{outline:2px solid var(--azul);outline-offset:3px}
+.cabecera{padding:clamp(40px,7vw,80px) var(--gutter) clamp(24px,3vw,36px);border-bottom:1px solid var(--linea)}
+.cabecera h1{font-weight:500;line-height:1;font-size:clamp(2rem,5.5vw,3.6rem);max-width:16ch}
+.cabecera p{max-width:56ch;margin-top:16px}
+.wrap{display:grid;grid-template-columns:1.25fr .95fr;gap:0;align-items:start}
+@media(max-width:940px){.wrap{grid-template-columns:1fr}}
+.panel{padding:clamp(26px,4vw,52px) var(--gutter)}
+.resumen{padding:clamp(26px,4vw,52px) var(--gutter);background:var(--profundo);color:var(--papel);
+  position:sticky;top:0;min-height:100vh}
+@media(max-width:940px){.resumen{position:static;min-height:0}}
+fieldset{border:0;padding:0;margin:0 0 34px}
+legend{font-family:var(--display);font-weight:500;font-size:.82rem;color:var(--azul);
+  margin-bottom:14px;padding:0}
+.paso{counter-increment:paso}
+.modelos{display:grid;gap:1px;background:var(--linea);border:1px solid var(--linea);max-height:340px;overflow:auto}
+.mod{background:var(--papel);display:flex;align-items:center;gap:12px;padding:11px 14px;cursor:pointer;transition:background .15s}
+.mod:hover{background:var(--espuma)}
+.mod input{margin:0;accent-color:var(--profundo)}
+.mod .nom{font-family:var(--display);font-weight:500;font-size:.95rem;flex:1}
+.mod .med{font-size:.85rem;opacity:.62;white-space:nowrap}
+.filtros{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.filtros input,.filtros select{font-family:var(--texto);font-size:.95rem;padding:9px 12px;
+  border:1px solid var(--linea);border-radius:2px;background:var(--papel);color:var(--tinta)}
+.filtros input{flex:1 1 180px}
+.ops{display:grid;gap:1px;background:var(--linea);border:1px solid var(--linea)}
+.op{background:var(--papel);display:flex;align-items:flex-start;gap:12px;padding:14px;cursor:pointer}
+.op:hover{background:var(--espuma)}
+.op input{margin-top:4px;accent-color:var(--profundo)}
+.op .t{flex:1}
+.op .t strong{font-family:var(--display);font-weight:500;font-size:.98rem;display:block}
+.op .t span{font-size:.9rem;opacity:.66}
+.op .pr{font-family:var(--display);font-size:.92rem;color:var(--profundo);white-space:nowrap;padding-top:2px}
+.radios{display:flex;flex-wrap:wrap;gap:8px}
+.radios label{border:1px solid var(--linea);padding:10px 14px;font-size:.88rem;cursor:pointer;
+  font-weight:400;border-radius:2px;transition:all .15s}
+.radios input{display:none}
+.radios input:checked+span{color:var(--papel)}
+.radios label:has(input:checked){background:var(--profundo);border-color:var(--profundo);color:var(--papel)}
+.total{font-family:var(--display);font-weight:500;letter-spacing:-.04em;
+  font-size:clamp(2.4rem,6vw,3.6rem);line-height:1;margin:6px 0 4px}
+.iva{font-size:.9rem;opacity:.78;margin-bottom:24px}
+.lineas{list-style:none;border-top:1px solid rgba(252,252,251,.24);font-size:.95rem}
+.lineas li{display:flex;justify-content:space-between;gap:14px;padding:10px 0;
+  border-bottom:1px solid rgba(252,252,251,.16)}
+.lineas li span:last-child{font-family:var(--display);font-size:.92rem;white-space:nowrap}
+.lineas li.sub{opacity:.72;font-size:.9rem}
+.aviso{background:rgba(252,252,251,.1);border-left:2px solid var(--arena);
+  padding:16px;margin-top:26px;font-size:.92rem}
+.aviso strong{font-family:var(--display);font-weight:500;display:block;margin-bottom:5px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.btn{font-family:var(--display);font-size:.9rem;font-weight:500;text-decoration:none;
+  padding:14px 24px;border-radius:2px;border:0;cursor:pointer;display:inline-block}
+.btn-solid{background:var(--papel);color:var(--profundo)}
+.btn-ghost{border:1px solid rgba(252,252,251,.5);color:var(--papel);background:transparent}
+.nota{font-size:.82rem;opacity:.7;margin-top:18px;line-height:1.5}
+.rev{background:var(--arena);color:var(--tinta);padding:12px var(--gutter);
+  font-family:var(--display);font-size:.82rem}
+
+.top{position:sticky;top:0;z-index:50;padding:16px var(--gutter);display:flex;align-items:center;
+  justify-content:space-between;gap:24px;background:var(--papel);border-bottom:1px solid var(--linea)}
+.marca{font-family:var(--display);font-weight:600;font-size:1.05rem;text-decoration:none}
+.menu{display:flex;gap:24px;font-family:var(--display);font-size:.83rem}
+.menu a{text-decoration:none;opacity:.85}
+.menu a:hover{opacity:1}
+.menu a[aria-current="page"]{opacity:1;text-decoration:underline;text-underline-offset:5px}
+@media(max-width:940px){.menu{display:none}}
+footer{background:var(--profundo);color:rgba(252,252,251,.74);padding:clamp(48px,6vw,72px) var(--gutter) 34px;
+  font-size:.9rem;border-top:1px solid rgba(252,252,251,.14)}
+.pie-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;padding-bottom:30px;
+  border-bottom:1px solid rgba(252,252,251,.16)}
+.pie-grid h4{font-family:var(--display);font-weight:500;font-size:.82rem;color:var(--papel);margin-bottom:12px}
+.pie-grid ul{list-style:none;display:grid;gap:7px}
+.pie-grid a{text-decoration:none;color:inherit}
+.pie-legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;padding-top:22px;
+  font-size:.8rem;opacity:.62}
+@media(max-width:760px){.pie-grid{grid-template-columns:1fr 1fr}}
+.miga{font-family:var(--display);font-size:.8rem;color:var(--azul);margin-bottom:14px}
+.miga a{color:inherit}
+
+/* ---------- Puerta de datos ---------- */
+.bloqueado #total,.bloqueado #iva{filter:blur(11px);user-select:none;pointer-events:none}
+.puerta{background:rgba(252,252,251,.1);border:1px solid rgba(252,252,251,.28);
+  padding:20px;margin:20px 0 4px;border-radius:2px}
+.puerta[hidden]{display:none}
+.puerta h3{font-family:var(--display);font-weight:500;font-size:1.02rem;margin-bottom:6px}
+.puerta p.sub{font-size:.9rem;opacity:.8;margin-bottom:16px}
+.puerta .f{display:grid;gap:12px}
+.puerta input[type=text],.puerta input[type=email],.puerta input[type=tel]{
+  width:100%;font-family:var(--texto);font-size:1rem;color:var(--papel);background:transparent;
+  border:0;border-bottom:1px solid rgba(252,252,251,.42);padding:9px 0;border-radius:0}
+.puerta input:focus{outline:none;border-bottom-color:var(--arena)}
+.puerta input::placeholder{color:rgba(252,252,251,.5)}
+.puerta .cons{display:flex;gap:9px;align-items:flex-start;font-size:.84rem;
+  line-height:1.45;opacity:.86;margin-top:4px}
+.puerta .cons input{margin-top:3px;accent-color:var(--arena)}
+.puerta button{margin-top:6px;width:100%;font-family:var(--display);font-size:.9rem;font-weight:500;
+  background:var(--papel);color:var(--profundo);border:0;padding:14px;border-radius:2px;cursor:pointer}
+.puerta button:disabled{opacity:.45;cursor:not-allowed}
+.err{color:#FFD9C9;font-size:.84rem;min-height:1.1em}
+.abierto{font-size:.86rem;opacity:.8;margin:16px 0 4px}
+
+.marca{display:flex;align-items:center;flex-shrink:0;line-height:0;text-decoration:none}
+.marca-img{width:auto;height:clamp(26px,3.1vw,34px);display:block}
+.marca-pie{display:inline-block;margin-bottom:16px;line-height:0}
+.marca-pie-img{width:auto;height:30px;display:block}
+picture{display:block}
+</style>
+</head>
+<body>
+
+<header class="top top-solida"><a class="marca" href="/en/" aria-label="Europiscina, inici"><img src="/img/logo-400.webp" srcset="/img/logo-260.webp 260w, /img/logo-400.webp 400w, /img/logo-600.webp 600w" sizes="180px" alt="Europiscina" width="2092" height="657" class="marca-img"></a><nav class="menu"><a href="/en/fibreglass-pools/">Fibreglass pools</a><a href="/en/pool-calculator/" aria-current="page">Price calculator</a><a href="/en/pool-maintenance/">Maintenance</a><a href="/en/contact/">Contact</a></nav><span class="idiomas"><a href="/configurador/" hreflang="es">ES</a><a href="/ca/configurador/" hreflang="ca">CA</a><a href="/en/pool-calculator/" class="act" hreflang="en">EN</a></span></header>
+<div class="rev">Indicative prices based on our current price list. Hard ground or rock, difficult access and high water tables are assessed on site.</div>
+
+<section class="cabecera">
+  <p class="miga"><a href="/en/">Home</a> &middot; <a href="/en/fibreglass-pools/">Fibreglass</a> &middot; Price calculator</p>
+  <h1>Work out your fibreglass pool price.</h1>
+  <p>Choose the size, the finish and which parts of the job we handle. The price updates instantly. It is indicative and does not replace a site visit, but it gets close.</p>
+</section>
+
+<div class="wrap">
+<div class="panel">
+
+  <fieldset>
+    <legend>1. The shell</legend>
+    <div class="filtros">
+      <input id="q" type="search" placeholder="Search size or model…" aria-label="Buscar modelo">
+      <select id="fl" aria-label="Filtrar por serie">
+        <option value="">All ranges</option>
+        <option value="Sky">Sky</option>
+        <option value="Star">Star</option>
+        <option value="Space">Space</option>
+        <option value="Plage">Plage, with beach entry</option>
+      </select>
+    </div>
+    <div class="modelos" id="modelos"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>2. Shell finish</legend>
+    <div class="radios" id="acabados"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>3. Groundwork we handle</legend>
+    <div class="ops" id="obra"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>4. Equipment</legend>
+    <div class="ops" id="equipo"></div>
+  </fieldset>
+
+</div>
+
+<aside class="resumen" aria-live="polite">
+  <p class="d" style="font-size:.82rem;opacity:.8">Indicative price</p>
+  <p class="total" id="total">&mdash;</p>
+  <p class="iva" id="iva"></p>
+  <ul class="lineas" id="lineas"></ul>
+
+  <div class="puerta" id="puerta">
+    <h3>See the total price</h3>
+    <p class="sub">Leave us your details and we will show you the total. We only call if you want us to.</p>
+    <div class="f">
+      <input type="text" id="g-nom" placeholder="Name" autocomplete="name">
+      <input type="email" id="g-mail" placeholder="Email address" autocomplete="email" inputmode="email">
+      <input type="tel" id="g-tel" placeholder="Mobile phone" autocomplete="tel" inputmode="tel">
+      <label class="cons"><input type="checkbox" id="g-ok">
+        I agree that Europiscina (GARCAM Industries SLU) may use these details to send me the indicative quote and contact me about it.</label>
+      <p class="err" id="g-err"></p>
+      <button id="g-btn" type="button">Show my price</button>
+    </div>
+  </div>
+  <p class="abierto" id="abierto" hidden>Quote unlocked. We have saved your configuration.</p>
+
+
+  <div class="aviso">
+    <strong>What is not included</strong>
+    Municipal licence, electrical connection from the house consumer unit, surrounding paving, fencing and landscaping. If the ground contains rock, the water table is high or crane access is difficult, the price changes and has to be assessed on site.
+  </div>
+
+  <div class="cta">
+    <a class="btn btn-solid" id="wa" href="#">Send on WhatsApp</a>
+    <a class="btn btn-ghost" href="/en/contact/">Call me back</a>
+  </div>
+  <p class="nota">Indicative, non-binding price calculated from our current price list. Valid for information purposes for 30 days. A firm quote is issued after a site visit.</p>
+</aside>
+</div>
+
+<script>
+// ---------------------------------------------------------------
+// MOTOR DE PRECIOS. Todo el calculo es determinista.
+// Reglas: PVP tarifa 2025 +10% en vasos. Transporte +20%.
+// Recargos acumulativos sobre el PVP ya ajustado.
+// ---------------------------------------------------------------
+const CFG = {
+  incrementoVaso: 0.10,      // tarifa 2025 -> 2026
+  transporteBase: 950,       // tarifa plana
+  incrementoTransporte: 0.20,
+  iva: 0.21,
+  excavacionM3: 40,          // terreno normal. Duro o roca se presupuesta aparte
+  bigbagPrecio: 45,          // big bag 1.000 kg, descarga con grua hasta 15 m
+  densidadGrava: 1.5,        // t/m3 -> big bags necesarios por m3
+  coronacionML: 125,         // zuncho + coronacion prefabricada Luxe, sin IVA
+  sobreexcavacion: 0.5       // m de holgura perimetral y en fondo
+};
+
+const POOLS = [{"n":"SKY 4","fam":"Sky","l":4.18,"a":2.38,"p":1.4,"pvp":5245},{"n":"STAR 5","fam":"Star","l":5.4,"a":2.7,"p":1.4,"pvp":5985},{"n":"STAR 6","fam":"Star","l":6.0,"a":3.0,"p":1.5,"pvp":6494},{"n":"SPACE 650","fam":"Space","l":6.5,"a":3.25,"p":1.5,"pvp":6657},{"n":"SATURN","fam":"Star","l":7.0,"a":3.0,"p":1.5,"pvp":6715},{"n":"SKY 7","fam":"Sky","l":7.0,"a":3.5,"p":1.5,"pvp":7319},{"n":"SPACE 750","fam":"Space","l":7.5,"a":3.6,"p":1.5,"pvp":8132},{"n":"STAR 8","fam":"Star","l":8.0,"a":4.0,"p":1.5,"pvp":9340},{"n":"SPACE 850","fam":"Space","l":8.5,"a":3.9,"p":1.5,"pvp":9487},{"n":"SKY 9","fam":"Sky","l":9.0,"a":4.0,"p":1.5,"pvp":10311},{"n":"SPACE 950","fam":"Space","l":9.5,"a":3.9,"p":1.5,"pvp":10873},{"n":"PLAGE 650","fam":"Plage","l":6.5,"a":3.0,"p":1.5,"pvp":7190},{"n":"PLAGE 750","fam":"Plage","l":7.5,"a":3.6,"p":1.5,"pvp":8500},{"n":"PLAGE 850","fam":"Plage","l":8.5,"a":3.9,"p":1.5,"pvp":10059},{"n":"PLAGE 950","fam":"Plage","l":9.5,"a":3.9,"p":1.5,"pvp":11193}];
+
+const ACABADOS = [
+  {id:"std",  n:"Standard colour", rec:0},
+  {id:"ncol", n:"Non-standard colour", rec:0.05},
+  {id:"ref",  n:"Reinforced construction", rec:0.10},
+  {id:"min",  n:"MINERAL finish", rec:0.15}
+];
+
+const OBRA = [
+  {id:"exc",  n:"Excavation", d:"Earth moving and removal of spoil. Hard ground or rock is priced separately", tipo:"m3exc"},
+  {id:"grav", n:"Gravel", d:"1,000 kg big bags, crane unloading up to 15 m", tipo:"bigbag"},
+  {id:"sol",  n:"Gravel base and levelling", d:"Labour to prepare the bedding layer", precio:700},
+  {id:"tub",  n:"Hydraulics and filtration plant", d:"Pipework, connections and plant room assembly", precio:3500},
+  {id:"cor",  n:"Ring beam and stone coping", d:"Concrete ring beam and precast Luxe coping, 30 cm wide by 15 cm high", tipo:"ml"}
+];
+
+const EQUIPO = [
+  {id:"sal",  n:"Salt chlorination", d:"Hydrosalt LC2 electrolysis, softer water and fewer chemicals", precio:1690},
+  {id:"bc",   n:"Heat pump", d:"Extends the season by several months", precio:2950},
+  {id:"luz",  n:"LED light", d:"Underwater lighting with remote", precio:390},
+  {id:"rob",  n:"Robotic cleaner", d:"Automatic cleaning of floor and walls", precio:850},
+  {id:"cob",  n:"Winter cover", d:"Protection during winterisation", precio:640},
+  {id:"esc",  n:"Stainless steel ladder", d:"Additional access", precio:320}
+];
+
+const eur = n => new Intl.NumberFormat("es-ES",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(n);
+const $ = s => document.querySelector(s);
+
+let sel = null, acabado = "std";
+const marcados = new Set();
+
+function volumenExcavacion(p){
+  return (p.l + CFG.sobreexcavacion*2) * (p.a + CFG.sobreexcavacion*2) * (p.p + CFG.sobreexcavacion);
+}
+function volumenGravas(p){
+  // corona perimetral de 40 cm alrededor del vaso
+  const ext = (p.l+1.3)*(p.a+1.3)*(p.p+0.5);
+  return Math.max(ext - (p.l*p.a*p.p), 0);
+}
+
+function perimetro(p){ return 2*(p.l + p.a); }
+
+function bigBags(p){
+  return Math.ceil(volumenGravas(p) * CFG.densidadGrava);
+}
+
+function precioOpcion(o){
+  if(!sel) return 0;
+  if(o.tipo === "m3exc")  return Math.round(volumenExcavacion(sel) * CFG.excavacionM3);
+  if(o.tipo === "bigbag") return bigBags(sel) * CFG.bigbagPrecio;
+  if(o.tipo === "ml")     return Math.round(perimetro(sel) * CFG.coronacionML);
+  return o.precio || 0;
+}
+
+function calcular(){
+  const l = [];
+  if(!sel){
+    $("#total").textContent = "\u2014";
+    $("#iva").textContent = "Choose a size to see the price.";
+    $("#lineas").innerHTML = "";
+    return;
+  }
+  const base = Math.round(sel.pvp * (1 + CFG.incrementoVaso));
+  l.push(["Shell "+sel.l.toFixed(2).replace(".",",")+" x "+sel.a.toFixed(2).replace(".",",")+" m ("+sel.n+")", base]);
+
+  const ac = ACABADOS.find(a => a.id === acabado);
+  let recargo = 0;
+  if(ac.rec > 0){
+    recargo = Math.round(base * ac.rec);
+    l.push([ac.n+" (+"+(ac.rec*100)+"%)", recargo, true]);
+  }
+  const transporte = Math.round(CFG.transporteBase * (1 + CFG.incrementoTransporte));
+  l.push(["Transport and crane installation", transporte]);
+
+  let extras = 0;
+  [...OBRA, ...EQUIPO].forEach(o => {
+    if(!marcados.has(o.id)) return;
+    const pr = precioOpcion(o);
+    extras += pr;
+    let etiqueta = o.n;
+    if(o.tipo === "m3exc")  etiqueta += " (" + Math.round(volumenExcavacion(sel)) + " m&sup3;)";
+    if(o.tipo === "bigbag") etiqueta += " (" + bigBags(sel) + " big bags)";
+    if(o.tipo === "ml")     etiqueta += " (" + perimetro(sel).toFixed(1).replace(".",",") + " ml)";
+    l.push([etiqueta, pr]);
+  });
+
+  const sinIva = base + recargo + transporte + extras;
+  const conIva = Math.round(sinIva * (1 + CFG.iva));
+
+  $("#total").textContent = eur(conIva);
+  $("#iva").textContent = "VAT included. Net amount " + eur(sinIva) + ".";
+  $("#lineas").innerHTML = l.map(x =>
+    '<li class="'+(x[2]?"sub":"")+'"><span>'+x[0]+'</span><span>'+eur(x[1])+'</span></li>').join("");
+
+  const txt = "Hello, I have calculated a pool of " + sel.l.toFixed(2) + " x " + sel.a.toFixed(2) +
+    " m (" + sel.n + "), acabado " + ac.n.replace(/&oacute;/g,"o").replace(/&aacute;/g,"a") +
+    ", con un orientativo de " + eur(conIva) + " IVA incluido. Quiero confirmarlo.";
+  $("#wa").href = "https://wa.me/34680335438?text=" + encodeURIComponent(txt);
+}
+
+function pintarModelos(){
+  const q = $("#q").value.toLowerCase().trim();
+  const fl = $("#fl").value;
+  const med = p => p.l.toFixed(2).replace(".",",")+" x "+p.a.toFixed(2).replace(".",",")+" m";
+  const lista = POOLS.filter(p => {
+    const okq = !q || (p.n+" "+p.fam+" "+med(p)).toLowerCase().includes(q);
+    return okq && (!fl || p.fam === fl);
+  });
+  $("#modelos").innerHTML = lista.map(p =>
+    '<label class="mod"><input type="radio" name="m" value="'+p.n+'"'+(sel&&sel.n===p.n?" checked":"")+'>'+
+    '<span class="nom">'+med(p)+'</span><span class="med">'+p.n+(p.fam==="Plage"?" &middot; with beach entry":"")+'</span></label>').join("")
+    || '<div style="padding:16px;background:#fff;opacity:.6">Ning&uacute;n modelo con esos criterios.</div>';
+  $("#modelos").querySelectorAll("input").forEach(i => i.onchange = () => {
+    sel = POOLS.find(p => p.n === i.value); calcular();
+  });
+}
+
+$("#acabados").innerHTML = ACABADOS.map(a =>
+  '<label><input type="radio" name="ac" value="'+a.id+'"'+(a.id==="std"?" checked":"")+'><span>'+a.n+
+  (a.rec?" +"+(a.rec*100)+"%":"")+'</span></label>').join("");
+$("#acabados").querySelectorAll("input").forEach(i => i.onchange = () => { acabado = i.value; calcular(); });
+
+function pintarOps(cont, arr){
+  $(cont).innerHTML = arr.map(o =>
+    '<label class="op"><input type="checkbox" value="'+o.id+'">'+
+    '<span class="t"><strong>'+o.n+'</strong><span>'+o.d+'</span></span>'+
+    '<span class="pr" data-p="'+o.id+'"></span></label>').join("");
+  $(cont).querySelectorAll("input").forEach(i => i.onchange = () => {
+    i.checked ? marcados.add(i.value) : marcados.delete(i.value);
+    calcular(); precios();
+  });
+}
+function precios(){
+  [...OBRA, ...EQUIPO].forEach(o => {
+    const el = document.querySelector('[data-p="'+o.id+'"]');
+    if(el) el.textContent = sel ? eur(precioOpcion(o)) : "";
+  });
+}
+pintarOps("#obra", OBRA);
+pintarOps("#equipo", EQUIPO);
+
+$("#q").oninput = pintarModelos;
+$("#fl").onchange = pintarModelos;
+
+const _calc = calcular;
+calcular = function(){ _calc(); precios(); };
+pintarModelos();
+calcular();
+
+// ---------------------------------------------------------------
+// Puerta de datos: el desglose es visible, el total no.
+// Validacion en cliente + honeypot. El envio va a Netlify Forms.
+// ---------------------------------------------------------------
+const RE_MAIL = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+const RE_TEL  = /^(?:\+?34[\s-]?)?[6-9]\d{2}[\s-]?\d{3}[\s-]?\d{3}$/;
+let abierto = false;
+try{ abierto = sessionStorage.getItem("ep_lead") === "1"; }catch(e){}
+
+function pintarPuerta(){
+  const res = document.querySelector(".resumen");
+  res.classList.toggle("bloqueado", !abierto);
+  $("#puerta").hidden = abierto;
+  $("#abierto").hidden = !abierto;
+}
+
+$("#g-btn").onclick = async () => {
+  const nom = $("#g-nom").value.trim();
+  const mail = $("#g-mail").value.trim();
+  const tel = $("#g-tel").value.trim();
+  const ok = $("#g-ok").checked;
+  const err = $("#g-err");
+
+  if(nom.length < 2)      return err.textContent = "Please enter your name.";
+  if(!RE_MAIL.test(mail)) return err.textContent = "That email does not look valid.";
+  if(!RE_TEL.test(tel))   return err.textContent = "Please enter a nine-digit Spanish phone number.";
+  if(!ok)                 return err.textContent = "We need your consent to send you the quote.";
+  err.textContent = "";
+  $("#g-btn").disabled = true;
+
+  const ac = ACABADOS.find(a => a.id === acabado);
+  const datos = {
+    "form-name":"configurador", nombre:nom, email:mail, telefono:tel,
+    modelo: sel ? sel.n : "", medidas: sel ? sel.l+" x "+sel.a+" m" : "",
+    acabado: ac.n.replace(/&[a-z]+;/g,""),
+    extras: [...marcados].join(", "),
+    total: $("#total").textContent,
+    consentimiento: "si", origen: "configurador web"
+  };
+  try{
+    await fetch("/", {method:"POST",
+      headers:{"Content-Type":"application/x-www-form-urlencoded"},
+      body:new URLSearchParams(datos).toString()});
+  }catch(e){ /* no bloqueamos al usuario si falla el envio */ }
+
+  abierto = true;
+  try{ sessionStorage.setItem("ep_lead","1"); }catch(e){}
+  pintarPuerta();
+};
+
+pintarPuerta();
+
+</script>
+
+<footer>
+  <div class="pie-grid">
+    <div><a class="marca-pie" href="/en/" aria-label="Europiscina"><img src="/img/logo-blanc-400.webp" srcset="/img/logo-blanc-260.webp 260w, /img/logo-blanc-400.webp 400w, /img/logo-blanc-600.webp 600w" sizes="180px" alt="Europiscina" width="2092" height="657" class="marca-pie-img"></a><p>Water since 1969, pools since 1999. Astralpool Fluidra Official Partner and ASOFAP members.</p></div>
+    <div><h4>Construction</h4><ul><li><a href="/en/fibreglass-pools/">Fibreglass pools</a></li><li><a href="/en/pool-calculator/">Price calculator</a></li></ul></div><div><h4>Service</h4><ul><li><a href="/en/pool-maintenance/">Maintenance</a></li><li><a href="/en/contact/">Contact</a></li></ul></div>
+  </div>
+  <div class="pie-legal">
+    <span>© 2026 Europiscina · GARCAM Industries SLU · Ctra. C-26 km 22, 25600 Balaguer (Lleida)</span>
+    <span>Legal notice · Privacy · Cookies</span>
+  </div>
+</footer>
+<form name="configurador" data-netlify="true" netlify-honeypot="empresa" hidden>
+<input type="text" name="nombre"><input type="email" name="email"><input type="tel" name="telefono">
+<input type="text" name="modelo"><input type="text" name="medidas"><input type="text" name="acabado">
+<input type="text" name="extras"><input type="text" name="total"><input type="text" name="consentimiento">
+<input type="text" name="origen"><input type="text" name="empresa">
+</form>
+</body>
+</html>
