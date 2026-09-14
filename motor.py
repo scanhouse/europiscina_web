@@ -15,10 +15,8 @@ MAIL = "comercial@europiscina.es"
 LANGS = ["es", "ca", "en"]
 PREFIJO = {"es": "", "ca": "/ca", "en": "/en"}
 
-FUENTES = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
-           '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-           '<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600'
-           '&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">')
+FUENTES = ('<link rel="preload" href="/fonts/libre-franklin-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>'
+           '<link rel="preload" href="/fonts/newsreader-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>')
 
 # clave -> slug por idioma. None = la página no existe en ese idioma.
 SLUGS = {
@@ -30,13 +28,26 @@ SLUGS = {
  "mant":   {"es": "mantenimiento",          "ca": "manteniment",            "en": "pool-maintenance"},
  "fugas":  {"es": "fugas-de-agua",          "ca": "fuites-aigua",           "en": None},
  "ref":    {"es": "reformas",               "ca": "reformes",               "en": None},
- "emp":    {"es": "empresa",                "ca": "empresa",                "en": None},
+ "emp":    {"es": "empresa",                "ca": "empresa",                "en": "about-us"},
  "conf":   {"es": "configurador",           "ca": "configurador",           "en": "pool-calculator"},
  "cont":   {"es": "contacto",               "ca": "contacte",               "en": "contact"},
 }
 
 
+SLUG_LEGAL = {
+ "legal":   {"es": "aviso-legal", "ca": "avis-legal", "en": "legal-notice"},
+ "priv":    {"es": "privacidad",  "ca": "privacitat", "en": "privacy"},
+ "cookies": {"es": "cookies",     "ca": "galetes",    "en": "cookies"},
+}
+
+
+def url_legal(clave, lang):
+    return ("" if lang == "es" else f"/{lang}") + "/" + SLUG_LEGAL[clave][lang] + "/"
+
+
 def url(clave, lang):
+    if clave in SLUG_LEGAL:
+        return url_legal(clave, lang)
     s = SLUGS[clave][lang]
     if s is None:
         return None
@@ -71,25 +82,27 @@ def imagen(clave, alt, sizes="100vw", eager=False, clase=""):
 
 NAV = {
  "es": [("obra", "Piscinas de obra"), ("lamina", "Lámina armada"), ("polie", "Poliéster"),
-        ("conf", "Configurador"), ("mant", "Mantenimiento"), ("cont", "Contacto")],
+        ("conf", "Configurador"), ("mant", "Mantenimiento"),
+        ("emp", "Empresa"), ("cont", "Contacto")],
  "ca": [("obra", "Piscines d'obra"), ("lamina", "Làmina armada"), ("polie", "Polièster"),
-        ("conf", "Configurador"), ("mant", "Manteniment"), ("cont", "Contacte")],
+        ("conf", "Configurador"), ("mant", "Manteniment"),
+        ("emp", "Qui som"), ("cont", "Contacte")],
  "en": [("polie", "Fibreglass pools"), ("conf", "Price calculator"),
-        ("mant", "Maintenance"), ("cont", "Contact")],
+        ("mant", "Maintenance"), ("emp", "About us"), ("cont", "Contact")],
 }
 
 T = {
  "es": {"con": "Construcción", "ser": "Servicio", "saltar": "Ir al contenido", "inicio": "Inicio",
         "tag": "Agua desde 1969, piscinas desde 1999. Official Partner de Astralpool Fluidra y miembros de ASOFAP.",
-        "legal": "Aviso legal · Privacidad · Cookies", "wa": "Escríbenos por WhatsApp",
+        "legal_avis": "Aviso legal", "legal_priv": "Privacidad", "legal_cook": "Cookies", "wa": "Escríbenos por WhatsApp",
         "cta1": "Pedir presupuesto", "faq": "Preguntas frecuentes"},
  "ca": {"con": "Construcció", "ser": "Servei", "saltar": "Vés al contingut", "inicio": "Inici",
         "tag": "Aigua des del 1969, piscines des del 1999. Official Partner d'Astralpool Fluidra i membres d'ASOFAP.",
-        "legal": "Avís legal · Privacitat · Galetes", "wa": "Escriu-nos per WhatsApp",
+        "legal_avis": "Avís legal", "legal_priv": "Privacitat", "legal_cook": "Galetes", "wa": "Escriu-nos per WhatsApp",
         "cta1": "Demanar pressupost", "faq": "Preguntes freqüents"},
  "en": {"con": "Construction", "ser": "Service", "saltar": "Skip to content", "inicio": "Home",
         "tag": "Water since 1969, pools since 1999. Astralpool Fluidra Official Partner and ASOFAP members.",
-        "legal": "Legal notice · Privacy · Cookies", "wa": "Message us on WhatsApp",
+        "legal_avis": "Legal notice", "legal_priv": "Privacy", "legal_cook": "Cookies", "wa": "Message us on WhatsApp",
         "cta1": "Request a quote", "faq": "Frequently asked questions"},
 }
 
@@ -152,6 +165,13 @@ def cabecera(clave, lang, clara=False):
             f'<nav class="menu">{items}</nav>{selector(clave, lang)}</header>')
 
 
+def enlaces_legales(lang):
+    t = T[lang]
+    return " · ".join(
+        f'<a href="{url_legal(k, lang)}">{t[e]}</a>'
+        for k, e in (("legal", "legal_avis"), ("priv", "legal_priv"), ("cookies", "legal_cook")))
+
+
 def pie(lang):
     t = T[lang]
     cols = ""
@@ -166,10 +186,10 @@ def pie(lang):
   </div>
   <div class="pie-legal">
     <span>© 2026 Europiscina · GARCAM Industries SLU · Ctra. C-26 km 22, 25600 Balaguer (Lleida)</span>
-    <span>{t['legal']}</span>
+    <span class="pie-legales">{enlaces_legales(lang)}</span>
   </div>
 </footer>
-<a class="wa" href="{WA}">{t['wa']}</a>"""
+<a class="wa" href="{WA}" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.480 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.23.85.86-3.15-.2-.32a8.2 8.2 0 0 1-1.26-4.37c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24z"/></svg><span>{t['wa']}</span></a>"""
 
 
 def ficha(titulo, filas):

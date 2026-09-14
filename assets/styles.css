@@ -1,3 +1,16 @@
+/* Tipografias alojadas en el propio dominio: sin peticiones a terceros,
+   sin transferencia de IP a Google y sin necesidad de consentimiento. */
+@font-face{font-family:'Libre Franklin';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/libre-franklin-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Libre Franklin';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/libre-franklin-latin-ext-400-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Libre Franklin';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/libre-franklin-latin-500-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Libre Franklin';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/libre-franklin-latin-ext-500-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Libre Franklin';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/libre-franklin-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Libre Franklin';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/libre-franklin-latin-ext-600-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/newsreader-latin-300-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/newsreader-latin-ext-300-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/newsreader-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/newsreader-latin-ext-400-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
 /* Europiscina — hoja de estilos única
    Paleta: azul de agua clara. Un solo bloque oscuro por página (contacto + pie).
    Tipografía: Libre Franklin en titulares, Newsreader en texto corrido. */
@@ -213,12 +226,7 @@ footer{background:var(--profundo);color:rgba(252,252,251,.74);
   padding-top:22px;font-size:.8rem;opacity:.62}
 @media(max-width:760px){.pie-grid{grid-template-columns:1fr 1fr}}
 
-/* ---------- WhatsApp ---------- */
-.wa{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;align-items:center;gap:9px;
-  background:var(--azul);color:var(--papel);text-decoration:none;padding:13px 19px;border-radius:100px;
-  font-family:var(--display);font-size:.86rem;font-weight:500;
-  box-shadow:0 8px 28px rgba(11,79,108,.28);transition:background .25s}
-.wa:hover{background:var(--profundo)}
+
 
 /* ---------- Rangos de precio orientativos ---------- */
 .rangos{list-style:none;margin:22px 0;border-top:1px solid var(--linea)}
@@ -254,3 +262,60 @@ picture{display:block;width:100%;height:100%}
 .marca-pie-img{width:auto;height:30px;display:block}
 .pie-grid h4{margin-bottom:12px}
 @media(max-width:520px){.marca-img{height:24px}}
+
+/* ---------- Paginas legales ---------- */
+.legal{max-width:70ch}
+.legal h2{font-family:var(--display);font-weight:500;letter-spacing:-.02em;
+  font-size:1.35rem;line-height:1.2;margin:2.4em 0 .7em}
+.legal h2:first-child{margin-top:0}
+.legal p{margin-bottom:1em}
+.legal ul{margin:0 0 1.4em 1.1em}
+.legal li{margin-bottom:.5em}
+.legal a{color:var(--azul)}
+.legal-tabla{border-collapse:collapse;width:100%;margin:0 0 1.6em;font-size:.97rem}
+.legal-tabla th{font-family:var(--display);font-weight:500;font-size:.8rem;color:var(--profundo);
+  text-align:left;padding:10px 14px 10px 0;border-bottom:1px solid var(--linea)}
+.legal-tabla td{padding:12px 14px 12px 0;border-bottom:1px solid var(--linea);vertical-align:top}
+.legal-tabla tr td:first-child{width:45%}
+.pie-legales a{text-decoration:none;border-bottom:1px solid rgba(252,252,251,.3)}
+.pie-legales a:hover{color:var(--papel)}
+@media(max-width:600px){.legal-tabla,.legal-tabla tr,.legal-tabla td,.legal-tabla th{display:block;width:auto}
+  .legal-tabla th{padding-bottom:4px}.legal-tabla td{border:0;padding:2px 0}
+  .legal-tabla tr{border-bottom:1px solid var(--linea);padding:10px 0;display:block}}
+
+/* ---------- Boton flotante de WhatsApp ---------- */
+.wa{position:fixed;right:16px;bottom:16px;z-index:70;
+  display:inline-flex;align-items:center;gap:10px;
+  background:#25D366;color:#fff;text-decoration:none;
+  padding:14px 22px 14px 18px;border-radius:100px;
+  font-family:var(--display);font-size:.95rem;font-weight:600;letter-spacing:-.01em;
+  box-shadow:0 6px 24px rgba(37,211,102,.45),0 2px 8px rgba(0,0,0,.18);
+  transition:transform .18s cubic-bezier(.19,1,.22,1),box-shadow .18s,background .18s;
+  animation:wa-entrada .5s cubic-bezier(.19,1,.22,1) 1.1s both}
+.wa svg{width:26px;height:26px;fill:#fff;flex-shrink:0}
+.wa:hover{background:#1FB855;transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(37,211,102,.55),0 3px 10px rgba(0,0,0,.2)}
+.wa:active{transform:translateY(0)}
+.wa::before{content:"";position:absolute;inset:0;border-radius:100px;
+  box-shadow:0 0 0 0 rgba(37,211,102,.6);animation:wa-pulso 2.8s ease-out 2s infinite}
+@keyframes wa-entrada{from{opacity:0;transform:translateY(20px) scale(.9)}to{opacity:1;transform:none}}
+@keyframes wa-pulso{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}
+  70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+@media (prefers-reduced-motion:reduce){.wa,.wa::before{animation:none}}
+@media(max-width:520px){
+  .wa{right:14px;bottom:14px;padding:14px;gap:0}
+  .wa span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .wa svg{width:30px;height:30px}
+}
+
+/* ---------- Menu en movil: barra desplazable, no oculta ---------- */
+@media(max-width:900px){
+  .top{flex-wrap:wrap;row-gap:10px;padding-bottom:12px}
+  .menu{display:flex;order:3;width:100%;gap:0;overflow-x:auto;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    margin:0 calc(var(--gutter)*-1);padding:2px var(--gutter) 0}
+  .menu::-webkit-scrollbar{display:none}
+  .menu a{white-space:nowrap;padding:7px 14px 7px 0;font-size:.86rem}
+  .marca-img{height:26px}
+}
+@media(max-width:380px){.menu a{font-size:.82rem;padding-right:12px}}

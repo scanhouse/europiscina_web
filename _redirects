@@ -37,3 +37,17 @@
 /wp-content/*                                             /                            404
 /wp-admin/*                                               /                            404
 /xmlrpc.php                                               /                            404
+
+# --- Blog y taxonomias de WordPress (indexadas por Google) ---
+/blog/                                                    /                            301!
+/blog/*                                                   /                            301!
+/ca/blog/*                                                /ca/                         301!
+/es/blog/*                                                /                            301!
+/category/*                                               /                            301!
+/tag/*                                                    /                            301!
+/feed                                                     /                            301!
+/feed/*                                                   /                            301!
+/comments/feed/*                                          /                            301!
+/wp-json/*                                                /                            404
+/wp-login.php                                             /                            404
+/producto/*/feed/                                         /configurador/               301!

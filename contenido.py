@@ -10,13 +10,21 @@ C["obra"] = {
  title="Piscinas de obra en Lleida | Hormigón armado a medida | Europiscina",
  desc="Construcción de piscinas de obra en hormigón armado en Lleida, Huesca y Andorra. Desbordantes, skimmer y carriles de natación. Proyecto y ejecución con equipo propio.",
  miga="Piscinas de obra", h1="Piscinas de obra: cuando el catálogo no llega.",
- entradilla="Hormigón armado proyectado o encofrado, sin límite de forma ni de medida. Es la opción cuando el terreno, el desnivel o la casa piden algo que no existe prefabricado.",
+ entradilla="Hormigón armado encofrado, sin límite de forma ni de medida. Es la opción cuando el terreno, el desnivel o la casa piden algo que no existe prefabricado.",
  foto=f"{IMG}/piscina-piedra-natural.jpg",
  foto_alt="Piscina de obra con coronación de piedra natural construida por Europiscina",
  cuerpo=cuerpo("Se construye una vez. Se vive treinta años.",
   """<p>Una piscina de obra no se compra, se proyecta. Estudiamos el terreno, el acceso de maquinaria, el nivel freático y el desagüe antes de dibujar nada. Ese trabajo previo evita las dos averías caras que vemos cada temporada en piscinas de otros: fisuras por asiento diferencial del terreno y vasos que flotan cuando se vacían.</p>
      <p>Después hormigonamos, impermeabilizamos y rematamos con el acabado que elijas: gres porcelánico, lámina armada o revestimiento Touch. Todo con nuestra plantilla y nuestra maquinaria.</p>""",
-  """<h3>Sistemas que construimos</h3>
+  """<h3>Por qué encofrado y no proyectado</h3>
+     <p>Construimos el vaso con hormigón armado <strong>encofrado</strong>, no con hormigón proyectado.
+     El encofrado da un espesor constante y controlado en toda la pared, una compactación homogénea y
+     una superficie regular desde el primer momento. El proyectado depende mucho más de la mano del
+     operario: donde hay rebote del material o falta de compactación aparecen los puntos débiles, y
+     esos puntos son los que años después se convierten en fisuras.</p>
+     <p>Es más lento y más caro de ejecutar. También es más fiable y dura más. Cuando una piscina tiene
+     que aguantar treinta años de heladas en la plana de Lleida, esa diferencia se acaba notando.</p>
+     <h3>Sistemas que construimos</h3>
      <p>Skimmer, el clásico pero con el diseño SLIM, con el nivel del agua unos centímetros por debajo de la coronación. Desbordante, con el agua a ras y rebosadero perimetral hacia vaso de compensación. Y desbordante tipo infinity, con lámina cayendo hacia el paisaje.</p>
      <h3>Antes de firmar nada</h3>
      <p>Hacemos visita técnica al terreno. Miramos si entra la máquina, dónde va la depuradora, por dónde sale el desagüe y qué distancia hay al cuadro eléctrico. La mitad de los sobrecostes de una piscina salen de esas cuatro cosas, y se resuelven antes de excavar, no después.</p>""")
@@ -39,13 +47,21 @@ C["obra"] = {
  title="Piscines d'obra a Lleida | Formigó armat a mida | Europiscina",
  desc="Construcció de piscines d'obra en formigó armat a Lleida, Osca i Andorra. Desbordants, skimmer i carrils de natació. Projecte i execució amb equip propi.",
  miga="Piscines d'obra", h1="Piscines d'obra: quan el catàleg no hi arriba.",
- entradilla="Formigó armat projectat o encofrat, sense límit de forma ni de mida. És l'opció quan el terreny, el desnivell o la casa demanen alguna cosa que no existeix prefabricada.",
+ entradilla="Formigó armat encofrat, sense límit de forma ni de mida. És l'opció quan el terreny, el desnivell o la casa demanen alguna cosa que no existeix prefabricada.",
  foto=f"{IMG}/piscina-piedra-natural.jpg",
  foto_alt="Piscina d'obra amb coronació de pedra natural construïda per Europiscina",
  cuerpo=cuerpo("Es construeix un cop. S'hi viu trenta anys.",
   """<p>Una piscina d'obra no es compra, es projecta. Estudiem el terreny, l'accés de maquinària, el nivell freàtic i el desguàs abans de dibuixar res. Aquesta feina prèvia evita les dues avaries cares que veiem cada temporada en piscines d'altres: fissures per assentament diferencial del terreny i vasos que suren quan es buiden.</p>
      <p>Després formigonem, impermeabilitzem i rematem amb l'acabat que triïs: gres porcellànic, làmina armada o revestiment Touch. Tot amb la nostra plantilla i la nostra maquinària.</p>""",
-  """<h3>Sistemes que construïm</h3>
+  """<h3>Per què encofrat i no projectat</h3>
+     <p>Construïm el vas amb formigó armat <strong>encofrat</strong>, no amb formigó projectat.
+     L'encofrat dona un gruix constant i controlat a tota la paret, una compactació homogènia i una
+     superfície regular des del primer moment. El projectat depèn molt més de la mà de l'operari: on
+     hi ha rebot del material o manca de compactació apareixen els punts febles, i aquests punts són
+     els que anys després es converteixen en fissures.</p>
+     <p>És més lent i més car d'executar. També és més fiable i dura més. Quan una piscina ha d'aguantar
+     trenta anys de gelades a la plana de Lleida, aquesta diferència s'acaba notant.</p>
+     <h3>Sistemes que construïm</h3>
      <p>Skimmer, el clàssic però amb el disseny SLIM, amb el nivell de l'aigua uns centímetres per sota de la coronació. Desbordant, amb l'aigua arran i sobreeixidor perimetral cap a vas de compensació. I desbordant tipus infinity, amb làmina caient cap al paisatge.</p>
      <h3>Abans de signar res</h3>
      <p>Fem visita tècnica al terreny. Mirem si hi entra la màquina, on va la depuradora, per on surt el desguàs i quina distància hi ha al quadre elèctric. La meitat dels sobrecostos d'una piscina surten d'aquestes quatre coses, i es resolen abans d'excavar, no després.</p>""")
@@ -448,33 +464,97 @@ C["ref"] = {
 C["emp"] = {
 "es": dict(
  title="Quiénes somos | Europiscina, constructores de piscinas desde 1999",
- desc="Europiscina, marca de GARCAM Industries SLU. Agua desde 1969, piscinas desde 1999. Equipo y maquinaria propios en Balaguer, Lleida.",
- miga="Empresa", h1="Empezamos con tuberías. Acabamos haciendo piscinas.",
- entradilla="En 1969 abrimos con canalizaciones, bombas y riego en la plana de Lleida. En 1999 aplicamos ese oficio a construir piscinas. Seguimos en el mismo sitio, en Balaguer.",
- foto=f"{IMG}/piscina-deportiva.jpg", foto_alt="Piscina de gran formato construida por Europiscina",
- cuerpo=cuerpo("Nadie subcontrata tu piscina.",
-  """<p>Excavamos, armamos, impermeabilizamos y ponemos en marcha con gente de nuestra plantilla y maquinaria propia. No hay una cuadrilla distinta cada semana ni un teléfono que deja de responder cuando acaba la obra.</p>
-     <p>Eso tiene un precio, y no lo escondemos: rara vez somos el presupuesto más barato de los tres que pides. Somos el que sigue respondiendo el teléfono siete años después, cuando toca cambiar la bomba.</p>""",
-  """<h3>Por qué la hidráulica es nuestra ventaja</h3>
-     <p>Las averías caras de una piscina casi nunca son estéticas. Son drenajes mal resueltos, freáticos no previstos, retornos mal dimensionados y salas de máquinas mal calculadas. Es exactamente lo que llevamos haciendo desde antes de dedicarnos a las piscinas.</p>
-     <h3>Marcas con las que trabajamos</h3>
-     <p>Official Partner de Astralpool Fluidra y miembros de ASOFAP. Lámina armada Renolit Alkorplan, gres porcelánico Rosa Gres, poliéster de Europa Piscinas.</p>"""),
- extra=cinta("¿Hablamos de tu proyecto?",
-             "Visita al terreno sin compromiso en Lleida, Huesca, Tarragona, Andorra y Mallorca.", "es")),
+ desc="Europiscina, marca de GARCAM Industries SLU. Más de 1.000 piscinas construidas con equipo y maquinaria propios: albañiles, fontaneros, electricistas y técnicos en plantilla.",
+ miga="Empresa", h1="Una piscina no la hace una empresa. La hace un equipo.",
+ entradilla="Somos Europiscina, la división de piscinas de GARCAM Industries. Empezamos con tuberías en 1969 y hoy llevamos más de 1.000 piscinas construidas, todas con gente de casa.",
+ foto=f"{IMG}/piscina-deportiva.jpg",
+ foto_alt="Piscina de gran formato construida por Europiscina",
+ cuerpo=cuerpo("Del riego a la piscina, sin salir de casa.",
+  """<p>GARCAM nació en 1969 en Balaguer haciendo prefabricados de hormigón, canalizaciones de riego, tuberías e instalaciones hidráulicas para la plana de Lleida. Durante treinta años nuestro oficio fue mover agua: captarla, conducirla, filtrarla y hacer que no se perdiera por el camino.</p>
+     <p>En 1999 construimos una piscina en casa del jefe. No había plan de negocio detrás. Aquella piscina la vio un vecino, y luego un cuñado, y luego el amigo de un cliente. Veintiséis años después son <strong>más de 1.000 piscinas</strong> y más de 1.000 familias, muchas de las cuales siguen llamándonos cuando toca cambiar una bomba.</p>
+     <p>Ese origen explica lo que mejor hacemos. Las averías caras de una piscina casi nunca son estéticas: son drenajes mal resueltos, freáticos no previstos, retornos mal dimensionados y salas de máquinas mal calculadas. Es decir, hidráulica. Justo lo que llevábamos treinta años haciendo antes de construir la primera.</p>""",
+  """<h3>Un solo equipo, de principio a fin</h3>
+     <p>Excavamos, hormigonamos, impermeabilizamos, enrajolamos, conectamos y ponemos en marcha <strong>con personal propio</strong>. En plantilla tenemos albañiles, fontaneros, electricistas y técnicos de piscina, y la maquinaria es nuestra: retroexcavadora, camión, grúa y encofrados.</p>
+     <p>Eso significa que no hay una empresa distinta cada semana, ni un industrial que culpa al anterior, ni una obra parada porque el subcontratista tenía otra más urgente. Y significa que el día que hay un problema, la persona que lo resuelve es la misma que lo construyó.</p>
+     <h3>Por qué casi nunca somos los más baratos</h3>
+     <p>Porque tener plantilla propia cuesta más que subcontratar, y porque no ahorramos en lo que no se ve: el armado, la sala de máquinas, el drenaje perimetral, el rejuntado. Un cliente nuestro lo dijo mejor que nosotros: era el presupuesto más alto de los tres que pidió, y aun así nos eligió.</p>
+     <h3>Lo que otros no pueden acreditar</h3>
+     <p>Buena parte de nuestro trabajo es obra pública: piscinas municipales que se adjudican por concurso, con pliego técnico, plazo cerrado y penalización por retraso. Preixens, Algerri, Balaguer, La Sentiu, Lleida, Guissona, Tarragona, Térmens, Guimerà y muchos más. Ahí no se elige al que cae mejor.</p>"""),
+ extra=ficha("La empresa en datos", [
+     ("Razón social", "GARCAM Industries SLU, marca comercial Europiscina"),
+     ("Origen", "1969 en prefabricados, riegos e instalaciones hidráulicas"),
+     ("Piscinas desde", "1999, con más de 1.000 obras ejecutadas"),
+     ("Equipo", "Albañiles, fontaneros, electricistas y técnicos de piscina en plantilla"),
+     ("Maquinaria", "Propia: excavación, transporte, grúa y encofrados"),
+     ("Acreditaciones", "Official Partner de Astralpool Fluidra y miembros de ASOFAP"),
+     ("Materiales", "Renolit Alkorplan, Rosa Gres, Europa Piscinas, Astralpool"),
+     ("Clientes", "Particulares, comunidades de propietarios y ayuntamientos"),
+     ("Zona", "Lleida, Huesca, Tarragona, Barcelona, Andorra y Mallorca"),
+     ("Sede", "Ctra. C-26 km 22, Balaguer (Lleida)")])
+  + cinta("¿Hablamos de tu proyecto?",
+          "Visita al terreno sin compromiso. Vamos, lo miramos y te decimos qué es posible y qué no.", "es")),
 
 "ca": dict(
  title="Qui som | Europiscina, constructors de piscines des del 1999",
- desc="Europiscina, marca de GARCAM Industries SLU. Aigua des del 1969, piscines des del 1999. Equip i maquinària propis a Balaguer, Lleida.",
- miga="Empresa", h1="Vam començar amb canonades. Vam acabar fent piscines.",
- entradilla="El 1969 vam obrir amb canalitzacions, bombes i reg a la plana de Lleida. El 1999 vam aplicar aquest ofici a construir piscines. Continuem al mateix lloc, a Balaguer.",
- foto=f"{IMG}/piscina-deportiva.jpg", foto_alt="Piscina de gran format construïda per Europiscina",
- cuerpo=cuerpo("Ningú subcontracta la teva piscina.",
-  """<p>Excavem, armem, impermeabilitzem i posem en marxa amb gent de la nostra plantilla i maquinària pròpia. No hi ha una colla diferent cada setmana ni un telèfon que deixa de respondre quan s'acaba l'obra.</p>
-     <p>Això té un preu, i no l'amaguem: poques vegades som el pressupost més barat dels tres que demanes. Som el que continua responent el telèfon set anys després, quan toca canviar la bomba.</p>""",
-  """<h3>Per què la hidràulica és el nostre avantatge</h3>
-     <p>Les avaries cares d'una piscina gairebé mai són estètiques. Són drenatges mal resolts, freàtics no previstos, retorns mal dimensionats i sales de màquines mal calculades. És exactament el que fem des d'abans de dedicar-nos a les piscines.</p>
-     <h3>Marques amb què treballem</h3>
-     <p>Official Partner d'Astralpool Fluidra i membres d'ASOFAP. Làmina armada Renolit Alkorplan, gres porcellànic Rosa Gres, polièster d'Europa Piscinas.</p>"""),
- extra=cinta("Parlem del teu projecte?",
-             "Visita al terreny sense compromís a Lleida, Osca, Tarragona, Andorra i Mallorca.", "ca")),
+ desc="Europiscina, marca de GARCAM Industries SLU. Més de 1.000 piscines construïdes amb equip i maquinària propis: paletes, lampistes, electricistes i tècnics en plantilla.",
+ miga="Qui som", h1="Una piscina no la fa una empresa. La fa un equip.",
+ entradilla="Som Europiscina, la divisió de piscines de GARCAM Industries. Vam començar amb canonades el 1969 i avui portem més de 1.000 piscines construïdes, totes amb gent de casa.",
+ foto=f"{IMG}/piscina-deportiva.jpg",
+ foto_alt="Piscina de gran format construïda per Europiscina",
+ cuerpo=cuerpo("Del reg a la piscina, sense sortir de casa.",
+  """<p>GARCAM va néixer el 1969 a Balaguer fent prefabricats de formigó, canalitzacions de reg, canonades i instal·lacions hidràuliques per a la plana de Lleida. Durant trenta anys el nostre ofici va ser moure aigua: captar-la, conduir-la, filtrar-la i fer que no es perdés pel camí.</p>
+     <p>El 1999 vam construir una piscina a casa del cap. No hi havia cap pla de negoci al darrere. Aquella piscina la va veure un veí, i després un cunyat, i després l'amic d'un client. Vint-i-sis anys després són <strong>més de 1.000 piscines</strong> i més de 1.000 famílies, moltes de les quals ens continuen trucant quan toca canviar una bomba.</p>
+     <p>Aquest origen explica el que fem millor. Les avaries cares d'una piscina gairebé mai són estètiques: són drenatges mal resolts, freàtics no previstos, retorns mal dimensionats i sales de màquines mal calculades. És a dir, hidràulica. Justament el que fèiem des de feia trenta anys abans de construir la primera.</p>""",
+  """<h3>Un sol equip, de principi a fi</h3>
+     <p>Excavem, formigonem, impermeabilitzem, enrajolem, connectem i posem en marxa <strong>amb personal propi</strong>. A la plantilla tenim paletes, lampistes, electricistes i tècnics de piscina, i la maquinària és nostra: retroexcavadora, camió, grua i encofrats.</p>
+     <p>Això vol dir que no hi ha una empresa diferent cada setmana, ni un industrial que culpa l'anterior, ni una obra aturada perquè el subcontractista en tenia una altra de més urgent. I vol dir que el dia que hi ha un problema, qui el resol és qui la va construir.</p>
+     <h3>Per què gairebé mai som els més barats</h3>
+     <p>Perquè tenir plantilla pròpia costa més que subcontractar, i perquè no estalviem en allò que no es veu: l'armat, la sala de màquines, el drenatge perimetral, el rejuntat. Un client nostre ho va dir millor que nosaltres: era el pressupost més alt dels tres que va demanar, i tot i així ens va triar.</p>
+     <h3>El que altres no poden acreditar</h3>
+     <p>Bona part de la nostra feina és obra pública: piscines municipals que s'adjudiquen per concurs, amb plec tècnic, termini tancat i penalització per retard. Preixens, Algerri, Balaguer, La Sentiu, Lleida, Guissona, Tarragona, Térmens, Guimerà i molts altres. Aquí no es tria qui cau més bé.</p>"""),
+ extra=ficha("L'empresa en dades", [
+     ("Raó social", "GARCAM Industries SLU, marca comercial Europiscina"),
+     ("Origen", "1969 en prefabricats, regs i instal·lacions hidràuliques"),
+     ("Piscines des de", "1999, amb més de 1.000 obres executades"),
+     ("Equip", "Paletes, lampistes, electricistes i tècnics de piscina en plantilla"),
+     ("Maquinària", "Pròpia: excavació, transport, grua i encofrats"),
+     ("Acreditacions", "Official Partner d'Astralpool Fluidra i membres d'ASOFAP"),
+     ("Materials", "Renolit Alkorplan, Rosa Gres, Europa Piscinas, Astralpool"),
+     ("Clients", "Particulars, comunitats de propietaris i ajuntaments"),
+     ("Zona", "Lleida, Osca, Tarragona, Barcelona, Andorra i Mallorca"),
+     ("Seu", "Ctra. C-26 km 22, Balaguer (Lleida)")])
+  + cinta("Parlem del teu projecte?",
+          "Visita al terreny sense compromís. Hi anem, ho mirem i et diem què és possible i què no.", "ca")),
+
+"en": dict(
+ title="About us | Europiscina, pool builders since 1999",
+ desc="Europiscina, a trading name of GARCAM Industries SLU. More than 1,000 pools built with our own staff and machinery: bricklayers, plumbers, electricians and pool technicians.",
+ miga="About us", h1="A pool is not built by a company. It is built by a team.",
+ entradilla="We are Europiscina, the pool division of GARCAM Industries. We started with pipework in 1969 and have since built more than 1,000 pools, all of them with our own people.",
+ foto=f"{IMG}/piscina-deportiva.jpg",
+ foto_alt="Large-format pool built by Europiscina",
+ cuerpo=cuerpo("From irrigation to swimming pools, without leaving home.",
+  """<p>GARCAM was founded in Balaguer in 1969, making precast concrete, irrigation channels, pipework and hydraulic installations across the Lleida plain. For thirty years our trade was moving water: capturing it, carrying it, filtering it and making sure none was lost along the way.</p>
+     <p>In 1999 we built a pool at the boss's house. There was no business plan behind it. A neighbour saw that pool, then a brother-in-law, then a client's friend. Twenty-six years later it is <strong>more than 1,000 pools</strong> and more than 1,000 families, many of whom still call us when a pump needs replacing.</p>
+     <p>That origin explains what we do best. The expensive faults in a pool are almost never cosmetic: they are badly resolved drainage, unforeseen water tables, undersized returns and miscalculated plant rooms. Hydraulics, in other words. Exactly what we had been doing for thirty years before we built our first pool.</p>""",
+  """<h3>One team, from start to finish</h3>
+     <p>We excavate, pour, waterproof, tile, connect and commission <strong>with our own staff</strong>. On the payroll we have bricklayers, plumbers, electricians and pool technicians, and the machinery is ours: excavator, lorry, crane and formwork.</p>
+     <p>That means no different company every week, no trade blaming the one before, and no site standing still because the subcontractor had something more urgent. It also means that when something goes wrong, the person who fixes it is the one who built it.</p>
+     <h3>Why we are rarely the cheapest</h3>
+     <p>Because keeping staff on the payroll costs more than subcontracting, and because we do not cut corners on what cannot be seen: the reinforcement, the plant room, the perimeter drainage, the grouting.</p>
+     <h3>What others cannot document</h3>
+     <p>A large part of our work is public sector: municipal pools awarded by tender, with technical specifications, fixed deadlines and penalties for delay. Preixens, Algerri, Balaguer, La Sentiu, Lleida, Guissona, Tarragona, Térmens, Guimerà and many more.</p>"""),
+ extra=ficha("The company in figures", [
+     ("Legal name", "GARCAM Industries SLU, trading as Europiscina"),
+     ("Origin", "1969 in precast concrete, irrigation and hydraulic installations"),
+     ("Pools since", "1999, with more than 1,000 projects completed"),
+     ("Team", "Bricklayers, plumbers, electricians and pool technicians on the payroll"),
+     ("Machinery", "Our own: excavation, haulage, crane and formwork"),
+     ("Accreditations", "Astralpool Fluidra Official Partner and ASOFAP members"),
+     ("Materials", "Renolit Alkorplan, Rosa Gres, Europa Piscinas, Astralpool"),
+     ("Clients", "Private owners, residents' associations and town councils"),
+     ("Area", "Lleida, Huesca, Tarragona, Barcelona, Andorra and Mallorca"),
+     ("Head office", "Ctra. C-26 km 22, Balaguer (Lleida), Spain")])
+  + cinta("Shall we talk about your project?",
+          "Site visit with no obligation. We come, we look, and we tell you what is possible and what is not.", "en")),
 }
