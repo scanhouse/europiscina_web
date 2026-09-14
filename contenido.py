@@ -463,98 +463,186 @@ C["ref"] = {
 # ============================================================ EMPRESA
 C["emp"] = {
 "es": dict(
- title="Quiénes somos | Europiscina, constructores de piscinas desde 1999",
- desc="Europiscina, marca de GARCAM Industries SLU. Más de 1.000 piscinas construidas con equipo y maquinaria propios: albañiles, fontaneros, electricistas y técnicos en plantilla.",
- miga="Empresa", h1="Una piscina no la hace una empresa. La hace un equipo.",
- entradilla="Somos Europiscina, la división de piscinas de GARCAM Industries. Empezamos con tuberías en 1969 y hoy llevamos más de 1.000 piscinas construidas, todas con gente de casa.",
+ title="Quiénes somos | GARCAM Europiscina, más de 55 años trabajando con agua",
+ desc="GARCAM Industries SLU, marca Europiscina. Desde 1969 en instalaciones hidráulicas y desde 1999 en construcción de piscinas, con más de 1.000 instalaciones realizadas y equipo propio.",
+ miga="Empresa", h1="Del riego a la piscina.",
+ entradilla="Más de 55 años trabajando con agua. GARCAM nació en Balaguer en 1969, vinculada a los prefabricados de hormigón, las canalizaciones de riego, las tuberías y las instalaciones hidráulicas.",
  foto=f"{IMG}/piscina-deportiva.jpg",
  foto_alt="Piscina de gran formato construida por Europiscina",
- cuerpo=cuerpo("Del riego a la piscina, sin salir de casa.",
-  """<p>GARCAM nació en 1969 en Balaguer haciendo prefabricados de hormigón, canalizaciones de riego, tuberías e instalaciones hidráulicas para la plana de Lleida. Durante treinta años nuestro oficio fue mover agua: captarla, conducirla, filtrarla y hacer que no se perdiera por el camino.</p>
-     <p>En 1999 construimos una piscina en casa del jefe. No había plan de negocio detrás. Aquella piscina la vio un vecino, y luego un cuñado, y luego el amigo de un cliente. Veintiséis años después son <strong>más de 1.000 piscinas</strong> y más de 1.000 familias, muchas de las cuales siguen llamándonos cuando toca cambiar una bomba.</p>
-     <p>Ese origen explica lo que mejor hacemos. Las averías caras de una piscina casi nunca son estéticas: son drenajes mal resueltos, freáticos no previstos, retornos mal dimensionados y salas de máquinas mal calculadas. Es decir, hidráulica. Justo lo que llevábamos treinta años haciendo antes de construir la primera.</p>""",
-  """<h3>Un solo equipo, de principio a fin</h3>
-     <p>Excavamos, hormigonamos, impermeabilizamos, enrajolamos, conectamos y ponemos en marcha <strong>con personal propio</strong>. En plantilla tenemos albañiles, fontaneros, electricistas y técnicos de piscina, y la maquinaria es nuestra: retroexcavadora, camión, grúa y encofrados.</p>
-     <p>Eso significa que no hay una empresa distinta cada semana, ni un industrial que culpa al anterior, ni una obra parada porque el subcontratista tenía otra más urgente. Y significa que el día que hay un problema, la persona que lo resuelve es la misma que lo construyó.</p>
-     <h3>Por qué casi nunca somos los más baratos</h3>
-     <p>Porque tener plantilla propia cuesta más que subcontratar, y porque no ahorramos en lo que no se ve: el armado, la sala de máquinas, el drenaje perimetral, el rejuntado. Un cliente nuestro lo dijo mejor que nosotros: era el presupuesto más alto de los tres que pidió, y aun así nos eligió.</p>
-     <h3>Lo que otros no pueden acreditar</h3>
-     <p>Buena parte de nuestro trabajo es obra pública: piscinas municipales que se adjudican por concurso, con pliego técnico, plazo cerrado y penalización por retraso. Preixens, Algerri, Balaguer, La Sentiu, Lleida, Guissona, Tarragona, Térmens, Guimerà y muchos más. Ahí no se elige al que cae mejor.</p>"""),
+ cuerpo=cuerpo("Una trayectoria alrededor de un mismo elemento.",
+  """<p>Durante décadas hemos trabajado alrededor de un mismo elemento: el agua. Captarla, conducirla,
+     distribuirla, filtrarla y controlar cada instalación para que funcione correctamente durante
+     muchos años.</p>
+     <p>En 1999 incorporamos la construcción de piscinas a nuestra actividad. Lo que empezó como una
+     nueva línea de trabajo se convirtió progresivamente en una de nuestras principales
+     especialidades.</p>
+     <p>Hoy acumulamos más de 25 años construyendo piscinas y <strong>más de 1.000 instalaciones
+     realizadas</strong>, tanto para clientes particulares como para empresas y administraciones
+     públicas.</p>
+     <p>Nuestra experiencia en hidráulica sigue marcando nuestra forma de trabajar. Porque una buena
+     piscina no depende únicamente de su aspecto. Detrás de un buen acabado debe haber una estructura
+     correctamente ejecutada, una hidráulica bien dimensionada, un drenaje adecuado y una sala técnica
+     preparada para funcionar de forma eficiente y fiable.</p>""",
+  """<h3>Un único equipo, de principio a fin</h3>
+     <p>En GARCAM ejecutamos directamente las principales fases de cada proyecto. Excavamos,
+     construimos, impermeabilizamos, revestimos, instalamos, conectamos y ponemos en marcha la piscina
+     con personal propio.</p>
+     <p>Contamos en plantilla con albañiles, fontaneros, electricistas y técnicos especializados en
+     piscinas, además de maquinaria y medios propios: retroexcavadoras, camiones, grúas, equipos de
+     obra y sistemas de encofrado.</p>
+     <p>Este modelo nos permite tener un mayor control sobre la calidad, los plazos y la coordinación
+     de cada obra. Para el cliente significa algo sencillo: un único interlocutor y un único
+     responsable durante todo el proyecto. Desde el primer movimiento de tierras hasta la puesta en
+     marcha del agua.</p>
+
+     <h3>Construimos pensando también en lo que no se ve</h3>
+     <p>Una piscina debe ser bonita, pero sobre todo debe estar bien construida. Por eso prestamos
+     especial atención a elementos que quedarán ocultos una vez terminada la obra: estructuras,
+     impermeabilización, drenajes, tuberías, retornos, instalaciones eléctricas y salas técnicas.</p>
+     <p>Son aspectos que marcan la diferencia entre una piscina que simplemente queda bien el primer
+     día y una piscina preparada para funcionar durante muchos años. Nuestro objetivo no es competir
+     únicamente por precio, sino ofrecer una construcción completa, fiable y técnicamente bien
+     resuelta.</p>
+
+     <h3>Experiencia también en obra pública</h3>
+     <p>Una parte importante de nuestra trayectoria está vinculada a proyectos para administraciones
+     públicas y equipamientos municipales. Hemos participado en actuaciones y piscinas en municipios
+     como Balaguer, Lleida, Guissona, Preixens, Algerri, La Sentiu de Sió, Térmens, Guimerà, Tarragona
+     y muchas otras localidades.</p>
+     <p>Son proyectos ejecutados bajo pliegos técnicos, controles de obra, requisitos de calidad y
+     plazos de ejecución definidos. Esa experiencia y nivel de exigencia es el mismo que trasladamos a
+     cada piscina particular.</p>"""),
  extra=ficha("La empresa en datos", [
      ("Razón social", "GARCAM Industries SLU, marca comercial Europiscina"),
-     ("Origen", "1969 en prefabricados, riegos e instalaciones hidráulicas"),
-     ("Piscinas desde", "1999, con más de 1.000 obras ejecutadas"),
-     ("Equipo", "Albañiles, fontaneros, electricistas y técnicos de piscina en plantilla"),
-     ("Maquinaria", "Propia: excavación, transporte, grúa y encofrados"),
+     ("Origen", "1969 en prefabricados de hormigón, riegos e instalaciones hidráulicas"),
+     ("Piscinas desde", "1999, con más de 1.000 instalaciones realizadas"),
+     ("Equipo propio", "Albañiles, fontaneros, electricistas y técnicos especializados en piscinas"),
+     ("Medios propios", "Retroexcavadoras, camiones, grúas, equipos de obra y sistemas de encofrado"),
      ("Acreditaciones", "Official Partner de Astralpool Fluidra y miembros de ASOFAP"),
      ("Materiales", "Renolit Alkorplan, Rosa Gres, Europa Piscinas, Astralpool"),
-     ("Clientes", "Particulares, comunidades de propietarios y ayuntamientos"),
+     ("Clientes", "Particulares, empresas, comunidades y administraciones públicas"),
      ("Zona", "Lleida, Huesca, Tarragona, Barcelona, Andorra y Mallorca"),
      ("Sede", "Ctra. C-26 km 22, Balaguer (Lleida)")])
-  + cinta("¿Hablamos de tu proyecto?",
-          "Visita al terreno sin compromiso. Vamos, lo miramos y te decimos qué es posible y qué no.", "es")),
+  + cinta("Más de 1.000 piscinas después, seguimos haciendo lo mismo.",
+          "Estudiar cada proyecto, construirlo con nuestros propios equipos y estar disponibles cuando el cliente vuelve a necesitarnos. Porque para nosotros una piscina no termina cuando llenamos el vaso de agua. Empieza ahí.", "es")),
 
 "ca": dict(
- title="Qui som | Europiscina, constructors de piscines des del 1999",
- desc="Europiscina, marca de GARCAM Industries SLU. Més de 1.000 piscines construïdes amb equip i maquinària propis: paletes, lampistes, electricistes i tècnics en plantilla.",
- miga="Qui som", h1="Una piscina no la fa una empresa. La fa un equip.",
- entradilla="Som Europiscina, la divisió de piscines de GARCAM Industries. Vam començar amb canonades el 1969 i avui portem més de 1.000 piscines construïdes, totes amb gent de casa.",
+ title="Qui som | GARCAM Europiscina, més de 55 anys treballant amb aigua",
+ desc="GARCAM Industries SLU, marca Europiscina. Des del 1969 en instal·lacions hidràuliques i des del 1999 en construcció de piscines, amb més de 1.000 instal·lacions fetes i equip propi.",
+ miga="Qui som", h1="Del reg a la piscina.",
+ entradilla="Més de 55 anys treballant amb aigua. GARCAM va néixer a Balaguer el 1969, vinculada als prefabricats de formigó, les canalitzacions de reg, les canonades i les instal·lacions hidràuliques.",
  foto=f"{IMG}/piscina-deportiva.jpg",
  foto_alt="Piscina de gran format construïda per Europiscina",
- cuerpo=cuerpo("Del reg a la piscina, sense sortir de casa.",
-  """<p>GARCAM va néixer el 1969 a Balaguer fent prefabricats de formigó, canalitzacions de reg, canonades i instal·lacions hidràuliques per a la plana de Lleida. Durant trenta anys el nostre ofici va ser moure aigua: captar-la, conduir-la, filtrar-la i fer que no es perdés pel camí.</p>
-     <p>El 1999 vam construir una piscina a casa del cap. No hi havia cap pla de negoci al darrere. Aquella piscina la va veure un veí, i després un cunyat, i després l'amic d'un client. Vint-i-sis anys després són <strong>més de 1.000 piscines</strong> i més de 1.000 famílies, moltes de les quals ens continuen trucant quan toca canviar una bomba.</p>
-     <p>Aquest origen explica el que fem millor. Les avaries cares d'una piscina gairebé mai són estètiques: són drenatges mal resolts, freàtics no previstos, retorns mal dimensionats i sales de màquines mal calculades. És a dir, hidràulica. Justament el que fèiem des de feia trenta anys abans de construir la primera.</p>""",
-  """<h3>Un sol equip, de principi a fi</h3>
-     <p>Excavem, formigonem, impermeabilitzem, enrajolem, connectem i posem en marxa <strong>amb personal propi</strong>. A la plantilla tenim paletes, lampistes, electricistes i tècnics de piscina, i la maquinària és nostra: retroexcavadora, camió, grua i encofrats.</p>
-     <p>Això vol dir que no hi ha una empresa diferent cada setmana, ni un industrial que culpa l'anterior, ni una obra aturada perquè el subcontractista en tenia una altra de més urgent. I vol dir que el dia que hi ha un problema, qui el resol és qui la va construir.</p>
-     <h3>Per què gairebé mai som els més barats</h3>
-     <p>Perquè tenir plantilla pròpia costa més que subcontractar, i perquè no estalviem en allò que no es veu: l'armat, la sala de màquines, el drenatge perimetral, el rejuntat. Un client nostre ho va dir millor que nosaltres: era el pressupost més alt dels tres que va demanar, i tot i així ens va triar.</p>
-     <h3>El que altres no poden acreditar</h3>
-     <p>Bona part de la nostra feina és obra pública: piscines municipals que s'adjudiquen per concurs, amb plec tècnic, termini tancat i penalització per retard. Preixens, Algerri, Balaguer, La Sentiu, Lleida, Guissona, Tarragona, Térmens, Guimerà i molts altres. Aquí no es tria qui cau més bé.</p>"""),
+ cuerpo=cuerpo("Una trajectòria al voltant d'un mateix element.",
+  """<p>Durant dècades hem treballat al voltant d'un mateix element: l'aigua. Captar-la, conduir-la,
+     distribuir-la, filtrar-la i controlar cada instal·lació perquè funcioni correctament durant molts
+     anys.</p>
+     <p>El 1999 vam incorporar la construcció de piscines a la nostra activitat. El que va començar com
+     una nova línia de treball es va convertir progressivament en una de les nostres principals
+     especialitats.</p>
+     <p>Avui acumulem més de 25 anys construint piscines i <strong>més de 1.000 instal·lacions
+     fetes</strong>, tant per a clients particulars com per a empreses i administracions públiques.</p>
+     <p>La nostra experiència en hidràulica continua marcant la nostra manera de treballar. Perquè una
+     bona piscina no depèn únicament del seu aspecte. Darrere d'un bon acabat hi ha d'haver una
+     estructura correctament executada, una hidràulica ben dimensionada, un drenatge adequat i una
+     sala tècnica preparada per funcionar de manera eficient i fiable.</p>""",
+  """<h3>Un únic equip, de principi a fi</h3>
+     <p>A GARCAM executem directament les principals fases de cada projecte. Excavem, construïm,
+     impermeabilitzem, revestim, instal·lem, connectem i posem en marxa la piscina amb personal
+     propi.</p>
+     <p>Tenim en plantilla paletes, lampistes, electricistes i tècnics especialitzats en piscines, a
+     més de maquinària i mitjans propis: retroexcavadores, camions, grues, equips d'obra i sistemes
+     d'encofrat.</p>
+     <p>Aquest model ens permet tenir un control més gran sobre la qualitat, els terminis i la
+     coordinació de cada obra. Per al client significa una cosa senzilla: un únic interlocutor i un
+     únic responsable durant tot el projecte. Des del primer moviment de terres fins a la posada en
+     marxa de l'aigua.</p>
+
+     <h3>Construïm pensant també en allò que no es veu</h3>
+     <p>Una piscina ha de ser bonica, però sobretot ha d'estar ben construïda. Per això parem especial
+     atenció a elements que quedaran ocults un cop acabada l'obra: estructures, impermeabilització,
+     drenatges, canonades, retorns, instal·lacions elèctriques i sales tècniques.</p>
+     <p>Són aspectes que marquen la diferència entre una piscina que simplement queda bé el primer dia
+     i una piscina preparada per funcionar durant molts anys. El nostre objectiu no és competir
+     únicament per preu, sinó oferir una construcció completa, fiable i tècnicament ben resolta.</p>
+
+     <h3>Experiència també en obra pública</h3>
+     <p>Una part important de la nostra trajectòria està vinculada a projectes per a administracions
+     públiques i equipaments municipals. Hem participat en actuacions i piscines en municipis com
+     Balaguer, Lleida, Guissona, Preixens, Algerri, La Sentiu de Sió, Térmens, Guimerà, Tarragona i
+     moltes altres localitats.</p>
+     <p>Són projectes executats sota plecs tècnics, controls d'obra, requisits de qualitat i terminis
+     d'execució definits. Aquesta experiència i nivell d'exigència és el mateix que traslladem a cada
+     piscina particular.</p>"""),
  extra=ficha("L'empresa en dades", [
      ("Raó social", "GARCAM Industries SLU, marca comercial Europiscina"),
-     ("Origen", "1969 en prefabricats, regs i instal·lacions hidràuliques"),
-     ("Piscines des de", "1999, amb més de 1.000 obres executades"),
-     ("Equip", "Paletes, lampistes, electricistes i tècnics de piscina en plantilla"),
-     ("Maquinària", "Pròpia: excavació, transport, grua i encofrats"),
+     ("Origen", "1969 en prefabricats de formigó, regs i instal·lacions hidràuliques"),
+     ("Piscines des de", "1999, amb més de 1.000 instal·lacions fetes"),
+     ("Equip propi", "Paletes, lampistes, electricistes i tècnics especialitzats en piscines"),
+     ("Mitjans propis", "Retroexcavadores, camions, grues, equips d'obra i sistemes d'encofrat"),
      ("Acreditacions", "Official Partner d'Astralpool Fluidra i membres d'ASOFAP"),
      ("Materials", "Renolit Alkorplan, Rosa Gres, Europa Piscinas, Astralpool"),
-     ("Clients", "Particulars, comunitats de propietaris i ajuntaments"),
+     ("Clients", "Particulars, empreses, comunitats i administracions públiques"),
      ("Zona", "Lleida, Osca, Tarragona, Barcelona, Andorra i Mallorca"),
      ("Seu", "Ctra. C-26 km 22, Balaguer (Lleida)")])
-  + cinta("Parlem del teu projecte?",
-          "Visita al terreny sense compromís. Hi anem, ho mirem i et diem què és possible i què no.", "ca")),
+  + cinta("Més de 1.000 piscines després, continuem fent el mateix.",
+          "Estudiar cada projecte, construir-lo amb els nostres propis equips i estar disponibles quan el client ens torna a necessitar. Perquè per a nosaltres una piscina no s'acaba quan omplim el vas d'aigua. Comença aquí.", "ca")),
 
 "en": dict(
- title="About us | Europiscina, pool builders since 1999",
- desc="Europiscina, a trading name of GARCAM Industries SLU. More than 1,000 pools built with our own staff and machinery: bricklayers, plumbers, electricians and pool technicians.",
- miga="About us", h1="A pool is not built by a company. It is built by a team.",
- entradilla="We are Europiscina, the pool division of GARCAM Industries. We started with pipework in 1969 and have since built more than 1,000 pools, all of them with our own people.",
+ title="About us | GARCAM Europiscina, more than 55 years working with water",
+ desc="GARCAM Industries SLU, trading as Europiscina. In hydraulic installations since 1969 and building pools since 1999, with more than 1,000 installations completed and our own workforce.",
+ miga="About us", h1="From irrigation to swimming pools.",
+ entradilla="More than 55 years working with water. GARCAM was founded in Balaguer in 1969, working in precast concrete, irrigation channels, pipework and hydraulic installations.",
  foto=f"{IMG}/piscina-deportiva.jpg",
  foto_alt="Large-format pool built by Europiscina",
- cuerpo=cuerpo("From irrigation to swimming pools, without leaving home.",
-  """<p>GARCAM was founded in Balaguer in 1969, making precast concrete, irrigation channels, pipework and hydraulic installations across the Lleida plain. For thirty years our trade was moving water: capturing it, carrying it, filtering it and making sure none was lost along the way.</p>
-     <p>In 1999 we built a pool at the boss's house. There was no business plan behind it. A neighbour saw that pool, then a brother-in-law, then a client's friend. Twenty-six years later it is <strong>more than 1,000 pools</strong> and more than 1,000 families, many of whom still call us when a pump needs replacing.</p>
-     <p>That origin explains what we do best. The expensive faults in a pool are almost never cosmetic: they are badly resolved drainage, unforeseen water tables, undersized returns and miscalculated plant rooms. Hydraulics, in other words. Exactly what we had been doing for thirty years before we built our first pool.</p>""",
+ cuerpo=cuerpo("A career built around a single element.",
+  """<p>For decades we have worked around one element: water. Capturing it, carrying it, distributing
+     it, filtering it, and making sure every installation runs properly for many years.</p>
+     <p>In 1999 we added pool construction to our activity. What began as a new line of work gradually
+     became one of our main specialisms.</p>
+     <p>Today we have more than 25 years of pool building behind us and <strong>more than 1,000
+     installations completed</strong>, for private clients, companies and public administrations
+     alike.</p>
+     <p>Our experience in hydraulics still shapes the way we work. A good pool does not depend on its
+     appearance alone. Behind a good finish there must be a properly executed structure, correctly
+     sized hydraulics, adequate drainage and a plant room built to run efficiently and reliably.</p>""",
   """<h3>One team, from start to finish</h3>
-     <p>We excavate, pour, waterproof, tile, connect and commission <strong>with our own staff</strong>. On the payroll we have bricklayers, plumbers, electricians and pool technicians, and the machinery is ours: excavator, lorry, crane and formwork.</p>
-     <p>That means no different company every week, no trade blaming the one before, and no site standing still because the subcontractor had something more urgent. It also means that when something goes wrong, the person who fixes it is the one who built it.</p>
-     <h3>Why we are rarely the cheapest</h3>
-     <p>Because keeping staff on the payroll costs more than subcontracting, and because we do not cut corners on what cannot be seen: the reinforcement, the plant room, the perimeter drainage, the grouting.</p>
-     <h3>What others cannot document</h3>
-     <p>A large part of our work is public sector: municipal pools awarded by tender, with technical specifications, fixed deadlines and penalties for delay. Preixens, Algerri, Balaguer, La Sentiu, Lleida, Guissona, Tarragona, Térmens, Guimerà and many more.</p>"""),
+     <p>At GARCAM we carry out the main stages of every project directly. We excavate, build,
+     waterproof, line, install, connect and commission the pool with our own staff.</p>
+     <p>Our payroll includes bricklayers, plumbers, electricians and specialist pool technicians, along
+     with our own machinery and equipment: excavators, lorries, cranes, site equipment and formwork
+     systems.</p>
+     <p>This model gives us greater control over quality, deadlines and coordination on every job. For
+     the client it means something simple: a single point of contact and a single party responsible
+     throughout the project, from the first excavation to the moment the water is turned on.</p>
+
+     <h3>We build with what cannot be seen in mind</h3>
+     <p>A pool should look good, but above all it must be well built. That is why we pay particular
+     attention to the elements that will be hidden once the work is finished: structures,
+     waterproofing, drainage, pipework, returns, electrical installations and plant rooms.</p>
+     <p>These are what separate a pool that looks good on day one from a pool built to work for many
+     years. Our aim is not to compete on price alone, but to deliver a complete, reliable and
+     technically sound construction.</p>
+
+     <h3>Experience in the public sector too</h3>
+     <p>A significant part of our track record involves projects for public administrations and
+     municipal facilities. We have worked on pools and related works in towns such as Balaguer,
+     Lleida, Guissona, Preixens, Algerri, La Sentiu de Sió, Térmens, Guimerà and Tarragona, among
+     many others.</p>
+     <p>These are projects delivered under technical specifications, site supervision, quality
+     requirements and defined completion deadlines. That same level of demand is what we bring to
+     every private pool.</p>"""),
  extra=ficha("The company in figures", [
      ("Legal name", "GARCAM Industries SLU, trading as Europiscina"),
      ("Origin", "1969 in precast concrete, irrigation and hydraulic installations"),
-     ("Pools since", "1999, with more than 1,000 projects completed"),
-     ("Team", "Bricklayers, plumbers, electricians and pool technicians on the payroll"),
-     ("Machinery", "Our own: excavation, haulage, crane and formwork"),
+     ("Pools since", "1999, with more than 1,000 installations completed"),
+     ("Own workforce", "Bricklayers, plumbers, electricians and specialist pool technicians"),
+     ("Own equipment", "Excavators, lorries, cranes, site equipment and formwork systems"),
      ("Accreditations", "Astralpool Fluidra Official Partner and ASOFAP members"),
      ("Materials", "Renolit Alkorplan, Rosa Gres, Europa Piscinas, Astralpool"),
-     ("Clients", "Private owners, residents' associations and town councils"),
+     ("Clients", "Private owners, companies, communities and public administrations"),
      ("Area", "Lleida, Huesca, Tarragona, Barcelona, Andorra and Mallorca"),
      ("Head office", "Ctra. C-26 km 22, Balaguer (Lleida), Spain")])
-  + cinta("Shall we talk about your project?",
-          "Site visit with no obligation. We come, we look, and we tell you what is possible and what is not.", "en")),
+  + cinta("More than 1,000 pools later, we still do the same thing.",
+          "Study each project, build it with our own teams, and be there when the client needs us again. Because for us a pool does not end when we fill it with water. That is where it starts.", "en")),
 }

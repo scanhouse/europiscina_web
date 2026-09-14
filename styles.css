@@ -1,0 +1,326 @@
+/* Tipografias alojadas en el propio dominio: sin peticiones a terceros,
+   sin transferencia de IP a Google y sin necesidad de consentimiento. */
+@font-face{font-family:'Libre Franklin';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/libre-franklin-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Libre Franklin';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/libre-franklin-latin-ext-400-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Libre Franklin';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/libre-franklin-latin-500-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Libre Franklin';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/libre-franklin-latin-ext-500-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Libre Franklin';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/libre-franklin-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Libre Franklin';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/libre-franklin-latin-ext-600-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/newsreader-latin-300-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/newsreader-latin-ext-300-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/newsreader-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/newsreader-latin-ext-400-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+/* Europiscina — hoja de estilos única
+   Paleta: azul de agua clara. Un solo bloque oscuro por página (contacto + pie).
+   Tipografía: Libre Franklin en titulares, Newsreader en texto corrido. */
+
+:root{
+  --profundo:#0B4F6C;
+  --azul:#17708F;
+  --lamina:#DCECF2;
+  --espuma:#EFF6F8;
+  --arena:#E5DACA;
+  --papel:#FCFCFB;
+  --tinta:#12262E;
+  --linea:rgba(18,38,46,.15);
+  --display:"Libre Franklin",system-ui,sans-serif;
+  --texto:"Newsreader",Georgia,serif;
+  --gutter:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--papel);color:var(--tinta);font-family:var(--texto);font-weight:300;
+  font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--azul);outline-offset:3px}
+.saltar{position:absolute;left:-9999px}
+.saltar:focus{left:var(--gutter);top:12px;z-index:99;background:var(--papel);color:var(--profundo);
+  padding:10px 16px;font-family:var(--display);font-size:.85rem}
+
+/* ---------- Cabecera ---------- */
+.top{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:24px}
+.top-clara{color:var(--papel);mix-blend-mode:difference}
+.top-solida{background:var(--papel);border-bottom:1px solid var(--linea);color:var(--tinta)}
+.marca{font-family:var(--display);font-weight:600;letter-spacing:-.02em;font-size:1.05rem;text-decoration:none}
+.menu{display:flex;gap:26px;font-family:var(--display);font-size:.83rem;font-weight:400}
+.menu a{text-decoration:none;opacity:.85}
+.menu a:hover{opacity:1}
+.menu a[aria-current="page"]{opacity:1;text-decoration:underline;text-underline-offset:5px}
+@media(max-width:900px){.menu{display:none}}
+
+/* ---------- Hero de portada ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 var(--gutter) clamp(36px,6vw,72px);color:var(--papel);overflow:hidden}
+.hero-img{position:absolute;inset:0;z-index:-2}
+.hero-img::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(11,79,108,.34) 0%,rgba(11,79,108,.06) 40%,rgba(11,79,108,.74) 100%)}
+.hero h1{font-family:var(--display);font-weight:500;letter-spacing:-.035em;line-height:.94;
+  font-size:clamp(2.9rem,9.2vw,7.4rem);max-width:15ch;text-wrap:balance}
+.waterline{height:1px;background:rgba(252,252,251,.55);margin:clamp(26px,4vw,42px) 0 22px;
+  transform-origin:left;animation:draw 1.5s cubic-bezier(.19,1,.22,1) .25s both}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.hero-pie{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:26px}
+.hero-pie p{max-width:44ch;font-size:1.06rem;opacity:.94}
+.acciones{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- Botones ---------- */
+.btn{font-family:var(--display);font-size:.9rem;font-weight:500;text-decoration:none;
+  padding:15px 26px;border-radius:2px;white-space:nowrap;display:inline-block;
+  transition:background .25s,color .25s}
+.btn-solid{background:var(--papel);color:var(--profundo)}
+.btn-solid:hover{background:var(--lamina)}
+.btn-ghost{border:1px solid rgba(252,252,251,.5);color:var(--papel)}
+.btn-ghost:hover{background:rgba(252,252,251,.12)}
+.btn-azul{background:var(--profundo);color:var(--papel)}
+.btn-azul:hover{background:var(--azul)}
+
+/* ---------- Bloques comunes ---------- */
+.bloque{padding:clamp(64px,10vw,132px) var(--gutter)}
+.rotulo{font-family:var(--display);font-size:.8rem;font-weight:500;color:var(--azul);margin-bottom:14px}
+h2{font-family:var(--display);font-weight:500;letter-spacing:-.03em;line-height:1.02;
+  font-size:clamp(1.9rem,4.6vw,3.5rem);text-wrap:balance}
+h3{font-family:var(--display);font-weight:500;letter-spacing:-.02em;font-size:1.22rem;margin-bottom:8px}
+
+.manifiesto{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,90px);align-items:start;
+  border-top:1px solid var(--linea)}
+.manifiesto p+p{margin-top:1.1em}
+.col-txt{max-width:58ch}
+@media(max-width:820px){.manifiesto{grid-template-columns:1fr}}
+
+/* ---------- Servicios ---------- */
+.servicios{background:var(--lamina);color:var(--tinta)}
+.servicios .rotulo{color:var(--profundo)}
+.rejilla{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(18,38,46,.16);
+  margin-top:clamp(34px,5vw,58px)}
+.serv{background:var(--lamina);padding:clamp(26px,3.4vw,44px)}
+.serv p{opacity:.86;max-width:42ch;font-size:1rem}
+.serv .dato{font-family:var(--display);font-size:.8rem;color:var(--azul);margin-top:16px}
+.serv a{text-decoration:none;border-bottom:1px solid var(--azul);padding-bottom:1px}
+@media(max-width:760px){.rejilla{grid-template-columns:1fr}}
+
+/* ---------- Galería ---------- */
+.mosaico{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:clamp(34px,5vw,58px)}
+.pieza{position:relative;overflow:hidden;background:var(--espuma)}
+.pieza img{transition:transform .7s cubic-bezier(.19,1,.22,1)}
+.pieza:hover img{transform:scale(1.03)}
+.pieza figcaption{position:absolute;left:16px;bottom:14px;color:var(--papel);
+  font-family:var(--display);font-size:.82rem;text-shadow:0 1px 12px rgba(11,79,108,.6)}
+.g-alta{grid-column:span 3;aspect-ratio:4/5}
+.g-ancha{grid-column:span 3;aspect-ratio:4/5}
+.g-tercio{grid-column:span 2;aspect-ratio:1/1}
+.g-full{grid-column:span 6;aspect-ratio:21/9}
+@media(max-width:760px){
+  .mosaico{grid-template-columns:repeat(2,1fr)}
+  .g-alta,.g-ancha{grid-column:span 2;aspect-ratio:4/3}
+  .g-tercio{grid-column:span 1;aspect-ratio:1/1}
+  .g-full{grid-column:span 2;aspect-ratio:3/2}
+}
+
+/* ---------- Obra pública ---------- */
+.publico{background:var(--arena);color:var(--tinta)}
+.publico .rotulo{color:var(--profundo)}
+.publico-txt{max-width:56ch;margin-top:clamp(22px,3vw,34px)}
+.publico-txt p+p{margin-top:1.05em}
+.municipios{list-style:none;display:flex;flex-wrap:wrap;gap:0 clamp(22px,3.4vw,46px);
+  margin-top:clamp(30px,4.4vw,52px);padding-top:22px;border-top:1px solid rgba(18,38,46,.26)}
+.municipios li{font-family:var(--display);font-weight:500;letter-spacing:-.02em;
+  font-size:clamp(1.05rem,2.1vw,1.6rem);padding:7px 0;color:var(--profundo)}
+
+/* ---------- Voces ---------- */
+.voces{background:var(--espuma);border-top:1px solid var(--linea)}
+.cita{max-width:30ch;font-size:clamp(1.1rem,1.6vw,1.32rem);line-height:1.5}
+.cita cite{display:block;margin-top:14px;font-family:var(--display);font-style:normal;
+  font-size:.82rem;color:var(--azul)}
+.voces-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px);
+  margin-top:clamp(34px,5vw,54px)}
+@media(max-width:820px){.voces-grid{grid-template-columns:1fr}}
+
+/* ---------- Zonas ---------- */
+.zonas ul{list-style:none;display:flex;flex-wrap:wrap;gap:0;margin-top:clamp(28px,4vw,46px);
+  border-top:1px solid var(--linea)}
+.zonas li{flex:1 1 190px;border-bottom:1px solid var(--linea);padding:22px 0}
+.zonas li strong{font-family:var(--display);font-weight:500;font-size:1.35rem;letter-spacing:-.02em;display:block}
+.zonas li span{font-size:.95rem;opacity:.7}
+
+/* ---------- Páginas interiores ---------- */
+.cabecera{padding:clamp(112px,15vw,180px) var(--gutter) clamp(40px,6vw,72px);
+  border-bottom:1px solid var(--linea)}
+.miga{font-family:var(--display);font-size:.8rem;color:var(--azul);margin-bottom:16px}
+.miga a{text-decoration:none}
+.miga a:hover{text-decoration:underline}
+.cabecera h1{font-family:var(--display);font-weight:500;letter-spacing:-.035em;line-height:.98;
+  font-size:clamp(2.3rem,6.2vw,4.6rem);max-width:17ch;text-wrap:balance}
+.entradilla{max-width:58ch;margin-top:clamp(20px,3vw,30px);font-size:1.14rem}
+
+.foto-ancha{aspect-ratio:21/9;background:var(--espuma)}
+@media(max-width:700px){.foto-ancha{aspect-ratio:3/2}}
+
+.cuerpo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,90px);align-items:start}
+.cuerpo h2{margin-bottom:0}
+.cuerpo p+p{margin-top:1.1em}
+.cuerpo h3{margin-top:1.8em}
+.cuerpo h3:first-child{margin-top:0}
+@media(max-width:820px){.cuerpo{grid-template-columns:1fr}}
+
+.ficha{background:var(--lamina);padding:clamp(26px,3.4vw,42px);margin-top:clamp(28px,4vw,40px)}
+.ficha h3{margin-top:0;margin-bottom:16px}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:11px 22px;font-size:.98rem}
+.ficha dt{font-family:var(--display);font-size:.8rem;color:var(--profundo);padding-top:4px}
+.ficha dd{border-bottom:1px solid rgba(18,38,46,.14);padding-bottom:11px}
+
+.faq{border-top:1px solid var(--linea)}
+.faq details{border-bottom:1px solid var(--linea);padding:22px 0}
+.faq summary{font-family:var(--display);font-weight:500;font-size:1.08rem;cursor:pointer;
+  letter-spacing:-.01em;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--azul);font-weight:400}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:12px;max-width:64ch}
+
+.cinta{background:var(--profundo);color:var(--papel);text-align:left}
+.cinta h2{max-width:20ch}
+.cinta p{max-width:50ch;margin-top:18px;opacity:.9}
+.cinta .acciones{margin-top:30px}
+
+/* ---------- Contacto ---------- */
+.contacto{background:var(--profundo);color:var(--papel)}
+.contacto .rotulo{color:var(--lamina)}
+.form-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,6vw,86px);
+  margin-top:clamp(32px,5vw,56px)}
+@media(max-width:900px){.form-wrap{grid-template-columns:1fr}}
+.datos p{margin-bottom:20px;font-size:1rem}
+.datos span{display:block;font-family:var(--display);font-size:.78rem;color:var(--lamina);margin-bottom:3px}
+.datos a{text-decoration:none;border-bottom:1px solid rgba(252,252,251,.35);padding-bottom:1px}
+.campos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.campo{display:flex;flex-direction:column;gap:6px}
+.campo.ancho{grid-column:span 2}
+label{font-family:var(--display);font-size:.78rem;color:rgba(252,252,251,.75)}
+input,select,textarea{font-family:var(--texto);font-size:1rem;color:var(--papel);
+  background:transparent;border:0;border-bottom:1px solid rgba(252,252,251,.4);
+  padding:9px 0;border-radius:0;transition:border-color .25s}
+input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--lamina)}
+select option{color:var(--tinta)}
+textarea{resize:vertical;min-height:74px}
+.enviar{margin-top:26px;font-family:var(--display);font-size:.9rem;font-weight:500;
+  background:var(--papel);color:var(--profundo);border:0;padding:15px 30px;border-radius:2px;
+  cursor:pointer;transition:background .25s}
+.enviar:hover{background:var(--lamina)}
+.legal{font-size:.82rem;opacity:.68;margin-top:14px;max-width:46ch}
+@media(max-width:600px){.campos{grid-template-columns:1fr}.campo.ancho{grid-column:span 1}}
+
+/* ---------- Pie ---------- */
+footer{background:var(--profundo);color:rgba(252,252,251,.74);
+  padding:clamp(48px,6vw,72px) var(--gutter) 34px;font-size:.9rem;
+  border-top:1px solid rgba(252,252,251,.14)}
+.pie-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;
+  padding-bottom:30px;border-bottom:1px solid rgba(252,252,251,.16)}
+.pie-grid h4{font-family:var(--display);font-weight:500;font-size:.82rem;color:var(--papel);margin-bottom:12px}
+.pie-grid ul{list-style:none;display:grid;gap:7px}
+.pie-grid a{text-decoration:none}
+.pie-grid a:hover{color:var(--papel)}
+.pie-legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
+  padding-top:22px;font-size:.8rem;opacity:.62}
+@media(max-width:760px){.pie-grid{grid-template-columns:1fr 1fr}}
+
+
+
+/* ---------- Rangos de precio orientativos ---------- */
+.rangos{list-style:none;margin:22px 0;border-top:1px solid var(--linea)}
+.rangos li{border-bottom:1px solid var(--linea);padding:14px 0;
+  display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px}
+.rangos strong{font-family:var(--display);font-weight:500;letter-spacing:-.02em;
+  font-size:1.18rem;color:var(--profundo)}
+.rangos span{font-size:.94rem;opacity:.72;flex:1 1 200px;text-align:right}
+@media(max-width:560px){.rangos span{text-align:left}}
+
+/* ---------- Selector de idioma ---------- */
+.idiomas{display:flex;gap:2px;font-family:var(--display);font-size:.74rem;font-weight:500;
+  letter-spacing:.02em;flex-shrink:0}
+.idiomas a{text-decoration:none;padding:5px 8px;opacity:.55;border-radius:2px;transition:opacity .2s}
+.idiomas a:hover{opacity:.9}
+.idiomas a.act{opacity:1;background:rgba(18,38,46,.09)}
+.top-clara .idiomas a.act{background:rgba(252,252,251,.2)}
+.municipios li.mas{color:rgba(18,38,46,.55);font-weight:400;font-style:italic}
+
+/* ---------- Imagenes responsive ---------- */
+picture{display:block;width:100%;height:100%}
+.hero-img picture,.foto-ancha picture,.pieza picture{height:100%}
+.foto-publico{margin-top:clamp(34px,5vw,54px);aspect-ratio:21/9;overflow:hidden}
+@media(max-width:700px){.foto-publico{aspect-ratio:3/2}}
+
+/* ---------- Logo ---------- */
+.marca{display:flex;align-items:center;flex-shrink:0;line-height:0}
+.marca-img{width:auto;height:clamp(26px,3.1vw,34px);display:block}
+.top-clara{mix-blend-mode:normal}
+.top-clara::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(to bottom,rgba(11,79,108,.42),rgba(11,79,108,0))}
+.marca-pie{display:inline-block;margin-bottom:16px;line-height:0}
+.marca-pie-img{width:auto;height:30px;display:block}
+.pie-grid h4{margin-bottom:12px}
+@media(max-width:520px){.marca-img{height:24px}}
+
+/* ---------- Paginas legales ---------- */
+.legal{max-width:70ch}
+.legal h2{font-family:var(--display);font-weight:500;letter-spacing:-.02em;
+  font-size:1.35rem;line-height:1.2;margin:2.4em 0 .7em}
+.legal h2:first-child{margin-top:0}
+.legal p{margin-bottom:1em}
+.legal ul{margin:0 0 1.4em 1.1em}
+.legal li{margin-bottom:.5em}
+.legal a{color:var(--azul)}
+.legal-tabla{border-collapse:collapse;width:100%;margin:0 0 1.6em;font-size:.97rem}
+.legal-tabla th{font-family:var(--display);font-weight:500;font-size:.8rem;color:var(--profundo);
+  text-align:left;padding:10px 14px 10px 0;border-bottom:1px solid var(--linea)}
+.legal-tabla td{padding:12px 14px 12px 0;border-bottom:1px solid var(--linea);vertical-align:top}
+.legal-tabla tr td:first-child{width:45%}
+.pie-legales a{text-decoration:none;border-bottom:1px solid rgba(252,252,251,.3)}
+.pie-legales a:hover{color:var(--papel)}
+@media(max-width:600px){.legal-tabla,.legal-tabla tr,.legal-tabla td,.legal-tabla th{display:block;width:auto}
+  .legal-tabla th{padding-bottom:4px}.legal-tabla td{border:0;padding:2px 0}
+  .legal-tabla tr{border-bottom:1px solid var(--linea);padding:10px 0;display:block}}
+
+/* ---------- Boton flotante de WhatsApp ---------- */
+.wa{position:fixed;right:18px;bottom:18px;z-index:70;
+  display:inline-flex;align-items:center;gap:8px;
+  background:#25D366;color:#fff;text-decoration:none;
+  padding:10px 17px 10px 13px;border-radius:100px;
+  font-family:var(--display);font-size:.85rem;font-weight:600;letter-spacing:-.01em;
+  box-shadow:0 4px 16px rgba(37,211,102,.4),0 1px 5px rgba(0,0,0,.15);
+  transition:transform .18s cubic-bezier(.19,1,.22,1),box-shadow .18s,background .18s;
+  animation:wa-entrada .5s cubic-bezier(.19,1,.22,1) 1.1s both,
+            wa-saludo 9s ease-in-out 3.5s infinite}
+.wa svg{width:21px;height:21px;fill:#fff;flex-shrink:0}
+.wa:hover{background:#1FB855;transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(37,211,102,.5),0 2px 8px rgba(0,0,0,.18)}
+.wa:active{transform:translateY(0)}
+.wa::before{content:"";position:absolute;inset:0;border-radius:100px;
+  box-shadow:0 0 0 0 rgba(37,211,102,.5);animation:wa-pulso 4.5s ease-out 2.5s infinite}
+@keyframes wa-entrada{from{opacity:0;transform:translateY(16px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes wa-pulso{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}
+  60%{box-shadow:0 0 0 12px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+@keyframes wa-saludo{0%,88%,100%{transform:none}
+  91%{transform:translateY(-3px) rotate(-3deg)}
+  94%{transform:translateY(-1px) rotate(2deg)}
+  97%{transform:translateY(0) rotate(0)}}
+@media (prefers-reduced-motion:reduce){.wa,.wa::before{animation:none}}
+@media(max-width:520px){
+  .wa{right:13px;bottom:13px;padding:11px;gap:0}
+  .wa span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .wa svg{width:24px;height:24px}
+}
+
+/* ---------- Menu en movil: barra desplazable, no oculta ---------- */
+@media(max-width:900px){
+  .top{flex-wrap:wrap;row-gap:10px;padding-bottom:12px}
+  .menu{display:flex;order:3;width:100%;gap:0;overflow-x:auto;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    margin:0 calc(var(--gutter)*-1);padding:2px var(--gutter) 0}
+  .menu::-webkit-scrollbar{display:none}
+  .menu a{white-space:nowrap;padding:7px 14px 7px 0;font-size:.86rem}
+  .marca-img{height:26px}
+}
+@media(max-width:380px){.menu a{font-size:.82rem;padding-right:12px}}
