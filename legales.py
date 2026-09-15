@@ -37,7 +37,7 @@ PLANTILLA = """<!DOCTYPE html>
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="theme-color" content="#0B4F6C">
 {fuentes}
-<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/styles.css?v5">
 </head>
 <body>
 <a class="saltar" href="#principal">{saltar}</a>
