@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Configurador de piscines de polièster | Europiscina</title>
 <meta name="description" content="Calcula el preu orientatiu de la teva piscina prefabricada de polièster: mida, acabat, excavació, graves, coronació, cloració salina, bomba de calor i il·luminació.">
-<link rel="canonical" href="https://europiscina.es/ca/configurador/"><link rel="alternate" hreflang="es" href="https://europiscina.es/configurador/"><link rel="alternate" hreflang="ca" href="https://europiscina.es/ca/configurador/"><link rel="alternate" hreflang="en" href="https://europiscina.es/en/pool-calculator/"><link rel="alternate" hreflang="x-default" href="https://europiscina.es/configurador/">
-<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/img/icon-512.png" type="image/png" sizes="512x512"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png"><meta name="theme-color" content="#0B4F6C"><link rel="preload" href="/fonts/libre-franklin-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/newsreader-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="canonical" href="https://europiscina.es/ca/configurador/">
+<link rel="alternate" hreflang="es" href="https://europiscina.es/configurador/"><link rel="alternate" hreflang="ca" href="https://europiscina.es/ca/configurador/"><link rel="alternate" hreflang="en" href="https://europiscina.es/en/pool-calculator/"><link rel="alternate" hreflang="x-default" href="https://europiscina.es/configurador/"><link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/img/icon-512.png" type="image/png" sizes="512x512"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png"><meta name="theme-color" content="#0B4F6C"><link rel="preload" href="/fonts/libre-franklin-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/newsreader-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
 
 
 <style>
@@ -138,8 +138,26 @@ picture{display:block}
   display:flex;flex-wrap:wrap;gap:6px 22px;font-size:.92rem}
 .ficha-vaso[hidden]{display:none}
 .ficha-vaso b{font-family:var(--display);font-weight:500;color:var(--profundo)}
+
+/* --- formulario y opciones del configurador (fondo claro) --- */
+.panel label{color:var(--tinta)}
+.panel .op .t strong{color:var(--tinta)}
+.panel .op .t span{color:var(--tinta);opacity:.66}
+.panel .radios label{color:var(--tinta)}
+.panel .radios label:has(input:checked){color:var(--papel)}
+.selector-medida select{color:var(--tinta);background-color:var(--papel)}
+.selector-medida select option{color:var(--tinta)}
+/* la puerta de datos va sobre azul: ahi si, texto claro */
+.puerta input[type=text],.puerta input[type=email],.puerta input[type=tel]{
+  color:var(--papel);background:transparent;border:0;
+  border-bottom:1px solid rgba(252,252,251,.42);padding:11px 0;
+  font-family:var(--texto);font-size:1rem;width:100%}
+.puerta input::placeholder{color:rgba(252,252,251,.55)}
+.puerta input:focus{outline:none;border-bottom-color:var(--arena)}
+.puerta label.cons{color:rgba(252,252,251,.9)}
 </style>
 <link rel="stylesheet" href="/assets/styles.css?v5">
+
 
 
 
@@ -156,36 +174,37 @@ picture{display:block}
 </head>
 <body>
 
-<header class="top top-solida"><a class="marca" href="/ca/" aria-label="Europiscina"><img src="/img/logo-400.webp" srcset="/img/logo-260.webp 260w, /img/logo-400.webp 400w, /img/logo-600.webp 600w" sizes="180px" alt="Europiscina" width="2092" height="657" class="marca-img"></a><nav class="menu"><a href="/ca/piscines-obra/">Piscines d'obra</a><a href="/ca/piscines-lamina-armada/">Làmina armada</a><a href="/ca/piscines-poliester/">Polièster</a><a href="/ca/configurador/" aria-current="page">Configurador</a><a href="/ca/manteniment/">Manteniment</a><a href="/ca/empresa/">Qui som</a><a href="/ca/contacte/">Contacte</a></nav><span class="idiomas"><a href="/configurador/" hreflang="es">ES</a><a href="/ca/configurador/" class="act" hreflang="ca">CA</a><a href="/en/pool-calculator/" hreflang="en">EN</a></span><details class="hamb"><summary aria-label="Menú"><span class="hamb-icono"><i></i><i></i><i></i></span></summary><div class="hamb-panel"><nav><a href="/ca/piscines-obra/">Piscines d'obra</a><a href="/ca/piscines-lamina-armada/">Làmina armada</a><a href="/ca/piscines-poliester/">Polièster</a><a href="/ca/configurador/" aria-current="page">Configurador</a><a href="/ca/manteniment/">Manteniment</a><a href="/ca/empresa/">Qui som</a><a href="/ca/contacte/">Contacte</a></nav><a class="hamb-wa" href="https://wa.me/34680335438">WhatsApp 680 335 438</a><a class="hamb-tel" href="tel:+34973446445">973 446 445</a></div></details></header>
+<header class="top top-solida"><a class="marca" href="/ca/" aria-label="Europiscina"><img src="/img/logo-400.webp" srcset="/img/logo-260.webp 260w, /img/logo-400.webp 400w, /img/logo-600.webp 600w" sizes="180px" alt="Europiscina" width="2092" height="657" class="marca-img"></a><nav class="menu"><a href="/ca/piscines-obra/">Piscines d'obra</a><a href="/ca/piscines-lamina-armada/">Làmina armada</a><a href="/ca/piscines-poliester/">Polièster</a><a href="/ca/configurador/" aria-current="page">Configurador</a><a href="/ca/manteniment/">Manteniment</a><a href="/ca/empresa/">Qui som</a><a href="/ca/contacte/">Contacte</a></nav><span class="idiomas"><a href="/ca/configurador/" hreflang="es">ES</a><a href="/ca/configurador/" class="act" hreflang="ca">CA</a><a href="/en/pool-calculator/" hreflang="en">EN</a></span><details class="hamb"><summary aria-label="Menú"><span class="hamb-icono"><i></i><i></i><i></i></span></summary><div class="hamb-panel"><nav><a href="/ca/piscines-obra/">Piscines d'obra</a><a href="/ca/piscines-lamina-armada/">Làmina armada</a><a href="/ca/piscines-poliester/">Polièster</a><a href="/ca/configurador/" aria-current="page">Configurador</a><a href="/ca/manteniment/">Manteniment</a><a href="/ca/empresa/">Qui som</a><a href="/ca/contacte/">Contacte</a></nav><a class="hamb-wa" href="https://wa.me/34680335438">WhatsApp 680 335 438</a><a class="hamb-tel" href="tel:+34973446445">973 446 445</a></div></details></header>
 <div class="rev">Preus orientatius sobre tarifa vigent. Terreny dur o roca, accés difícil i nivell freàtic es valoren a la visita.</div>
 
 <section class="cabecera">
   <p class="miga"><a href="/ca/">Inici</a> &middot; <a href="/ca/piscines-poliester/">Polièster</a> &middot; Configurador</p>
   <h1>Calcula la teva piscina de polièster.</h1>
-  <p>Tria la mida, l'acabat i el que vulguis que fem nosaltres. El preu s'actualitza al moment. És orientatiu i no substitueix la visita tècnica, però s'hi acosta molt.</p>
+  <p>Elige la medida, el acabado y lo que quieras que hagamos nosotros. El precio se actualiza al momento. Es orientativo y no sustituye a la visita técnica, pero se acerca mucho.</p>
 </section>
 
 <div class="wrap">
 <div class="panel">
 
   <fieldset>
-    <legend>1. El vas</legend>
+    <legend>1. Mides del vas</legend>
     <div class="selector-medida">
       <label for="modelo">Mida de la piscina</label>
       <select id="modelo" name="modelo"></select>
-      <p class="ayuda">Mides del vas. Llarg x ample, fondària 1,40-1,50 m segons model.</p>
+      <p class="ayuda">Llarg x ample, fondària d'1,40 a 1,50 m segons model. Aquí hi ha una selecció de mides de referència, no el catàleg complet: si busques una mida que no hi surt, escriu-nos i ho mirem.</p>
     </div>
     <div class="ficha-vaso" id="ficha-vaso" hidden></div>
   </fieldset>
 
   <fieldset>
     <legend>2. Acabat del vas</legend>
-    <div class="radios" id="acabados"></div>
+    <div class="ops" id="acabados"></div>
   </fieldset>
 
   <fieldset>
-    <legend>3. Obra: què fem nosaltres</legend>
+    <legend>3. Obra: la fem nosaltres o la contractes tu</legend>
     <div class="ops" id="obra"></div>
+    <p class="ayuda">Tots els imports d'aquesta pàgina són sense IVA; el total de la dreta ja l'inclou. Totes les quantitats (metres cúbics, sacs de grava, metres lineals) es calculen soles segons la mida triada. Tret del transport, tot això és opcional: pots encarregar-ho al teu propi contractista si ho prefereixes.</p>
   </fieldset>
 
   <fieldset>
@@ -206,10 +225,10 @@ picture{display:block}
     <p class="sub">Deixa'ns com localitzar-te i et mostrem el total. Et truquem només si tu vols.</p>
     <div class="f">
       <input type="text" id="g-nom" placeholder="Nom" autocomplete="name">
-      <input type="email" id="g-mail" placeholder="Correu electrònic" autocomplete="email" inputmode="email">
-      <input type="tel" id="g-tel" placeholder="Telèfon mòbil" autocomplete="tel" inputmode="tel">
+      <input type="email" id="g-mail" placeholder="Correo electrónico" autocomplete="email" inputmode="email">
+      <input type="tel" id="g-tel" placeholder="Teléfono móvil" autocomplete="tel" inputmode="tel">
       <label class="cons"><input type="checkbox" id="g-ok">
-        Accepto que Europiscina (GARCAM Industries SLU) faci servir aquestes dades per enviar-me el pressupost orientatiu i contactar-me sobre aquest.</label>
+        Acepto que Europiscina (GARCAM Industries SLU) use estos datos para enviarme el presupuesto orientativo y contactarme sobre él.</label>
       <p class="err" id="g-err"></p>
       <button id="g-btn" type="button">Veure el meu preu</button>
     </div>
@@ -218,8 +237,7 @@ picture{display:block}
 
 
   <div class="aviso">
-    <strong>Què no hi està inclòs</strong>
-    Llicència municipal, connexió elèctrica des del quadre de l'habitatge, paviment perimetral, tanca i jardineria. Si el terreny té roca, nivell freàtic alt o accés difícil per a la grua, el preu canvia i cal veure-ho en obra.
+    <strong>Qué no está incluido</strong> Llicència municipal, connexió elèctrica des del quadre de l'habitatge, paviment perimetral, tanca i jardineria. Si el terreny té roca, nivell freàtic alt o accés difícil per a la grua, el preu canvia i cal veure-ho en obra.
   </div>
 
   <div class="cta">
@@ -245,51 +263,94 @@ const CFG = {
   bigbagPrecio: 45,          // big bag 1.000 kg, descarga con grua hasta 15 m
   densidadGrava: 1.5,        // t/m3 -> big bags necesarios por m3
   coronacionML: 125,         // zuncho + coronacion prefabricada Luxe, sin IVA
-  sobreexcavacion: 0.5       // m de holgura perimetral y en fondo
+  holguraLateral: 0.5,       // m libres a cada lado del vaso
+  camaGrava: 0.20            // m de cama de gravas bajo el vaso
 };
 
 const POOLS = [{"n":"SKY 4","fam":"Sky","l":4.18,"a":2.38,"p":1.4,"pvp":5245},{"n":"STAR 5","fam":"Star","l":5.4,"a":2.7,"p":1.4,"pvp":5985},{"n":"STAR 6","fam":"Star","l":6.0,"a":3.0,"p":1.5,"pvp":6494},{"n":"SPACE 650","fam":"Space","l":6.5,"a":3.25,"p":1.5,"pvp":6657},{"n":"SATURN","fam":"Star","l":7.0,"a":3.0,"p":1.5,"pvp":6715},{"n":"SKY 7","fam":"Sky","l":7.0,"a":3.5,"p":1.5,"pvp":7319},{"n":"SPACE 750","fam":"Space","l":7.5,"a":3.6,"p":1.5,"pvp":8132},{"n":"STAR 8","fam":"Star","l":8.0,"a":4.0,"p":1.5,"pvp":9340},{"n":"SPACE 850","fam":"Space","l":8.5,"a":3.9,"p":1.5,"pvp":9487},{"n":"SKY 9","fam":"Sky","l":9.0,"a":4.0,"p":1.5,"pvp":10311},{"n":"SPACE 950","fam":"Space","l":9.5,"a":3.9,"p":1.5,"pvp":10873},{"n":"PLAGE 650","fam":"Plage","l":6.5,"a":3.0,"p":1.5,"pvp":7190},{"n":"PLAGE 750","fam":"Plage","l":7.5,"a":3.6,"p":1.5,"pvp":8500},{"n":"PLAGE 850","fam":"Plage","l":8.5,"a":3.9,"p":1.5,"pvp":10059},{"n":"PLAGE 950","fam":"Plage","l":9.5,"a":3.9,"p":1.5,"pvp":11193}];
 
 const ACABADOS = [
-  {id:"std",  n:"Color estàndard", rec:0},
-  {id:"ncol", n:"Color no estàndard", rec:0.05},
-  {id:"ref",  n:"Construcció reforçada", rec:0.10},
-  {id:"min",  n:"Acabat MINERAL", rec:0.15}
+  {id:"std",  n:"Color estàndard", rec:0,
+   d:"El color de sèrie del model triat. Sense recàrrec."},
+  {id:"ncol", n:"Color no estàndard", rec:0.05,
+   d:"Qualsevol altre color del catàleg de fàbrica."},
+  {id:"ref",  n:"Construcció reforçada", rec:0.15,
+   d:"Tots els vasos són autoportants. La versió reforçada afegeix estructura extra i permet instal·lacions sobre el terra o semienterrades, i panelar els laterals."},
+  {id:"min",  n:"Acabat MINERAL", rec:0.15,
+   d:"Gel-coat granulat amb aspecte de pedra natural, més profunditat de color i superfície menys llisa al tacte."}
 ];
 
 const OBRA = [
-  {id:"exc",  n:"Excavació del forat", d:"Moviment de terres i retirada de sobrant. Terreny dur o roca es valora a part", tipo:"m3exc"},
-  {id:"grav", n:"Graves", d:"Big bag de 1.000 kg amb descàrrega de grua fins a 15 m", tipo:"bigbag"},
-  {id:"sol",  n:"Formació de solera de graves i anivellat", d:"Mà d'obra de preparació de la base d'assentament", precio:700},
-  {id:"tub",  n:"Instal·lació hidràulica i depuradora", d:"Canonades, connexions i muntatge de la sala de màquines", precio:3500},
-  {id:"cor",  n:"Cèrcol i coronació de pedra", d:"Cèrcol de formigó i coronació prefabricada Luxe, 30 cm d'ample per 15 d'alt", tipo:"ml"}
+  {id:"trans", n:"Transport des de fàbrica", fijo:true,
+   d:"Obligatori. El vas arriba sencer des de fàbrica sobre camió i es descarrega amb grua. Sense transport no hi ha piscina."},
+  {id:"exc",  n:"Excavació del forat", tipo:"m3exc",
+   d:"Forat amb 50 cm lliures a cada costat del vas i 20 cm extra de fondària per al llit de graves. Moviment de terres i retirada del sobrant. Terreny dur o roca es valora a part."},
+  {id:"grav", n:"Graves", tipo:"bigbag",
+   d:"Material i transport en camió grua, amb descàrrega fins a 15 m. Cobreix el llit d'assentament sota el vas i el rebliment dels laterals. El nombre de sacs es calcula segons la mida."},
+  {id:"sol",  n:"Formació de solera, rebliment i anivellat de graves", tipo:"solera",
+   d:"Mà d'obra de col·locació: ompliment de la solera base, reglat i anivellament, col·locació del vas, rebliment lateral amb les graves, punxat de laterals i control de l'ompliment d'aigua."},
+  {id:"tub",  n:"Instal·lació hidràulica i depuradora", precio:3500,
+   d:"Canonades, connexions, muntatge de la depuradora i sala de màquines. Mà d'obra i material inclosos."},
+  {id:"cor",  n:"Cèrcol i coronació de pedra", tipo:"ml",
+   d:"Cèrcol de formigó perimetral i pedra de coronació Luxe, l'estàndard per a aquest tipus de vas. Es calcula per metre lineal segons la mida."}
 ];
 
 const EQUIPO = [
-  {id:"sal",  n:"Cloració salina", d:"Electròlisi Hydrosalt LC2, aigua més suau i menys química", precio:1690},
-  {id:"bc",   n:"Bomba de calor", d:"Allarga la temporada uns quants mesos", precio:2950},
-  {id:"luz",  n:"Focus LED", d:"Il·luminació submergida amb comandament", precio:390},
-  {id:"rob",  n:"Robot netejafons", d:"Neteja automàtica de fons i parets", precio:850},
-  {id:"cob",  n:"Cobertor d'hivern", d:"Protecció durant l'hivernatge", precio:640},
-  {id:"esc",  n:"Escala d'acer inoxidable", d:"Accés addicional", precio:320}
+  {id:"sal",  n:"Cloració salina amb control de pH", precio:1690,
+   d:"Electròlisi Astralpool Hydrosalt LC2 amb regulació automàtica de pH. Aigua més suau i menys producte químic."},
+  {id:"bc",   n:"Bomba de calor", precio:2950,
+   d:"Preu mitjà orientatiu d'una Zodiac Z260MD5. Allarga la temporada uns quants mesos."},
+  {id:"luz",  n:"Focus LED", precio:180,
+   d:"Focus submergit de llum blanca, 17 W."},
+  {id:"rob",  n:"Robot netejafons", precio:850,
+   d:"Robot Zodiac de gamma mitjana. Neteja automàtica de fons i parets."},
+  {id:"duc",  n:"Dutxa solar", precio:500,
+   d:"Dutxa exterior que escalfa l'aigua amb el sol, sense instal·lació elèctrica."},
+  {id:"cob",  n:"Cobertor d'hivern", precio:650,
+   d:"Lona per tapar la piscina durant l'hivern. Entre 600 i 700 euros segons mida."}
 ];
 
 const eur = n => new Intl.NumberFormat("es-ES",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(n);
 const $ = s => document.querySelector(s);
 
 let sel = null, acabado = "std";
-const marcados = new Set();
+const marcados = new Set(["trans"]);
 
 function volumenExcavacion(p){
-  return (p.l + CFG.sobreexcavacion*2) * (p.a + CFG.sobreexcavacion*2) * (p.p + CFG.sobreexcavacion);
+  // Hueco real: el vaso mas 0,5 m a cada lado, y de hondo el vaso mas la cama de gravas.
+  // Ejemplo 8,00 x 4,00 x 1,50 -> 9,00 x 5,00 x 1,70 = 76,5 m3
+  const L = p.l + CFG.holguraLateral*2;
+  const A = p.a + CFG.holguraLateral*2;
+  return L * A * (p.p + CFG.camaGrava);
 }
 function volumenGravas(p){
-  // corona perimetral de 40 cm alrededor del vaso
-  const ext = (p.l+1.3)*(p.a+1.3)*(p.p+0.5);
-  return Math.max(ext - (p.l*p.a*p.p), 0);
+  // Gravas = cama bajo el vaso (20 cm en toda la planta del hueco)
+  //          + relleno del anillo perimetral de 50 cm, hasta la altura del vaso.
+  const L = p.l + CFG.holguraLateral*2;
+  const A = p.a + CFG.holguraLateral*2;
+  const cama      = L * A * CFG.camaGrava;
+  const laterales = (L * A - p.l * p.a) * p.p;
+  return cama + laterales;
 }
 
 function perimetro(p){ return 2*(p.l + p.a); }
+
+// Solera y nivelado: precios reales de referencia por perimetro (sin IVA)
+//   4,00 x 2,00 -> 12 ml -> 1.200 EUR
+//   6,00 x 3,00 -> 18 ml -> 1.950 EUR
+//   8,00 x 4,00 -> 24 ml -> 2.400 EUR
+// Entre esos puntos se interpola; por encima se mantiene la ultima pendiente.
+const SOLERA = [[12,1200],[18,1950],[24,2400]];
+function precioSolera(p){
+  const x = perimetro(p);
+  if(x <= SOLERA[0][0]) return SOLERA[0][1];
+  for(let i = 1; i < SOLERA.length; i++){
+    const [x0,y0] = SOLERA[i-1], [x1,y1] = SOLERA[i];
+    if(x <= x1) return Math.round((y0 + (x-x0)*(y1-y0)/(x1-x0))/10)*10;
+  }
+  const [xa,ya] = SOLERA[SOLERA.length-2], [xb,yb] = SOLERA[SOLERA.length-1];
+  return Math.round((yb + (x-xb)*(yb-ya)/(xb-xa))/10)*10;
+}
 
 function bigBags(p){
   return Math.ceil(volumenGravas(p) * CFG.densidadGrava);
@@ -297,9 +358,11 @@ function bigBags(p){
 
 function precioOpcion(o){
   if(!sel) return 0;
+  if(o.fijo)              return Math.round(CFG.transporteBase * (1 + CFG.incrementoTransporte));
   if(o.tipo === "m3exc")  return Math.round(volumenExcavacion(sel) * CFG.excavacionM3);
   if(o.tipo === "bigbag") return bigBags(sel) * CFG.bigbagPrecio;
   if(o.tipo === "ml")     return Math.round(perimetro(sel) * CFG.coronacionML);
+  if(o.tipo === "solera") return precioSolera(sel);
   return o.precio || 0;
 }
 
@@ -320,8 +383,6 @@ function calcular(){
     recargo = Math.round(base * ac.rec);
     l.push([ac.n+" (+"+(ac.rec*100)+"%)", recargo, true]);
   }
-  const transporte = Math.round(CFG.transporteBase * (1 + CFG.incrementoTransporte));
-  l.push(["Transport i col·locació amb grua", transporte]);
 
   let extras = 0;
   [...OBRA, ...EQUIPO].forEach(o => {
@@ -332,10 +393,11 @@ function calcular(){
     if(o.tipo === "m3exc")  etiqueta += " (" + Math.round(volumenExcavacion(sel)) + " m&sup3;)";
     if(o.tipo === "bigbag") etiqueta += " (" + bigBags(sel) + " big bags)";
     if(o.tipo === "ml")     etiqueta += " (" + perimetro(sel).toFixed(1).replace(".",",") + " ml)";
+    if(o.tipo === "solera") etiqueta += " (" + perimetro(sel).toFixed(1).replace(".",",") + " ml)";
     l.push([etiqueta, pr]);
   });
 
-  const sinIva = base + recargo + transporte + extras;
+  const sinIva = base + recargo + extras;
   const conIva = Math.round(sinIva * (1 + CFG.iva));
 
   $("#total").textContent = eur(conIva);
@@ -377,13 +439,15 @@ function fichaVaso(){
 }
 
 $("#acabados").innerHTML = ACABADOS.map(a =>
-  '<label><input type="radio" name="ac" value="'+a.id+'"'+(a.id==="std"?" checked":"")+'><span>'+a.n+
-  (a.rec?" +"+(a.rec*100)+"%":"")+'</span></label>').join("");
+  '<label class="op op-radio"><input type="radio" name="ac" value="'+a.id+'"'+(a.id==="std"?" checked":"")+'>'+
+  '<span class="t"><strong>'+a.n+'</strong><span>'+a.d+'</span></span>'+
+  '<span class="pr">'+(a.rec?"+"+(a.rec*100)+"%":"inclòs")+'</span></label>').join("");
 $("#acabados").querySelectorAll("input").forEach(i => i.onchange = () => { acabado = i.value; calcular(); });
 
 function pintarOps(cont, arr){
   $(cont).innerHTML = arr.map(o =>
-    '<label class="op"><input type="checkbox" value="'+o.id+'">'+
+    '<label class="op'+(o.fijo?" op-fijo":"")+'">'+
+    '<input type="checkbox" value="'+o.id+'"'+(o.fijo?" checked disabled":"")+'>'+
     '<span class="t"><strong>'+o.n+'</strong><span>'+o.d+'</span></span>'+
     '<span class="pr" data-p="'+o.id+'"></span></label>').join("");
   $(cont).querySelectorAll("input").forEach(i => i.onchange = () => {
@@ -430,8 +494,8 @@ $("#g-btn").onclick = async () => {
   const err = $("#g-err");
 
   if(nom.length < 2)      return err.textContent = "Escriu el teu nom.";
-  if(!RE_MAIL.test(mail)) return err.textContent = "Aquest correu no sembla vàlid.";
-  if(!RE_TEL.test(tel))   return err.textContent = "Escriu un telèfon espanyol de 9 dígits.";
+  if(!RE_MAIL.test(mail)) return err.textContent = "Ese correo no parece válido.";
+  if(!RE_TEL.test(tel))   return err.textContent = "Escribe un teléfono español de 9 dígitos.";
   if(!ok)                 return err.textContent = "Necessitem el teu consentiment per enviar-te el pressupost.";
   err.textContent = "";
   $("#g-btn").disabled = true;

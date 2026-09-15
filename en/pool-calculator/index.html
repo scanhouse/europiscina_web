@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fibreglass pool price calculator | Europiscina</title>
 <meta name="description" content="Work out an indicative price for your prefabricated fibreglass pool: size, finish, excavation, gravel, coping, salt chlorination, heat pump and lighting.">
-<link rel="canonical" href="https://europiscina.es/en/pool-calculator/"><link rel="alternate" hreflang="es" href="https://europiscina.es/configurador/"><link rel="alternate" hreflang="ca" href="https://europiscina.es/ca/configurador/"><link rel="alternate" hreflang="en" href="https://europiscina.es/en/pool-calculator/"><link rel="alternate" hreflang="x-default" href="https://europiscina.es/configurador/">
-<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/img/icon-512.png" type="image/png" sizes="512x512"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png"><meta name="theme-color" content="#0B4F6C"><link rel="preload" href="/fonts/libre-franklin-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/newsreader-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="canonical" href="https://europiscina.es/en/pool-calculator/">
+<link rel="alternate" hreflang="es" href="https://europiscina.es/configurador/"><link rel="alternate" hreflang="ca" href="https://europiscina.es/ca/configurador/"><link rel="alternate" hreflang="en" href="https://europiscina.es/en/pool-calculator/"><link rel="alternate" hreflang="x-default" href="https://europiscina.es/configurador/"><link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/img/icon-512.png" type="image/png" sizes="512x512"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png"><meta name="theme-color" content="#0B4F6C"><link rel="preload" href="/fonts/libre-franklin-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/newsreader-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
 
 
 <style>
@@ -138,8 +138,26 @@ picture{display:block}
   display:flex;flex-wrap:wrap;gap:6px 22px;font-size:.92rem}
 .ficha-vaso[hidden]{display:none}
 .ficha-vaso b{font-family:var(--display);font-weight:500;color:var(--profundo)}
+
+/* --- formulario y opciones del configurador (fondo claro) --- */
+.panel label{color:var(--tinta)}
+.panel .op .t strong{color:var(--tinta)}
+.panel .op .t span{color:var(--tinta);opacity:.66}
+.panel .radios label{color:var(--tinta)}
+.panel .radios label:has(input:checked){color:var(--papel)}
+.selector-medida select{color:var(--tinta);background-color:var(--papel)}
+.selector-medida select option{color:var(--tinta)}
+/* la puerta de datos va sobre azul: ahi si, texto claro */
+.puerta input[type=text],.puerta input[type=email],.puerta input[type=tel]{
+  color:var(--papel);background:transparent;border:0;
+  border-bottom:1px solid rgba(252,252,251,.42);padding:11px 0;
+  font-family:var(--texto);font-size:1rem;width:100%}
+.puerta input::placeholder{color:rgba(252,252,251,.55)}
+.puerta input:focus{outline:none;border-bottom-color:var(--arena)}
+.puerta label.cons{color:rgba(252,252,251,.9)}
 </style>
 <link rel="stylesheet" href="/assets/styles.css?v5">
+
 
 
 
@@ -156,36 +174,37 @@ picture{display:block}
 </head>
 <body>
 
-<header class="top top-solida"><a class="marca" href="/en/" aria-label="Europiscina"><img src="/img/logo-400.webp" srcset="/img/logo-260.webp 260w, /img/logo-400.webp 400w, /img/logo-600.webp 600w" sizes="180px" alt="Europiscina" width="2092" height="657" class="marca-img"></a><nav class="menu"><a href="/en/fibreglass-pools/">Fibreglass pools</a><a href="/en/pool-calculator/" aria-current="page">Price calculator</a><a href="/en/pool-maintenance/">Maintenance</a><a href="/en/about-us/">About us</a><a href="/en/contact/">Contact</a></nav><span class="idiomas"><a href="/configurador/" hreflang="es">ES</a><a href="/ca/configurador/" hreflang="ca">CA</a><a href="/en/pool-calculator/" class="act" hreflang="en">EN</a></span><details class="hamb"><summary aria-label="Menu"><span class="hamb-icono"><i></i><i></i><i></i></span></summary><div class="hamb-panel"><nav><a href="/en/fibreglass-pools/">Fibreglass pools</a><a href="/en/pool-calculator/" aria-current="page">Price calculator</a><a href="/en/pool-maintenance/">Maintenance</a><a href="/en/about-us/">About us</a><a href="/en/contact/">Contact</a></nav><a class="hamb-wa" href="https://wa.me/34680335438">WhatsApp 680 335 438</a><a class="hamb-tel" href="tel:+34973446445">973 446 445</a></div></details></header>
+<header class="top top-solida"><a class="marca" href="/en/" aria-label="Europiscina"><img src="/img/logo-400.webp" srcset="/img/logo-260.webp 260w, /img/logo-400.webp 400w, /img/logo-600.webp 600w" sizes="180px" alt="Europiscina" width="2092" height="657" class="marca-img"></a><nav class="menu"><a href="/en/fibreglass-pools/">Fibreglass pools</a><a href="/en/pool-calculator/" aria-current="page">Price calculator</a><a href="/en/pool-maintenance/">Maintenance</a><a href="/en/about-us/">About us</a><a href="/en/contact/">Contact</a></nav><span class="idiomas"><a href="/en/pool-calculator/" hreflang="es">ES</a><a href="/ca/configurador/" hreflang="ca">CA</a><a href="/en/pool-calculator/" class="act" hreflang="en">EN</a></span><details class="hamb"><summary aria-label="Menu"><span class="hamb-icono"><i></i><i></i><i></i></span></summary><div class="hamb-panel"><nav><a href="/en/fibreglass-pools/">Fibreglass pools</a><a href="/en/pool-calculator/" aria-current="page">Price calculator</a><a href="/en/pool-maintenance/">Maintenance</a><a href="/en/about-us/">About us</a><a href="/en/contact/">Contact</a></nav><a class="hamb-wa" href="https://wa.me/34680335438">WhatsApp 680 335 438</a><a class="hamb-tel" href="tel:+34973446445">973 446 445</a></div></details></header>
 <div class="rev">Indicative prices based on our current price list. Hard ground or rock, difficult access and high water tables are assessed on site.</div>
 
 <section class="cabecera">
   <p class="miga"><a href="/en/">Home</a> &middot; <a href="/en/fibreglass-pools/">Fibreglass</a> &middot; Price calculator</p>
   <h1>Work out your fibreglass pool price.</h1>
-  <p>Choose the size, the finish and which parts of the job we handle. The price updates instantly. It is indicative and does not replace a site visit, but it gets close.</p>
+  <p>Elige la medida, el acabado y lo que quieras que hagamos nosotros. El precio se actualiza al momento. Es orientativo y no sustituye a la visita técnica, pero se acerca mucho.</p>
 </section>
 
 <div class="wrap">
 <div class="panel">
 
   <fieldset>
-    <legend>1. The shell</legend>
+    <legend>1. Pool size</legend>
     <div class="selector-medida">
       <label for="modelo">Pool size</label>
       <select id="modelo" name="modelo"></select>
-      <p class="ayuda">Shell dimensions. Length x width, depth 1.40-1.50 m depending on model.</p>
+      <p class="ayuda">Length x width, depth from 1.40 to 1.50 m depending on the model. This is a selection of reference sizes, not the full catalogue: if the size you want is not listed, write to us and we will look into it.</p>
     </div>
     <div class="ficha-vaso" id="ficha-vaso" hidden></div>
   </fieldset>
 
   <fieldset>
     <legend>2. Shell finish</legend>
-    <div class="radios" id="acabados"></div>
+    <div class="ops" id="acabados"></div>
   </fieldset>
 
   <fieldset>
-    <legend>3. Groundwork we handle</legend>
+    <legend>3. Groundwork: we do it, or you arrange it</legend>
     <div class="ops" id="obra"></div>
+    <p class="ayuda">All amounts on this page are excluding VAT; the total on the right already includes it. All quantities (cubic metres, gravel bags, linear metres) are calculated automatically from the size you choose. Apart from transport, everything here is optional: you can have your own contractor do it.</p>
   </fieldset>
 
   <fieldset>
@@ -206,10 +225,10 @@ picture{display:block}
     <p class="sub">Leave us your details and we will show you the total. We only call if you want us to.</p>
     <div class="f">
       <input type="text" id="g-nom" placeholder="Name" autocomplete="name">
-      <input type="email" id="g-mail" placeholder="Email address" autocomplete="email" inputmode="email">
-      <input type="tel" id="g-tel" placeholder="Mobile phone" autocomplete="tel" inputmode="tel">
+      <input type="email" id="g-mail" placeholder="Correo electrónico" autocomplete="email" inputmode="email">
+      <input type="tel" id="g-tel" placeholder="Teléfono móvil" autocomplete="tel" inputmode="tel">
       <label class="cons"><input type="checkbox" id="g-ok">
-        I agree that Europiscina (GARCAM Industries SLU) may use these details to send me the indicative quote and contact me about it.</label>
+        Acepto que Europiscina (GARCAM Industries SLU) use estos datos para enviarme el presupuesto orientativo y contactarme sobre él.</label>
       <p class="err" id="g-err"></p>
       <button id="g-btn" type="button">Show my price</button>
     </div>
@@ -218,8 +237,7 @@ picture{display:block}
 
 
   <div class="aviso">
-    <strong>What is not included</strong>
-    Municipal licence, electrical connection from the house consumer unit, surrounding paving, fencing and landscaping. If the ground contains rock, the water table is high or crane access is difficult, the price changes and has to be assessed on site.
+    <strong>Qué no está incluido</strong> Municipal licence, electrical connection from the house consumer unit, surrounding paving, fencing and landscaping. If the ground contains rock, the water table is high or crane access is difficult, the price changes and has to be assessed on site.
   </div>
 
   <div class="cta">
@@ -245,51 +263,94 @@ const CFG = {
   bigbagPrecio: 45,          // big bag 1.000 kg, descarga con grua hasta 15 m
   densidadGrava: 1.5,        // t/m3 -> big bags necesarios por m3
   coronacionML: 125,         // zuncho + coronacion prefabricada Luxe, sin IVA
-  sobreexcavacion: 0.5       // m de holgura perimetral y en fondo
+  holguraLateral: 0.5,       // m libres a cada lado del vaso
+  camaGrava: 0.20            // m de cama de gravas bajo el vaso
 };
 
 const POOLS = [{"n":"SKY 4","fam":"Sky","l":4.18,"a":2.38,"p":1.4,"pvp":5245},{"n":"STAR 5","fam":"Star","l":5.4,"a":2.7,"p":1.4,"pvp":5985},{"n":"STAR 6","fam":"Star","l":6.0,"a":3.0,"p":1.5,"pvp":6494},{"n":"SPACE 650","fam":"Space","l":6.5,"a":3.25,"p":1.5,"pvp":6657},{"n":"SATURN","fam":"Star","l":7.0,"a":3.0,"p":1.5,"pvp":6715},{"n":"SKY 7","fam":"Sky","l":7.0,"a":3.5,"p":1.5,"pvp":7319},{"n":"SPACE 750","fam":"Space","l":7.5,"a":3.6,"p":1.5,"pvp":8132},{"n":"STAR 8","fam":"Star","l":8.0,"a":4.0,"p":1.5,"pvp":9340},{"n":"SPACE 850","fam":"Space","l":8.5,"a":3.9,"p":1.5,"pvp":9487},{"n":"SKY 9","fam":"Sky","l":9.0,"a":4.0,"p":1.5,"pvp":10311},{"n":"SPACE 950","fam":"Space","l":9.5,"a":3.9,"p":1.5,"pvp":10873},{"n":"PLAGE 650","fam":"Plage","l":6.5,"a":3.0,"p":1.5,"pvp":7190},{"n":"PLAGE 750","fam":"Plage","l":7.5,"a":3.6,"p":1.5,"pvp":8500},{"n":"PLAGE 850","fam":"Plage","l":8.5,"a":3.9,"p":1.5,"pvp":10059},{"n":"PLAGE 950","fam":"Plage","l":9.5,"a":3.9,"p":1.5,"pvp":11193}];
 
 const ACABADOS = [
-  {id:"std",  n:"Standard colour", rec:0},
-  {id:"ncol", n:"Non-standard colour", rec:0.05},
-  {id:"ref",  n:"Reinforced construction", rec:0.10},
-  {id:"min",  n:"MINERAL finish", rec:0.15}
+  {id:"std",  n:"Standard colour", rec:0,
+   d:"The model's standard colour. No surcharge."},
+  {id:"ncol", n:"Non-standard colour", rec:0.05,
+   d:"Any other colour from the factory range."},
+  {id:"ref",  n:"Reinforced construction", rec:0.15,
+   d:"All shells are self-supporting. The reinforced version adds extra structure and allows above-ground or semi-buried installations, and side panelling."},
+  {id:"min",  n:"MINERAL finish", rec:0.15,
+   d:"Granulated gel-coat with a natural stone look, deeper colour and a less smooth surface."}
 ];
 
 const OBRA = [
-  {id:"exc",  n:"Excavation", d:"Earth moving and removal of spoil. Hard ground or rock is priced separately", tipo:"m3exc"},
-  {id:"grav", n:"Gravel", d:"1,000 kg big bags, crane unloading up to 15 m", tipo:"bigbag"},
-  {id:"sol",  n:"Gravel base and levelling", d:"Labour to prepare the bedding layer", precio:700},
-  {id:"tub",  n:"Hydraulics and filtration plant", d:"Pipework, connections and plant room assembly", precio:3500},
-  {id:"cor",  n:"Ring beam and stone coping", d:"Concrete ring beam and precast Luxe coping, 30 cm wide by 15 cm high", tipo:"ml"}
+  {id:"trans", n:"Transport from the factory", fijo:true,
+   d:"Compulsory. The shell arrives in one piece on a lorry and is unloaded by crane. No transport, no pool."},
+  {id:"exc",  n:"Excavation", tipo:"m3exc",
+   d:"Hole with 50 cm clear on each side of the shell and 20 cm extra depth for the gravel bed. Earth moving and removal of spoil. Hard ground or rock is priced separately."},
+  {id:"grav", n:"Gravel", tipo:"bigbag",
+   d:"Material and delivery by crane lorry, unloading up to 15 m. Covers the bedding layer under the shell and the side backfill. The number of bags is calculated from the size."},
+  {id:"sol",  n:"Base, backfill and gravel levelling", tipo:"solera",
+   d:"Installation labour: laying the base, screeding and levelling, setting the shell, side backfill with gravel, bracing the sides and supervising the filling with water."},
+  {id:"tub",  n:"Hydraulics and filtration plant", precio:3500,
+   d:"Pipework, connections, filtration and plant room assembly. Labour and materials included."},
+  {id:"cor",  n:"Ring beam and stone coping", tipo:"ml",
+   d:"Perimeter concrete ring beam and precast Luxe coping, the standard for this type of shell. Calculated per linear metre."}
 ];
 
 const EQUIPO = [
-  {id:"sal",  n:"Salt chlorination", d:"Hydrosalt LC2 electrolysis, softer water and fewer chemicals", precio:1690},
-  {id:"bc",   n:"Heat pump", d:"Extends the season by several months", precio:2950},
-  {id:"luz",  n:"LED light", d:"Underwater lighting with remote", precio:390},
-  {id:"rob",  n:"Robotic cleaner", d:"Automatic cleaning of floor and walls", precio:850},
-  {id:"cob",  n:"Winter cover", d:"Protection during winterisation", precio:640},
-  {id:"esc",  n:"Stainless steel ladder", d:"Additional access", precio:320}
+  {id:"sal",  n:"Salt chlorination with pH control", precio:1690,
+   d:"Astralpool Hydrosalt LC2 electrolysis with automatic pH regulation. Softer water and fewer chemicals."},
+  {id:"bc",   n:"Heat pump", precio:2950,
+   d:"Indicative mid-range price for a Zodiac Z260MD5. Extends the season by several months."},
+  {id:"luz",  n:"LED light", precio:180,
+   d:"Submerged white LED light, 17 W."},
+  {id:"rob",  n:"Robotic cleaner", precio:850,
+   d:"Mid-range Zodiac robot. Automatic cleaning of floor and walls."},
+  {id:"duc",  n:"Solar shower", precio:500,
+   d:"Outdoor shower heated by the sun, no electrical installation needed."},
+  {id:"cob",  n:"Winter cover", precio:650,
+   d:"Cover to protect the pool through the winter. Between 600 and 700 euros depending on size."}
 ];
 
 const eur = n => new Intl.NumberFormat("es-ES",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(n);
 const $ = s => document.querySelector(s);
 
 let sel = null, acabado = "std";
-const marcados = new Set();
+const marcados = new Set(["trans"]);
 
 function volumenExcavacion(p){
-  return (p.l + CFG.sobreexcavacion*2) * (p.a + CFG.sobreexcavacion*2) * (p.p + CFG.sobreexcavacion);
+  // Hueco real: el vaso mas 0,5 m a cada lado, y de hondo el vaso mas la cama de gravas.
+  // Ejemplo 8,00 x 4,00 x 1,50 -> 9,00 x 5,00 x 1,70 = 76,5 m3
+  const L = p.l + CFG.holguraLateral*2;
+  const A = p.a + CFG.holguraLateral*2;
+  return L * A * (p.p + CFG.camaGrava);
 }
 function volumenGravas(p){
-  // corona perimetral de 40 cm alrededor del vaso
-  const ext = (p.l+1.3)*(p.a+1.3)*(p.p+0.5);
-  return Math.max(ext - (p.l*p.a*p.p), 0);
+  // Gravas = cama bajo el vaso (20 cm en toda la planta del hueco)
+  //          + relleno del anillo perimetral de 50 cm, hasta la altura del vaso.
+  const L = p.l + CFG.holguraLateral*2;
+  const A = p.a + CFG.holguraLateral*2;
+  const cama      = L * A * CFG.camaGrava;
+  const laterales = (L * A - p.l * p.a) * p.p;
+  return cama + laterales;
 }
 
 function perimetro(p){ return 2*(p.l + p.a); }
+
+// Solera y nivelado: precios reales de referencia por perimetro (sin IVA)
+//   4,00 x 2,00 -> 12 ml -> 1.200 EUR
+//   6,00 x 3,00 -> 18 ml -> 1.950 EUR
+//   8,00 x 4,00 -> 24 ml -> 2.400 EUR
+// Entre esos puntos se interpola; por encima se mantiene la ultima pendiente.
+const SOLERA = [[12,1200],[18,1950],[24,2400]];
+function precioSolera(p){
+  const x = perimetro(p);
+  if(x <= SOLERA[0][0]) return SOLERA[0][1];
+  for(let i = 1; i < SOLERA.length; i++){
+    const [x0,y0] = SOLERA[i-1], [x1,y1] = SOLERA[i];
+    if(x <= x1) return Math.round((y0 + (x-x0)*(y1-y0)/(x1-x0))/10)*10;
+  }
+  const [xa,ya] = SOLERA[SOLERA.length-2], [xb,yb] = SOLERA[SOLERA.length-1];
+  return Math.round((yb + (x-xb)*(yb-ya)/(xb-xa))/10)*10;
+}
 
 function bigBags(p){
   return Math.ceil(volumenGravas(p) * CFG.densidadGrava);
@@ -297,9 +358,11 @@ function bigBags(p){
 
 function precioOpcion(o){
   if(!sel) return 0;
+  if(o.fijo)              return Math.round(CFG.transporteBase * (1 + CFG.incrementoTransporte));
   if(o.tipo === "m3exc")  return Math.round(volumenExcavacion(sel) * CFG.excavacionM3);
   if(o.tipo === "bigbag") return bigBags(sel) * CFG.bigbagPrecio;
   if(o.tipo === "ml")     return Math.round(perimetro(sel) * CFG.coronacionML);
+  if(o.tipo === "solera") return precioSolera(sel);
   return o.precio || 0;
 }
 
@@ -320,8 +383,6 @@ function calcular(){
     recargo = Math.round(base * ac.rec);
     l.push([ac.n+" (+"+(ac.rec*100)+"%)", recargo, true]);
   }
-  const transporte = Math.round(CFG.transporteBase * (1 + CFG.incrementoTransporte));
-  l.push(["Transport and crane installation", transporte]);
 
   let extras = 0;
   [...OBRA, ...EQUIPO].forEach(o => {
@@ -332,10 +393,11 @@ function calcular(){
     if(o.tipo === "m3exc")  etiqueta += " (" + Math.round(volumenExcavacion(sel)) + " m&sup3;)";
     if(o.tipo === "bigbag") etiqueta += " (" + bigBags(sel) + " big bags)";
     if(o.tipo === "ml")     etiqueta += " (" + perimetro(sel).toFixed(1).replace(".",",") + " ml)";
+    if(o.tipo === "solera") etiqueta += " (" + perimetro(sel).toFixed(1).replace(".",",") + " ml)";
     l.push([etiqueta, pr]);
   });
 
-  const sinIva = base + recargo + transporte + extras;
+  const sinIva = base + recargo + extras;
   const conIva = Math.round(sinIva * (1 + CFG.iva));
 
   $("#total").textContent = eur(conIva);
@@ -377,13 +439,15 @@ function fichaVaso(){
 }
 
 $("#acabados").innerHTML = ACABADOS.map(a =>
-  '<label><input type="radio" name="ac" value="'+a.id+'"'+(a.id==="std"?" checked":"")+'><span>'+a.n+
-  (a.rec?" +"+(a.rec*100)+"%":"")+'</span></label>').join("");
+  '<label class="op op-radio"><input type="radio" name="ac" value="'+a.id+'"'+(a.id==="std"?" checked":"")+'>'+
+  '<span class="t"><strong>'+a.n+'</strong><span>'+a.d+'</span></span>'+
+  '<span class="pr">'+(a.rec?"+"+(a.rec*100)+"%":"included")+'</span></label>').join("");
 $("#acabados").querySelectorAll("input").forEach(i => i.onchange = () => { acabado = i.value; calcular(); });
 
 function pintarOps(cont, arr){
   $(cont).innerHTML = arr.map(o =>
-    '<label class="op"><input type="checkbox" value="'+o.id+'">'+
+    '<label class="op'+(o.fijo?" op-fijo":"")+'">'+
+    '<input type="checkbox" value="'+o.id+'"'+(o.fijo?" checked disabled":"")+'>'+
     '<span class="t"><strong>'+o.n+'</strong><span>'+o.d+'</span></span>'+
     '<span class="pr" data-p="'+o.id+'"></span></label>').join("");
   $(cont).querySelectorAll("input").forEach(i => i.onchange = () => {
@@ -430,8 +494,8 @@ $("#g-btn").onclick = async () => {
   const err = $("#g-err");
 
   if(nom.length < 2)      return err.textContent = "Please enter your name.";
-  if(!RE_MAIL.test(mail)) return err.textContent = "That email does not look valid.";
-  if(!RE_TEL.test(tel))   return err.textContent = "Please enter a nine-digit Spanish phone number.";
+  if(!RE_MAIL.test(mail)) return err.textContent = "Ese correo no parece válido.";
+  if(!RE_TEL.test(tel))   return err.textContent = "Escribe un teléfono español de 9 dígitos.";
   if(!ok)                 return err.textContent = "We need your consent to send you the quote.";
   err.textContent = "";
   $("#g-btn").disabled = true;
