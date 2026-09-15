@@ -212,7 +212,7 @@ def escribir_home(lang):
 </head>
 <body>
 <a class="saltar" href="#principal">{t['saltar']}</a>
-{cabecera('home', lang, clara=True)}
+{cabecera('home', lang)}
 <main id="principal">
 
 <section class="hero">

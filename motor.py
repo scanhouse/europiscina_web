@@ -160,9 +160,19 @@ def cabecera(clave, lang, clara=False):
         items += f'<a href="{u}"{cur}>{t}</a>'
     clase = "top top-clara" if clara else "top top-solida"
     marca = logo("blanc" if clara else "color")
+    etiq = {"es": "Menú", "ca": "Menú", "en": "Menu"}[lang]
+    # <details> nativo: hamburguesa sin JavaScript, funciona siempre
     return (f'<header class="{clase}">'
-            f'<a class="marca" href="{url("home", lang)}" aria-label="Europiscina, inici">{marca}</a>'
-            f'<nav class="menu">{items}</nav>{selector(clave, lang)}</header>')
+            f'<a class="marca" href="{url("home", lang)}" aria-label="Europiscina">{marca}</a>'
+            f'<nav class="menu">{items}</nav>'
+            f'{selector(clave, lang)}'
+            f'<details class="hamb"><summary aria-label="{etiq}">'
+            f'<span class="hamb-icono"><i></i><i></i><i></i></span></summary>'
+            f'<div class="hamb-panel"><nav>{items}</nav>'
+            f'<a class="hamb-wa" href="{WA}">WhatsApp {WA_TXT}</a>'
+            f'<a class="hamb-tel" href="tel:{TEL}">{TEL_TXT}</a>'
+            f'</div></details>'
+            f'</header>')
 
 
 def enlaces_legales(lang):
