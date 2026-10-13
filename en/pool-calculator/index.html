@@ -264,10 +264,11 @@ const CFG = {
   densidadGrava: 1.5,        // t/m3 -> big bags necesarios por m3
   coronacionML: 125,         // zuncho + coronacion prefabricada Luxe, sin IVA
   holguraLateral: 0.5,       // m libres a cada lado del vaso
-  camaGrava: 0.20            // m de cama de gravas bajo el vaso
+  camaGrava: 0.20,           // m de cama de gravas bajo el vaso
+  margenAutoportante: 0.20   // serie autoportante (FLAT, ANTARES, SQUARE): kit = neto de fabrica +20%
 };
 
-const POOLS = [{"n":"SKY 4","fam":"Sky","l":4.18,"a":2.38,"p":1.4,"pvp":5245},{"n":"STAR 5","fam":"Star","l":5.4,"a":2.7,"p":1.4,"pvp":5985},{"n":"STAR 6","fam":"Star","l":6.0,"a":3.0,"p":1.5,"pvp":6494},{"n":"SPACE 650","fam":"Space","l":6.5,"a":3.25,"p":1.5,"pvp":6657},{"n":"SATURN","fam":"Star","l":7.0,"a":3.0,"p":1.5,"pvp":6715},{"n":"SKY 7","fam":"Sky","l":7.0,"a":3.5,"p":1.5,"pvp":7319},{"n":"SPACE 750","fam":"Space","l":7.5,"a":3.6,"p":1.5,"pvp":8132},{"n":"STAR 8","fam":"Star","l":8.0,"a":4.0,"p":1.5,"pvp":9340},{"n":"SPACE 850","fam":"Space","l":8.5,"a":3.9,"p":1.5,"pvp":9487},{"n":"SKY 9","fam":"Sky","l":9.0,"a":4.0,"p":1.5,"pvp":10311},{"n":"SPACE 950","fam":"Space","l":9.5,"a":3.9,"p":1.5,"pvp":10873},{"n":"PLAGE 650","fam":"Plage","l":6.5,"a":3.0,"p":1.5,"pvp":7190},{"n":"PLAGE 750","fam":"Plage","l":7.5,"a":3.6,"p":1.5,"pvp":8500},{"n":"PLAGE 850","fam":"Plage","l":8.5,"a":3.9,"p":1.5,"pvp":10059},{"n":"PLAGE 950","fam":"Plage","l":9.5,"a":3.9,"p":1.5,"pvp":11193}];
+const POOLS = [{"n":"FLAT 3","fam":"Autoportante","l":3.6,"a":2.0,"p":1.1,"pvp":4325,"auto":650},{"n":"FLAT 4","fam":"Autoportante","l":4.18,"a":2.0,"p":1.4,"pvp":4920,"auto":740},{"n":"ANTARES","fam":"Autoportante","l":3.9,"a":2.25,"p":1.2,"pvp":4494,"auto":675},{"n":"SQUARE","fam":"Autoportante","l":3.15,"a":3.15,"p":1.4,"pvp":5290,"auto":795},{"n":"SKY 4","fam":"Sky","l":4.18,"a":2.38,"p":1.4,"pvp":5245},{"n":"STAR 5","fam":"Star","l":5.4,"a":2.7,"p":1.4,"pvp":5985},{"n":"STAR 6","fam":"Star","l":6.0,"a":3.0,"p":1.5,"pvp":6494},{"n":"SPACE 650","fam":"Space","l":6.5,"a":3.25,"p":1.5,"pvp":6657},{"n":"SATURN","fam":"Star","l":7.0,"a":3.0,"p":1.5,"pvp":6715},{"n":"SKY 7","fam":"Sky","l":7.0,"a":3.5,"p":1.5,"pvp":7319},{"n":"SPACE 750","fam":"Space","l":7.5,"a":3.6,"p":1.5,"pvp":8132},{"n":"STAR 8","fam":"Star","l":8.0,"a":4.0,"p":1.5,"pvp":9340},{"n":"SPACE 850","fam":"Space","l":8.5,"a":3.9,"p":1.5,"pvp":9487},{"n":"SKY 9","fam":"Sky","l":9.0,"a":4.0,"p":1.5,"pvp":10311},{"n":"SPACE 950","fam":"Space","l":9.5,"a":3.9,"p":1.5,"pvp":10873},{"n":"PLAGE 650","fam":"Plage","l":6.5,"a":3.0,"p":1.5,"pvp":7190},{"n":"PLAGE 750","fam":"Plage","l":7.5,"a":3.6,"p":1.5,"pvp":8500},{"n":"PLAGE 850","fam":"Plage","l":8.5,"a":3.9,"p":1.5,"pvp":10059},{"n":"PLAGE 950","fam":"Plage","l":9.5,"a":3.9,"p":1.5,"pvp":11193}];
 
 const ACABADOS = [
   {id:"std",  n:"Standard colour", rec:0,
@@ -384,6 +385,13 @@ function calcular(){
     l.push([ac.n+" (+"+(ac.rec*100)+"%)", recargo, true]);
   }
 
+  // Serie autoportante: kit propio de fabrica (neto +20%), siempre incluido en estos modelos
+  let autoport = 0;
+  if(sel.auto){
+    autoport = Math.round(sel.auto * (1 + CFG.margenAutoportante));
+    l.push(["Self-supporting kit", autoport]);
+  }
+
   let extras = 0;
   [...OBRA, ...EQUIPO].forEach(o => {
     if(!marcados.has(o.id)) return;
@@ -397,7 +405,7 @@ function calcular(){
     l.push([etiqueta, pr]);
   });
 
-  const sinIva = base + recargo + extras;
+  const sinIva = base + recargo + autoport + extras;
   const conIva = Math.round(sinIva * (1 + CFG.iva));
 
   $("#total").textContent = eur(conIva);
@@ -418,7 +426,7 @@ function med(p){
 function pintarModelos(){
   const s = $("#modelo");
   s.innerHTML = '<option value="">— Choose a size —</option>' + POOLS.map(p =>
-    '<option value="'+p.n+'">'+med(p)+' — '+p.n+(p.fam==="Plage"?" (with beach entry)":"")+'</option>').join("");
+    '<option value="'+p.n+'">'+med(p)+' — '+p.n+(p.fam==="Plage"?" (with beach entry)":p.auto?" (self-supporting)":"")+'</option>').join("");
   s.onchange = () => {
     sel = POOLS.find(p => p.n === s.value) || null;
     fichaVaso();
