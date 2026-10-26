@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Albarán · Europiscina</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app" class="app">
+  <header class="cap">
+    <div class="cap-top"><span class="marca" id="marca">EUROPISCINA</span><span class="tel">973 446 445</span></div>
+    <h1 id="titol">Cargando…</h1>
+    <p id="subtitol" class="sub"></p>
+  </header>
+
+  <main id="main" class="main" hidden>
+    <section class="card dades">
+      <div class="full"><div class="et" data-t="client">CLIENTE</div><div class="val fort" id="client"></div><div class="val suau" id="adreca"></div></div>
+      <div><div class="et" data-t="data">FECHA</div><div class="val" id="data"></div></div>
+      <div><div class="et" data-t="tecnics">TÉCNICOS</div><div class="val" id="operaris"></div></div>
+    </section>
+
+    <section class="card">
+      <h2 data-t="treballs">Trabajos realizados</h2>
+      <p id="treballs" class="treballs"></p>
+      <div class="sep"></div>
+      <div class="et" data-t="detall">DETALLE</div>
+      <div id="linies" class="linies"></div>
+    </section>
+
+    <section class="card" id="sec-fotos">
+      <h2 data-t="fotos">Fotos del técnico</h2>
+      <div id="fotos" class="fotos"></div>
+    </section>
+
+    <section class="card">
+      <h2 data-t="import">Importe</h2>
+      <div class="fila"><span data-t="base">Base imponible</span><span id="base"></span></div>
+      <div class="fila"><span id="iva-et">IVA</span><span id="iva"></span></div>
+      <div class="fila total"><span data-t="total">Total</span><span id="total"></span></div>
+      <p class="nota" data-t="nota_factura">Una vez firmado, en los próximos días recibirá la factura de este servicio.</p>
+    </section>
+
+    <section class="card" id="sec-signar">
+      <h2 data-t="conformitat">Su conformidad</h2>
+      <span class="ajuda" data-t="firma_ajuda">Firme con el dedo dentro del recuadro</span>
+      <div class="pad-wrap"><canvas id="pad" class="pad" aria-label="Recuadro de firma"></canvas></div>
+      <div class="dreta"><button type="button" id="esborrar" class="link" data-t="esborrar">Borrar firma</button></div>
+      <label class="camp"><span data-t="nom">Nombre y apellidos</span><input id="nom" type="text" autocomplete="name" maxlength="100"></label>
+      <label class="camp"><span data-t="dni">DNI (opcional)</span><input id="dni" type="text" autocomplete="off" maxlength="12"></label>
+      <label class="check"><input id="accepta" type="checkbox"><span data-t="accepto">He revisado los trabajos, las fotos y el importe, y estoy conforme con el servicio realizado.</span></label>
+      <p id="err-signar" class="err" role="alert" hidden></p>
+      <button type="button" id="btn-signar" class="primari" data-t="signar">Firmar conforme</button>
+      <button type="button" id="btn-obre-reparo" class="secundari" data-t="no_conforme">No estoy conforme, indicar qué falla</button>
+    </section>
+
+    <section class="card" id="sec-reparo" hidden>
+      <h2 data-t="que_falla">¿Qué no está bien?</h2>
+      <label class="camp"><span data-t="explica">Explíquenos el problema</span><textarea id="reparo-text" rows="5" maxlength="2000"></textarea></label>
+      <label class="camp"><span data-t="foto_opcional">Añadir foto (opcional)</span><input id="reparo-foto" type="file" accept="image/jpeg,image/png"></label>
+      <p id="err-reparo" class="err" role="alert" hidden></p>
+      <button type="button" id="btn-reparo" class="avis" data-t="enviar_reparo">Enviar</button>
+      <button type="button" id="btn-tanca-reparo" class="link" data-t="tornar">Volver a la firma</button>
+    </section>
+
+    <section class="card ok" id="sec-signat" hidden>
+      <svg width="64" height="64" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="34" fill="#E3F2EA" stroke="#1F6B45" stroke-width="2"/><path d="M22 37l9 9 19-20" fill="none" stroke="#1F6B45" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h2 data-t="signat_tit">Albarán firmado</h2>
+      <p data-t="signat_text">Gracias. Le hemos enviado una copia en PDF por WhatsApp. En los próximos días recibirá la factura de este servicio.</p>
+      <div class="fila"><span data-t="signat_per">Firmado por</span><span id="s-nom"></span></div>
+      <div class="fila"><span data-t="data_hora">Fecha y hora</span><span id="s-data"></span></div>
+      <div class="fila"><span data-t="verificacio">Código de verificación</span><span id="s-verif" class="fort"></span></div>
+      <button type="button" id="btn-pdf" class="primari" data-t="descarregar">Descargar PDF</button>
+    </section>
+
+    <section class="card avis-card" id="sec-reparo-ok" hidden>
+      <h2 data-t="reparo_ok_tit">Hemos recibido su comentario</h2>
+      <p data-t="reparo_ok_text">Le llamaremos para resolverlo. No se emitirá ninguna factura de este servicio hasta que esté solucionado.</p>
+    </section>
+
+    <footer class="peu">
+      <p data-t="mai_banc">Nunca le pediremos datos bancarios ni de tarjeta en esta página.</p>
+      <p data-t="rgpd">Responsable: GARCAM Industries SLU (CIF B10713675). Usamos sus datos únicamente para gestionar este servicio.</p>
+    </footer>
+  </main>
+
+  <section id="no-valid" class="card buit" hidden>
+    <h2 data-t="no_valid_tit">Este enlace no es válido o ha caducado</h2>
+    <p data-t="no_valid_text">Si necesita el albarán, llámenos al 973 446 445 y se lo volvemos a enviar.</p>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

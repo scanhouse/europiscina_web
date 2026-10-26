@@ -1,3 +1,6 @@
+# Albarans signats: /a/<token> obre la pàgina de signatura (app.js i style.css existeixen i no es reescriuen)
+/a/*                                                      /a/index.html                200
+
 # Mapa 301 WordPress -> sitio nuevo. Sin esto se pierde el posicionamiento.
 # --- Castellano (raiz) ---
 /construccion-piscinas/                                   /piscinas-de-obra/           301!

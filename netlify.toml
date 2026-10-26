@@ -10,7 +10,7 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     # script-src permite el codigo en linea del configurador y los datos
     # estructurados JSON-LD. font-src y style-src son propios: ya no usamos Google Fonts.
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://gwyjwmedllseirtxprlp.supabase.co; font-src 'self'; connect-src 'self' https://gwyjwmedllseirtxprlp.supabase.co; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
 
 # Las imagenes y tipografias llevan el nombre fijo: cache larga
 [[headers]]
@@ -29,3 +29,11 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=3600, must-revalidate"
+
+# Albarans signats pels clients (enllaç personal per WhatsApp): no indexar ni guardar a la memòria cau
+[[headers]]
+  for = "/a/*"
+  [headers.values]
+    Cache-Control = "no-store"
+    X-Robots-Tag = "noindex, nofollow"
+    X-Frame-Options = "DENY"
