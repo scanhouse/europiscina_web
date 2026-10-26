@@ -52,6 +52,7 @@ button{font:inherit;cursor:pointer}
 .err{margin:0;background:var(--avis-fons);color:#5C2D06;border-radius:8px;padding:10px 12px;font-size:14px}
 .ok{align-items:center;text-align:center}
 .ok .fila{width:100%;text-align:left}
+.ok .primari{width:100%}
 .ok p{margin:0;font-size:15px;line-height:22px;color:var(--suau)}
 .avis-card{background:var(--avis-fons)}
 .avis-card p{margin:0;font-size:14px;line-height:20px;color:#5C2D06}
