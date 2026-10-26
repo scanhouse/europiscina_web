@@ -1,17 +1,22 @@
 User-agent: *
 Allow: /
+Disallow: /a/
 
 # Los asistentes de IA tambien son bienvenidos
 User-agent: GPTBot
 Allow: /
+Disallow: /a/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /a/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /a/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /a/
 
 Sitemap: https://europiscina.es/sitemap.xml
