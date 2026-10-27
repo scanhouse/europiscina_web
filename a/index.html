@@ -21,6 +21,7 @@
       <div class="full"><div class="et" data-t="client">CLIENTE</div><div class="val fort" id="client"></div><div class="val suau" id="adreca"></div></div>
       <div><div class="et" data-t="data">FECHA</div><div class="val" id="data"></div></div>
       <div><div class="et" data-t="tecnics">TÉCNICOS</div><div class="val" id="operaris"></div></div>
+      <div class="full" id="ref-box" hidden><div class="et" data-t="ref_et">REFERENCIA OBRA</div><div class="val" id="ref-val"></div></div>
     </section>
 
     <section class="card">
@@ -50,7 +51,8 @@
       <div class="pad-wrap"><canvas id="pad" class="pad" aria-label="Recuadro de firma"></canvas></div>
       <div class="dreta"><button type="button" id="esborrar" class="link" data-t="esborrar">Borrar firma</button></div>
       <label class="camp"><span data-t="nom">Nombre y apellidos</span><input id="nom" type="text" autocomplete="name" maxlength="100"></label>
-      <label class="camp"><span data-t="dni">DNI (opcional)</span><input id="dni" type="text" autocomplete="off" maxlength="12"></label>
+      <label class="camp"><span data-t="dni">DNI o NIE</span><input id="dni" type="text" autocomplete="off" autocapitalize="characters" maxlength="12" required></label>
+      <label class="camp"><span data-t="ref">Referencia de la obra o del trabajo</span><input id="ref" type="text" autocomplete="off" maxlength="120" required><small class="ajuda" data-t="ref_ajuda">Dónde se ha hecho el trabajo, para que no haya confusiones. Ej.: Hidrante 14, Comunidad de Regantes de Térmens.</small></label>
       <label class="check"><input id="accepta" type="checkbox"><span data-t="accepto">He revisado los trabajos, las fotos y el importe, y estoy conforme con el servicio realizado.</span></label>
       <p id="err-signar" class="err" role="alert" hidden></p>
       <button type="button" id="btn-signar" class="primari" data-t="signar">Firmar conforme</button>
@@ -71,6 +73,7 @@
       <h2 data-t="signat_tit">Albarán firmado</h2>
       <p data-t="signat_text">Gracias. Le hemos enviado una copia en PDF por WhatsApp. En los próximos días recibirá la factura de este servicio.</p>
       <div class="fila"><span data-t="signat_per">Firmado por</span><span id="s-nom"></span></div>
+      <div class="fila"><span data-t="ref_fila">Referencia de obra</span><span id="s-ref"></span></div>
       <div class="fila"><span data-t="data_hora">Fecha y hora</span><span id="s-data"></span></div>
       <div class="fila"><span data-t="verificacio">Código de verificación</span><span id="s-verif" class="fort"></span></div>
       <button type="button" id="btn-pdf" class="primari" data-t="descarregar">Descargar PDF</button>
