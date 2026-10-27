@@ -12,7 +12,9 @@
       fotos: "Fotos del técnico", import: "Importe", base: "Base imponible", total: "Total",
       nota_factura: "Una vez firmado, en los próximos días recibirá la factura de este servicio.",
       conformitat: "Su conformidad", firma_ajuda: "Firme con el dedo dentro del recuadro", esborrar: "Borrar firma",
-      nom: "Nombre y apellidos", dni: "DNI (opcional)",
+      nom: "Nombre y apellidos", dni: "DNI o NIE",
+      ref: "Referencia de la obra o del trabajo", ref_et: "REFERENCIA OBRA", ref_fila: "Referencia de obra",
+      ref_ajuda: "Dónde se ha hecho el trabajo, para que no haya confusiones. Ej.: Hidrante 14, Comunidad de Regantes de Térmens.",
       accepto: "He revisado los trabajos, las fotos y el importe, y estoy conforme con el servicio realizado.",
       signar: "Firmar conforme", no_conforme: "No estoy conforme, indicar qué falla",
       que_falla: "¿Qué no está bien?", explica: "Explíquenos el problema", foto_opcional: "Añadir foto (opcional)",
@@ -24,7 +26,7 @@
       rgpd: "Responsable: GARCAM Industries SLU (CIF B10713675). Usamos sus datos únicamente para gestionar este servicio.",
       no_valid_tit: "Este enlace no es válido o ha caducado", no_valid_text: "Si necesita el albarán, llámenos al 973 446 445 y se lo volvemos a enviar.",
       titol: "Revise el trabajo y firme", albara: "Albarán",
-      e_firma: "Firme dentro del recuadro.", e_nom: "Escriba su nombre y apellidos.", e_dni: "El DNI no parece correcto.",
+      e_firma: "Firme dentro del recuadro.", e_nom: "Escriba su nombre y apellidos.", e_dni: "Escriba un DNI o NIE válido (con la letra).", e_ref: "Indique la referencia de la obra o dónde se ha hecho el trabajo.",
       e_accepta: "Marque la casilla de conformidad.", e_text: "Explíquenos brevemente qué no está bien.", e_foto: "La foto no se ha podido preparar. Pruebe con otra.",
       e_gen: "No se ha podido enviar. Revise la conexión y vuelva a intentarlo.", e_resolt: "Este albarán ya se ha firmado o tiene un comentario pendiente.",
       enviant: "Enviando…", signant: "Firmando…", vist_ok: "Firmado", reparo_estat: "Comentario recibido"
@@ -34,7 +36,9 @@
       fotos: "Fotos del tècnic", import: "Import", base: "Base imposable", total: "Total",
       nota_factura: "Un cop signat, en els propers dies rebrà la factura d'aquest servei.",
       conformitat: "La seva conformitat", firma_ajuda: "Signi amb el dit dins del requadre", esborrar: "Esborrar signatura",
-      nom: "Nom i cognoms", dni: "DNI (opcional)",
+      nom: "Nom i cognoms", dni: "DNI o NIE",
+      ref: "Referència de l'obra o del treball", ref_et: "REFERÈNCIA OBRA", ref_fila: "Referència d'obra",
+      ref_ajuda: "On s'ha fet el treball, perquè no hi hagi confusions. Ex.: Hidrant 14, Comunitat de Regants de Térmens.",
       accepto: "He revisat els treballs, les fotos i l'import, i estic conforme amb el servei realitzat.",
       signar: "Signar conforme", no_conforme: "No hi estic conforme, indicar què falla",
       que_falla: "Què no està bé?", explica: "Expliqui'ns el problema", foto_opcional: "Afegir foto (opcional)",
@@ -46,7 +50,7 @@
       rgpd: "Responsable: GARCAM Industries SLU (CIF B10713675). Fem servir les seves dades només per gestionar aquest servei.",
       no_valid_tit: "Aquest enllaç no és vàlid o ha caducat", no_valid_text: "Si necessita l'albarà, truqui'ns al 973 446 445 i l'hi tornarem a enviar.",
       titol: "Revisi el treball i signi", albara: "Albarà",
-      e_firma: "Signi dins del requadre.", e_nom: "Escrigui el seu nom i cognoms.", e_dni: "El DNI no sembla correcte.",
+      e_firma: "Signi dins del requadre.", e_nom: "Escrigui el seu nom i cognoms.", e_dni: "Escrigui un DNI o NIE vàlid (amb la lletra).", e_ref: "Indiqui la referència de l'obra o on s'ha fet el treball.",
       e_accepta: "Marqui la casella de conformitat.", e_text: "Expliqui'ns breument què no està bé.", e_foto: "No s'ha pogut preparar la foto. Provi'n una altra.",
       e_gen: "No s'ha pogut enviar. Revisi la connexió i torni-ho a provar.", e_resolt: "Aquest albarà ja s'ha signat o té un comentari pendent.",
       enviant: "Enviant…", signant: "Signant…", vist_ok: "Signat", reparo_estat: "Comentari rebut"
@@ -62,6 +66,13 @@
   var eur = function (n) { return new Intl.NumberFormat("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2, useGrouping: "always" }).format(n) + " €"; };
   function traduir() {
     document.querySelectorAll("[data-t]").forEach(function (el) { var k = el.getAttribute("data-t"); if (L[k]) el.textContent = L[k]; });
+  }
+  // DNI (8 xifres + lletra) o NIE (X/Y/Z + 7 xifres + lletra), amb la lletra de control.
+  function dniValid(v) {
+    var m = /^([0-9XYZ])([0-9]{7})([A-Z])$/.exec(v || "");
+    if (!m) return false;
+    var n = Number(("XYZ".indexOf(m[1]) >= 0 ? String("XYZ".indexOf(m[1])) : m[1]) + m[2]);
+    return "TRWAGMYFPDXBNJZSQVHLCKE".charAt(n % 23) === m[3];
   }
   function mostra(id, on) { $(id).hidden = !on; }
   function err(id, msg) { var e = $(id); e.textContent = msg || ""; e.hidden = !msg; }
@@ -83,6 +94,9 @@
     $("data").textContent = a.data_servei;
     $("operaris").textContent = (a.operaris || []).join(" · ") || "-";
     $("treballs").textContent = a.treballs;
+    $("ref-val").textContent = a.referencia || "";
+    mostra("ref-box", Boolean(a.referencia));
+    if (a.referencia && !$("ref").value) $("ref").value = a.referencia;
     var li = $("linies"); li.textContent = "";
     (a.linies || []).forEach(function (l) {
       var row = document.createElement("div"); row.className = "linia";
@@ -120,6 +134,7 @@
       $("s-nom").textContent = a.signant_nom || "-";
       $("s-data").textContent = a.signat_el ? new Date(a.signat_el).toLocaleString("es-ES", { timeZone: "Europe/Madrid", day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" }) : "-";
       $("s-verif").textContent = a.verificacio || "-";
+      $("s-ref").textContent = a.signant_ref || a.referencia || "-";
     }
     if (reparo) $("titol").textContent = L.reparo_estat;
     mostra("main", true);
@@ -147,16 +162,21 @@
   $("btn-signar").addEventListener("click", function () {
     err("err-signar", "");
     var nom = $("nom").value.replace(/\s+/g, " ").trim();
-    var dni = $("dni").value.replace(/[\s-]/g, "").toUpperCase();
+    var dni = $("dni").value.replace(/[\s.-]/g, "").toUpperCase();
+    var ref = $("ref").value.replace(/\s+/g, " ").trim();
     if (traços < 8) return err("err-signar", L.e_firma);
     if (nom.length < 3) return err("err-signar", L.e_nom);
-    if (dni && !/^[0-9XYZ][0-9]{7}[A-Z]$/.test(dni)) return err("err-signar", L.e_dni);
+    if (!dniValid(dni)) return err("err-signar", L.e_dni);
+    if (ref.length < 3) return err("err-signar", L.e_ref);
     if (!$("accepta").checked) return err("err-signar", L.e_accepta);
     var b = $("btn-signar"); b.disabled = true; b.textContent = L.signant;
-    api("signar", { nom: nom, dni: dni || null, accepta: true, firma: pad.toDataURL("image/png") }).then(function (r) {
+    api("signar", { nom: nom, dni: dni, referencia: ref, accepta: true, firma: pad.toDataURL("image/png") }).then(function (r) {
       b.disabled = false; b.textContent = L.signar;
       if (r.ok && r.albara) { pinta(r.albara, null); mostra("sec-fotos", false); window.scrollTo(0, 0); return; }
       if (r.error === "ja_resolt") return err("err-signar", L.e_resolt);
+      if (r.error === "dni_no_valid") return err("err-signar", L.e_dni);
+      if (r.error === "ref_no_valida") return err("err-signar", L.e_ref);
+      if (r.error === "nom_no_valid") return err("err-signar", L.e_nom);
       if (r._status === 404) return noValid();
       err("err-signar", L.e_gen);
     }).catch(function () { b.disabled = false; b.textContent = L.signar; err("err-signar", L.e_gen); });
