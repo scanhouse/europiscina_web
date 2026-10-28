@@ -16,6 +16,8 @@
       ref: "Referencia de la obra o del trabajo", ref_et: "REFERENCIA OBRA", ref_fila: "Referencia de obra",
       ref_ajuda: "Dónde se ha hecho el trabajo, para que no haya confusiones. Ej.: Hidrante 14, Comunidad de Regantes de Térmens.",
       accepto: "He revisado los trabajos, las fotos y el importe, y estoy conforme con el servicio realizado.",
+      accepto_sense: "He revisado los trabajos realizados y las fotos, y estoy conforme con el servicio realizado.",
+      nota_sense: "En los próximos días recibirá la factura de este servicio.",
       signar: "Firmar conforme", no_conforme: "No estoy conforme, indicar qué falla",
       que_falla: "¿Qué no está bien?", explica: "Explíquenos el problema", foto_opcional: "Añadir foto (opcional)",
       enviar_reparo: "Enviar", tornar: "Volver a la firma",
@@ -40,6 +42,8 @@
       ref: "Referència de l'obra o del treball", ref_et: "REFERÈNCIA OBRA", ref_fila: "Referència d'obra",
       ref_ajuda: "On s'ha fet el treball, perquè no hi hagi confusions. Ex.: Hidrant 14, Comunitat de Regants de Térmens.",
       accepto: "He revisat els treballs, les fotos i l'import, i estic conforme amb el servei realitzat.",
+      accepto_sense: "He revisat els treballs realitzats i les fotos, i estic conforme amb el servei realitzat.",
+      nota_sense: "En els propers dies rebrà la factura d'aquest servei.",
       signar: "Signar conforme", no_conforme: "No hi estic conforme, indicar què falla",
       que_falla: "Què no està bé?", explica: "Expliqui'ns el problema", foto_opcional: "Afegir foto (opcional)",
       enviar_reparo: "Enviar", tornar: "Tornar a la signatura",
@@ -97,14 +101,18 @@
     $("ref-val").textContent = a.referencia || "";
     mostra("ref-box", Boolean(a.referencia));
     if (a.referencia && !$("ref").value) $("ref").value = a.referencia;
+    var sensePreus = a.mostra_import === false;
     var li = $("linies"); li.textContent = "";
+    mostra("detall-box", (a.linies || []).length > 0);
     (a.linies || []).forEach(function (l) {
       var row = document.createElement("div"); row.className = "linia";
       var d = document.createElement("span"); d.textContent = l.desc + " ";
       var q = document.createElement("span"); q.className = "q"; q.textContent = "× " + String(l.qty).replace(".", ",");
       d.appendChild(q);
-      var i = document.createElement("span"); i.className = "imp"; i.textContent = eur(l.imp);
-      row.appendChild(d); row.appendChild(i); li.appendChild(row);
+      row.appendChild(d);
+      if (sensePreus) { row.style.justifyContent = "flex-start"; }
+      else { var i = document.createElement("span"); i.className = "imp"; i.textContent = eur(l.imp); row.appendChild(i); }
+      li.appendChild(row);
     });
     var fo = $("fotos"); fo.textContent = "";
     (fotos || []).forEach(function (f) {
@@ -118,10 +126,14 @@
       fig.appendChild(cap); fo.appendChild(fig);
     });
     mostra("sec-fotos", (fotos || []).length > 0);
-    $("base").textContent = eur(a.base);
-    $("iva-et").textContent = "IVA " + String(a.iva_pct).replace(".", ",") + " %";
-    $("iva").textContent = eur(a.iva);
-    $("total").textContent = eur(a.total);
+    mostra("sec-import", !sensePreus);
+    if (!sensePreus) {
+      $("base").textContent = eur(a.base);
+      $("iva-et").textContent = "IVA " + String(a.iva_pct).replace(".", ",") + " %";
+      $("iva").textContent = eur(a.iva);
+      $("total").textContent = eur(a.total);
+    }
+    var acc = document.querySelector('[data-t="accepto"]'); if (acc) acc.textContent = sensePreus ? L.accepto_sense : L.accepto;
 
     var signat = a.estat === "signat" || a.estat === "conforme_tacit";
     var reparo = a.estat === "reparo";
