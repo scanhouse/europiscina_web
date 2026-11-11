@@ -142,9 +142,18 @@ FORM = {
 }
 
 
+# Què vol el client després del formulari: es desa a of_leads.interes (garcam-oficina)
+SIGUIENTE = ['presupuesto', 'llamada', 'visita', 'solo_precio']
+FORM["es"].update(sig='¿Qué quieres que hagamos?', sigops=['Enviadme el presupuesto', 'Que me llaméis', 'Visita sin compromiso', 'Solo quiero un precio orientativo'])
+FORM["ca"].update(sig='Què vols que fem?', sigops=['Envieu-me el pressupost', 'Que em truqueu', 'Visita sense compromís', 'Només vull un preu orientatiu'])
+FORM["en"].update(sig='What would you like us to do?', sigops=['Send me the quote', 'Call me', 'Free site visit', 'Just a rough price'])
+
+
 def bloque_form(lang, con_rotulo=True):
     f = FORM[lang]
     ops = "".join(f"<option>{o}</option>" for o in f["ops"])
+    sig = "".join(f'<label><input type="radio" name="siguiente" value="{v}"{" required" if i == 0 else ""}><span>{t}</span></label>'
+                  for i, (v, t) in enumerate(zip(SIGUIENTE, f["sigops"])))
     rot = f'<p class="rotulo">{f["rot"]}</p>\n  <h2>{f["h2"]}</h2>' if con_rotulo else ""
     return f"""<section class="bloque contacto" id="presupuesto">
   {rot}
@@ -167,6 +176,7 @@ def bloque_form(lang, con_rotulo=True):
         <div class="campo"><label for="pob">{f['pob']}</label><input id="pob" name="poblacion"></div>
         <div class="campo ancho"><label for="tipo">{f['tipo']}</label>
           <select id="tipo" name="tipo">{ops}</select></div>
+        <div class="campo ancho"><fieldset class="sigue"><legend>{f['sig']}</legend>{sig}</fieldset></div>
         <div class="campo ancho"><label for="msg">{f['msg']}</label>
           <textarea id="msg" name="mensaje" placeholder="{f['ph']}"></textarea></div>
       </div>
@@ -208,7 +218,7 @@ def escribir_home(lang):
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="theme-color" content="#0B4F6C">
 {FUENTES}
-<link rel="stylesheet" href="/assets/styles.css?v5">
+<link rel="stylesheet" href="/assets/styles.css?v6">
 </head>
 <body>
 <a class="saltar" href="#principal">{t['saltar']}</a>
@@ -304,7 +314,7 @@ def escribir_contacto(lang):
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="theme-color" content="#0B4F6C">
 {FUENTES}
-<link rel="stylesheet" href="/assets/styles.css?v5">
+<link rel="stylesheet" href="/assets/styles.css?v6">
 </head>
 <body>
 <a class="saltar" href="#principal">{t['saltar']}</a>

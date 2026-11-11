@@ -156,7 +156,7 @@ picture{display:block}
 .puerta input:focus{outline:none;border-bottom-color:var(--arena)}
 .puerta label.cons{color:rgba(252,252,251,.9)}
 </style>
-<link rel="stylesheet" href="/assets/styles.css?v5">
+<link rel="stylesheet" href="/assets/styles.css?v6">
 
 
 
@@ -225,10 +225,11 @@ picture{display:block}
     <p class="sub">Deixa'ns com localitzar-te i et mostrem el total. Et truquem només si tu vols.</p>
     <div class="f">
       <input type="text" id="g-nom" placeholder="Nom" autocomplete="name">
-      <input type="email" id="g-mail" placeholder="Correo electrónico" autocomplete="email" inputmode="email">
-      <input type="tel" id="g-tel" placeholder="Teléfono móvil" autocomplete="tel" inputmode="tel">
+      <input type="email" id="g-mail" placeholder="Correu electrònic" autocomplete="email" inputmode="email">
+      <input type="tel" id="g-tel" placeholder="Telèfon mòbil" autocomplete="tel" inputmode="tel">
+      <fieldset class="sigue"><legend>Després de veure el preu, què vols?</legend><label><input type="radio" name="g-sig" value="presupuesto"><span>Envieu-me el pressupost final</span></label><label><input type="radio" name="g-sig" value="llamada"><span>Que em truqueu</span></label><label><input type="radio" name="g-sig" value="visita"><span>Visita sense compromís</span></label><label><input type="radio" name="g-sig" value="solo_precio"><span>Només vull veure el preu</span></label></fieldset>
       <label class="cons"><input type="checkbox" id="g-ok">
-        Acepto que Europiscina (GARCAM Industries SLU) use estos datos para enviarme el presupuesto orientativo y contactarme sobre él.</label>
+        Accepto que Europiscina (GARCAM Industries SLU) faci servir aquestes dades per enviar-me el pressupost orientatiu i contactar-me sobre aquest.</label>
       <p class="err" id="g-err"></p>
       <button id="g-btn" type="button">Veure el meu preu</button>
     </div>
@@ -491,11 +492,13 @@ $("#g-btn").onclick = async () => {
   const mail = $("#g-mail").value.trim();
   const tel = $("#g-tel").value.trim();
   const ok = $("#g-ok").checked;
+  const sig = document.querySelector('input[name="g-sig"]:checked');
   const err = $("#g-err");
 
   if(nom.length < 2)      return err.textContent = "Escriu el teu nom.";
-  if(!RE_MAIL.test(mail)) return err.textContent = "Ese correo no parece válido.";
-  if(!RE_TEL.test(tel))   return err.textContent = "Escribe un teléfono español de 9 dígitos.";
+  if(!RE_MAIL.test(mail)) return err.textContent = "Aquest correu no sembla vàlid.";
+  if(!RE_TEL.test(tel))   return err.textContent = "Escriu un telèfon espanyol de 9 xifres.";
+  if(!sig)                return err.textContent = "Digues-nos què vols que fem després.";
   if(!ok)                 return err.textContent = "Necessitem el teu consentiment per enviar-te el pressupost.";
   err.textContent = "";
   $("#g-btn").disabled = true;
@@ -507,6 +510,7 @@ $("#g-btn").onclick = async () => {
     acabado: ac.n.replace(/&[a-z]+;/g,""),
     extras: [...marcados].join(", "),
     total: $("#total").textContent,
+    siguiente: sig.value,
     consentimiento: "si", origen: "configurador web"
   };
   try{
@@ -538,8 +542,8 @@ pintarPuerta();
 <input type="text" name="nombre"><input type="email" name="email"><input type="tel" name="telefono">
 <input type="text" name="modelo"><input type="text" name="medidas"><input type="text" name="acabado">
 <input type="text" name="extras"><input type="text" name="total"><input type="text" name="consentimiento">
-<input type="text" name="origen"><input type="text" name="empresa">
+<input type="text" name="origen"><input type="text" name="siguiente"><input type="text" name="empresa">
 </form>
-<a class="wa" href="https://wa.me/34680335438?text=Hola%2C%20estic%20calculant%20una%20piscina%20al%20web%20i%20vull%20informacio" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.480 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.23.85.86-3.15-.2-.32a8.2 8.2 0 0 1-1.26-4.37c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24z"/></svg><span>Escriu-nos per WhatsApp</span></a>
+<a class="wa" href="https://wa.me/34680335438?text=Hola%2C%20estic%20calculant%20una%20piscina%20al%20web%20i%20vull%20informacio" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.23.85.86-3.15-.2-.32a8.2 8.2 0 0 1-1.26-4.37c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24z"/></svg><span>Escriu-nos per WhatsApp</span></a>
 </body>
 </html>
