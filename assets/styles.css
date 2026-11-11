@@ -408,4 +408,7 @@ fieldset.sigue input{position:absolute;inset:0;opacity:0;width:100%;height:100%;
 fieldset.sigue label:hover{border-color:var(--papel)}
 fieldset.sigue label:has(input:checked){background:var(--papel);color:var(--profundo);border-color:var(--papel)}
 fieldset.sigue label:has(input:focus-visible){outline:2px solid var(--arena);outline-offset:2px}
-.puerta fieldset.sigue{margin-top:4px}
+.sigue-bloque{background:rgba(252,252,251,.1);border:1px solid rgba(252,252,251,.28);padding:18px 20px;margin:16px 0 4px;border-radius:2px}
+.sigue-bloque[hidden]{display:none}
+.sigue-bloque .hecho{font-size:.9rem;margin-top:14px;color:var(--papel)}
+.sigue-bloque .hecho[hidden]{display:none}
