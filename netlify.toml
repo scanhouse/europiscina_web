@@ -1,3 +1,10 @@
+# Cada despliegue comprueba que el HTML coincide con las recetas (.py).
+# Si alguien tocó un HTML a mano, el despliegue se bloquea y la web sigue como estaba.
+# Ver generar.py. Escape de emergencia: variable PERMITIR_HTML_MANUAL=1 en Netlify.
+[build]
+  publish = "."
+  command = "python3 generar.py --comprobar"
+
 # Cabeceras de seguridad y cache
 
 [[headers]]

@@ -61,7 +61,8 @@ def main():
         if "</body>" not in s:
             print("  SIN </body>, omitida:", p)
             continue
-        s = s.replace("</body>", bloque + "\n</body>", 1)
+        # colapsar el espacio previo a </body>: repetir no acumula líneas en blanco
+        s = re.sub(r"\s*</body>", lambda _m: "\n" + bloque + "\n</body>", s, count=1)
         p.write_text(s, encoding="utf-8")
         n += 1
     print(f"{n} páginas con botón de WhatsApp")

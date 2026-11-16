@@ -178,6 +178,10 @@ def bloque(ruta, lang, titulo, desc, faqs, miga):
 if __name__ == "__main__":
     rutas = []
     for p in sorted(BASE.rglob("index.html")):
+        partes = p.relative_to(BASE).parts
+        # /a/ es la firma de albaranes (noindex, interna): sin datos estructurados
+        if partes[0] in ("a", ".git", ".netlify"):
+            continue
         d = str(p.parent.relative_to(BASE)).strip(".")
         rutas.append("/" + d.strip("/") + "/" if d else "/")
 
@@ -196,7 +200,8 @@ if __name__ == "__main__":
               f'<meta property="og:image" content="{SITIO}/img/og-europiscina.jpg">'
               f'<meta name="twitter:card" content="summary_large_image">')
         s = re.sub(r'(<meta property="og:[^>]*>|<meta name="twitter:[^>]*>)', "", s)
-        s = s.replace("</head>", og + bloque(ruta, lang, tit, des, faqs, miga) + "\n</head>")
+        # colapsar el espacio que dejan las etiquetas retiradas: repetir no acumula líneas
+        s = re.sub(r"\s*</head>", lambda _m: "\n" + og + bloque(ruta, lang, tit, des, faqs, miga) + "\n</head>", s, count=1)
         p.write_text(s, encoding="utf-8")
         n_faq += len(faqs)
         print(f"  {ruta:<32} {len(faqs)} FAQ")
