@@ -54,3 +54,7 @@
 /wp-json/*                                                /                            404
 /wp-login.php                                             /                            404
 /producto/*/feed/                                         /configurador/               301!
+
+# Ficheros de trabajo: no son paginas publicas
+/snippet-whatsapp.html                                    /                            404
+/*.py                                                     /                            404
