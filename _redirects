@@ -55,6 +55,12 @@
 /wp-login.php                                             /                            404
 /producto/*/feed/                                         /configurador/               301!
 
-# Ficheros de trabajo: no son paginas publicas
-/snippet-whatsapp.html                                    /                            404
-/*.py                                                     /                            404
+# Ficheros de trabajo: no son paginas publicas (el ! fuerza la regla aunque el fichero exista)
+/snippet-whatsapp.html                                     /                            404!
+/contenido.py                                              /                            404!
+/extras.py                                                 /                            404!
+/imagenes.py                                               /                            404!
+/legales.py                                                /                            404!
+/motor.py                                                  /                            404!
+/schema.py                                                 /                            404!
+/whatsapp.py                                               /                            404!
